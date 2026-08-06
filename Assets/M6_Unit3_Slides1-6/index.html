@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>M6 (33293) Unit 3 — Slides 1–13</title>
+<style>
+  :root{
+    --brand-green:#3a9a5c;
+    --navy:#1c2a33;
+    --white:#fff;
+    --page-bg:#DDDFE8;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:'Segoe UI',Arial,sans-serif;background:var(--navy);}
+
+  /* Prev/Next vertical stack, right side */
+  #navstack{
+    position:fixed;right:14px;top:50%;transform:translateY(-50%);
+    display:flex;flex-direction:column;gap:10px;z-index:100;
+  }
+  #navstack button{
+    width:46px;height:46px;border-radius:50%;border:none;
+    background:var(--brand-green);color:#fff;font-size:20px;cursor:pointer;
+    box-shadow:0 2px 6px rgba(0,0,0,.4);
+  }
+  #navstack button:disabled{opacity:.35;cursor:default;}
+
+  /* Reveal/Hide answers vertical stack, right edge, below the prev/next controls */
+  #answerstack{
+    position:fixed;right:10px;top:calc(50% + 110px);
+    display:flex;flex-direction:column;gap:8px;z-index:100;
+    width:74px;
+  }
+  #answerstack button{
+    border:none;border-radius:8px;padding:8px 4px;
+    font-size:11px;font-weight:600;line-height:1.2;cursor:pointer;
+    box-shadow:0 2px 6px rgba(0,0,0,.4);
+  }
+  #revealBtn{background:var(--brand-green);color:#fff;}
+  #hideBtn{background:var(--navy);color:#fff;border:2px solid var(--brand-green) !important;}
+  #answerstack button:disabled{opacity:.35;cursor:default;}
+
+  /* Zoom vertical stack, left side */
+  #zoomstack{
+    position:fixed;left:14px;top:50%;transform:translateY(-50%);
+    display:flex;flex-direction:column;align-items:center;gap:10px;z-index:100;
+  }
+  #zoomstack button{
+    width:42px;height:42px;border-radius:50%;border:none;
+    background:var(--navy);color:#fff;border:2px solid var(--brand-green);
+    font-size:16px;cursor:pointer;
+  }
+  #zoomlabel{color:#cfe8d8;font-size:12px;}
+
+  /* Slide area */
+  #slides{
+    position:absolute;inset:0;
+    overflow:hidden;
+    z-index:1;
+  }
+  .slide{
+    position:absolute;inset:0;
+    display:none;
+    overflow-y:auto;
+    align-items:flex-start;justify-content:center;
+  }
+  .slide.active{display:flex;}
+
+  /* Global fixed background layer: page-colour fill + the 5-colour stripe.
+     Pinned to the viewport (not any slide's scroll box), so it always covers
+     the full screen no matter the zoom level or scroll position. */
+  #pagebg{
+    position:fixed;inset:0;
+    background:var(--page-bg);
+    z-index:0;
+    pointer-events:none;
+  }
+  #pagebg img{
+    position:absolute;top:0;left:0;
+    height:100%;width:auto;
+    display:block;
+  }
+
+  /* Scaling content layer, sits above the fixed background */
+  .slide-content{
+    position:relative;z-index:1;
+    width:100%;
+    max-width:1280px;
+    margin:0 auto;
+    padding:10px 10px 20px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    transform-origin:top center;
+  }
+  .slide-content img{
+    width:100%;
+    height:auto;
+    display:block;
+  }
+  .slide-content img.stage-img{cursor:default;}
+  .audio-wrap{
+    width:100%;
+    max-width:900px;
+    margin-bottom:10px;
+    padding:8px 14px;
+    background:#eef6f0;
+    border:1px solid var(--brand-green);
+    border-radius:8px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .audio-wrap audio{flex:1;}
+</style>
+</head>
+<body>
+
+<div id="pagebg"><img src="media/stripe.png" alt=""></div>
+
+<div id="navstack">
+  <button id="prevBtn" title="Previous slide">&#8593;</button>
+  <button id="nextBtn" title="Next slide">&#8595;</button>
+</div>
+
+<div id="answerstack">
+  <button id="revealBtn" title="Reveal next answer">Reveal Answer</button>
+  <button id="hideBtn" title="Hide all answers">Hide Answers</button>
+</div>
+
+<div id="zoomstack">
+  <button id="zoomIn">A+</button>
+  <div id="zoomlabel">100%</div>
+  <button id="zoomOut">A&minus;</button>
+</div>
+
+<div id="slides">
+  <div class="slide" data-index="1">
+    <div class="slide-content">
+      <img class="stage-img" src="media/slide1_stage0.png" alt="Slide 1">    </div>
+  </div>
+  <div class="slide" data-index="2">
+    <div class="slide-content">
+      <img class="stage-img" src="media/slide2_stage0.png" alt="Slide 2">
+    </div>
+  </div>
+  <div class="slide" data-index="3">
+    <div class="slide-content">
+      <img class="stage-img" src="media/slide3_stage0.png" alt="Slide 3">
+    </div>
+  </div>
+  <div class="slide" data-index="4">
+    <div class="slide-content">
+      <div class="audio-wrap">
+        <audio controls src="media/audio-slide4.mp3"></audio>
+      </div>
+      <img class="stage-img" src="media/slide4_stage0.png" alt="Slide 4">
+    </div>
+  </div>
+  <div class="slide" data-index="5">
+    <div class="slide-content">
+      <img class="stage-img" src="media/slide5_stage0.png" alt="Slide 5">
+    </div>
+  </div>
+  <div class="slide" data-index="6">
+    <div class="slide-content">
+      <div class="audio-wrap">
+        <audio controls src="media/audio-slide6.mp3"></audio>
+      </div>
+      <img class="stage-img" src="media/slide6_stage0.png" alt="Slide 6">
+    </div>
+  </div>
+  <div class="slide" data-index="7">
+    <div class="slide-content">
+      <img class="stage-img" src="media/slide7_stage0.png" alt="Slide 7">
+    </div>
+  </div>
+  <div class="slide" data-index="8">
+    <div class="slide-content">
+      <img class="stage-img" src="media/slide8_stage0.png" alt="Slide 8">
+    </div>
+  </div>
+  <div class="slide" data-index="9">
+    <div class="slide-content">
+      <img class="stage-img" src="media/slide9_stage0.png" alt="Slide 9">
+    </div>
+  </div>
+  <div class="slide" data-index="10">
+    <div class="slide-content">
+      <div class="audio-wrap">
+        <audio controls src="media/audio-slide10.mp3"></audio>
+      </div>
+      <img class="stage-img" src="media/slide10_stage0.png" alt="Slide 10">
+    </div>
+  </div>
+  <div class="slide" data-index="11">
+    <div class="slide-content">
+      <img class="stage-img" src="media/slide11_stage0.png" alt="Slide 11">
+    </div>
+  </div>
+  <div class="slide" data-index="12">
+    <div class="slide-content">
+      <img class="stage-img" src="media/slide12_stage0.png" alt="Slide 12">
+    </div>
+  </div>
+  <div class="slide" data-index="13">
+    <div class="slide-content">
+      <img class="stage-img" src="media/slide13_stage0.png" alt="Slide 13">
+    </div>
+  </div>
+</div>
+
+<script>
+const TOTAL = 13;
+const BASE_ZOOM = 1.2;
+let current = 1;
+let zoomBySlide = {};
+for (let i = 1; i <= TOTAL; i++) zoomBySlide[i] = 0.7; // default = 3 steps (0.1 each) below 100%
+
+// number of answer-reveal stages per slide, beyond the base image (0 = nothing to reveal)
+const MAX_STAGE = { 1: 2, 2: 0, 3: 2, 4: 3, 5: 2, 6: 4, 7: 0, 8: 1, 9: 1, 10: 4, 11: 5, 12: 11, 13: 1 };
+let stageBySlide = {};
+for (let i = 1; i <= TOTAL; i++) stageBySlide[i] = 0;
+
+function stageImgSrc(i, stage) {
+  return 'media/slide' + i + '_stage' + stage + '.png';
+}
+
+function applyZoom(i) {
+  const slide = document.querySelector('.slide[data-index="' + i + '"]');
+  const content = slide.querySelector('.slide-content');
+  const scale = zoomBySlide[i] * BASE_ZOOM;
+  content.style.transform = 'scale(' + scale + ')';
+  content.style.width = (100 / scale) + '%';
+  document.getElementById('zoomlabel').textContent = Math.round(zoomBySlide[i] * 100) + '%';
+}
+
+function refreshStage(i) {
+  const slide = document.querySelector('.slide[data-index="' + i + '"]');
+  const img = slide.querySelector('.stage-img');
+  img.src = stageImgSrc(i, stageBySlide[i]);
+  const hint = document.getElementById('hint-' + i);
+  if (hint) hint.classList.toggle('done', stageBySlide[i] >= MAX_STAGE[i]);
+  document.getElementById('revealBtn').disabled = stageBySlide[i] >= MAX_STAGE[i];
+  document.getElementById('hideBtn').disabled = stageBySlide[i] <= 0;
+}
+
+function goTo(i) {
+  if (i < 1 || i > TOTAL) return;
+  current = i;
+  document.querySelectorAll('.slide').forEach(s => s.classList.toggle('active', +s.dataset.index === i));
+  document.getElementById('prevBtn').disabled = i === 1;
+  document.getElementById('nextBtn').disabled = i === TOTAL;
+  refreshStage(i);
+  applyZoom(i);
+}
+
+// Reveal Answer button: shows one animated element per click.
+function revealAnswer() {
+  if (stageBySlide[current] < MAX_STAGE[current]) {
+    stageBySlide[current]++;
+    refreshStage(current);
+  }
+}
+// Hide Answers button: resets the slide back to its unrevealed state.
+function hideAnswers() {
+  stageBySlide[current] = 0;
+  refreshStage(current);
+}
+
+// Prev/Next arrow buttons jump straight to the adjacent slide (answers stay
+// however you last left them — only the Reveal/Hide Answers buttons touch them).
+document.getElementById('prevBtn').addEventListener('click', () => goTo(current - 1));
+document.getElementById('nextBtn').addEventListener('click', () => goTo(current + 1));
+document.getElementById('revealBtn').addEventListener('click', revealAnswer);
+document.getElementById('hideBtn').addEventListener('click', hideAnswers);
+document.getElementById('zoomIn').addEventListener('click', () => {
+  zoomBySlide[current] = Math.min(2.0, +(zoomBySlide[current] + 0.1).toFixed(2));
+  applyZoom(current);
+});
+document.getElementById('zoomOut').addEventListener('click', () => {
+  zoomBySlide[current] = Math.max(0.5, +(zoomBySlide[current] - 0.1).toFixed(2));
+  applyZoom(current);
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') goTo(current + 1);
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') goTo(current - 1);
+});
+
+goTo(1);
+</script>
+
+</body>
+</html>

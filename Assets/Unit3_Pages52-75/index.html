@@ -94,8 +94,12 @@ audio{width:100%;max-width:520px;display:block;margin:8px 0 12px;}
 .revealbtn{background:var(--purple);color:#fff;border:none;padding:7px 16px;border-radius:16px;font-size:12.5px;font-weight:700;cursor:pointer;}
 .revealbtn.model{background:var(--modelblue);}
 .revealbtn.script{background:var(--blue);}
+.revealbtn.ts{background:#7a5c1e;}
 .revealbtn.locked{background:#8a8a8a;}
 .revealbtn.locked::after{content:" \1F512";}
+.ts-chip{display:none;background:var(--lav);color:var(--blue);border:1px solid #ccd6ee;border-radius:10px;padding:1px 8px;font-size:11px;font-weight:700;cursor:pointer;margin-left:6px;white-space:nowrap;}
+.ts-chip:hover{background:#dde6f7;}
+.exwrap.ts-visible .ts-chip{display:inline-block;}
 #lockModal .modal-box{max-width:420px;}
 #lockRow{display:flex;gap:8px;align-items:center;}
 #lockInput{font-size:15px;padding:8px 12px;flex:1;border:1px solid #bbb;border-radius:8px;}
@@ -400,7 +404,7 @@ Do not try to write complete sentences in your notes. Key words and phrases are 
 <div class="barhead">WORK WITH THE LISTENING</div>
 <h3 class="exline"><span class="exlabel">A. Listen and Take Notes</span> Listen to the lecture. Then watch the video.* Complete the chart with the main points of the lecture and video. Write down only the important words. Compare your notes with a partner.</h3>
 <div class="audiorow">
-<audio controls src="media/audio-listening1-part1.mp3"></audio>
+<audio controls id="audio-p56" src="media/audio-listening1-part1.mp3"></audio>
 <button class="revealbtn script" data-group="p56" onclick="toggleScript(this,'script-p56','p56')">Show Script</button>
 </div>
 <div class="script-box" id="script-p56">
@@ -411,13 +415,13 @@ Do not try to write complete sentences in your notes. Key words and phrases are 
 <div id="ex8" class="exwrap">
 <table class="chart chart-tall">
 <tr><th style="width:32%;">Main ideas</th><th>Details</th></tr>
-<tr><td>&ldquo;Adulting&rdquo; skills&mdash;examples?</td><td><span class="model-ans">searching for a job, buying insurance, saving for retirement, healthy eating, minor car repairs, buying a home, pickling vegetables, folding a fitted sheet, exercise, changing a flat tire, keeping things alive, managing debt, making a budget</span></td></tr>
-<tr><td>How previously learned?</td><td><span class="model-ans">from parents, in school, from online videos</span></td></tr>
-<tr><td>What is &ldquo;Adulting&rdquo; School?</td><td><span class="model-ans">lessons for people who need to learn grown-up skills</span></td></tr>
+<tr><td>&ldquo;Adulting&rdquo; skills&mdash;examples?<span class="ts-chip" data-t="70" data-audio="audio-p56" onclick="jumpTo(this)">&#9654; 1:10</span></td><td><span class="model-ans">searching for a job, buying insurance, saving for retirement, healthy eating, minor car repairs, buying a home, pickling vegetables, folding a fitted sheet, exercise, changing a flat tire, keeping things alive, managing debt, making a budget</span></td></tr>
+<tr><td>How previously learned?<span class="ts-chip" data-t="106" data-audio="audio-p56" onclick="jumpTo(this)">&#9654; 1:46</span></td><td><span class="model-ans">from parents, in school, from online videos</span></td></tr>
+<tr><td>What is &ldquo;Adulting&rdquo; School?<span class="ts-chip" data-t="52" data-audio="audio-p56" onclick="jumpTo(this)">&#9654; 0:52</span></td><td><span class="model-ans">lessons for people who need to learn grown-up skills</span></td></tr>
 <tr><td>Why is this useful to Millennials?</td><td><span class="model-ans">There are real teachers?</span></td></tr>
 </table>
 </div>
-<div class="btnrow"><button class="revealbtn model" data-group="p56" onclick="toggleAnswers(this,'ex8','p56')">Show Sample Notes</button></div></div>
+<div class="btnrow"><button class="revealbtn ts" onclick="toggleTimestamps(this,'ex8')">Show Timestamps</button><button class="revealbtn model" data-group="p56" onclick="toggleAnswers(this,'ex8','p56')">Show Sample Notes</button></div></div>
 <div class="page-divider"><span>PAGE 57</span></div>
 <div id="p57" class="page-anchor"></div>
 <div class="exblock" id="slide9">
@@ -558,7 +562,7 @@ Do not try to write complete sentences in your notes. Key words and phrases are 
 <div class="barhead">WORK WITH THE LISTENING</div>
 <h3 class="exline"><span class="exlabel">A. Listen and Take Notes</span> Listen to the podcast and read the notes. Cross out the words that are not important. Compare your answers with a partner.</h3>
 <div class="audiorow">
-<audio controls src="media/audio-listening2.mp3"></audio>
+<audio controls id="audio-p63" src="media/audio-listening2.mp3"></audio>
 <button class="revealbtn script" data-group="p63" onclick="toggleScript(this,'script-p63','p63')">Show Script</button>
 </div>
 <div class="script-box" id="script-p63">
@@ -575,22 +579,22 @@ Do not try to write complete sentences in your notes. Key words and phrases are 
 </div>
 <div id="ex17" class="exwrap">
 <ul class="qlist crossnote">
-<li><span class="crossout">A</span> man and woman <span class="crossout">went to the</span> bank <span class="crossout">to get a</span> mortgage.</li>
-<li><span class="crossout">The banker talked about a lot of financial things.</span></li>
-<li><span class="crossout">The</span> man fell asleep.</li>
-<li><span class="crossout">The man was bored because he was</span> financially illiterate.</li>
-<li><span class="crossout">The man doesn&rsquo;t understand the first thing about finances.</span></li>
-<li><i>Forbes</i> <span class="crossout">magazine reported that</span> teenagers are dangerously financially illiterate.</li>
-<li><span class="crossout">It is killing us.</span></li>
-<li><span class="crossout">Young people don&rsquo;t know the difference between an asset and a liability.</span></li>
-<li><span class="crossout">This is happening in the</span> US and in Canada.</li>
-<li><span class="crossout">The government in Canada started the</span> Financial Consumer Agency of Canada in 2001.</li>
-<li><span class="crossout">Its job is to</span> teach young people about finances.</li>
-<li><span class="crossout">It has a</span> month&mdash;November&mdash;to promote financial literacy.</li>
-<li>Schools in Ontario <span class="crossout">have started to</span> talk about money to children in elementary school.</li>
+<li><span class="crossout">A</span> man and woman <span class="crossout">went to the</span> bank <span class="crossout">to get a</span> mortgage.<span class="ts-chip" data-t="8" data-audio="audio-p63" onclick="jumpTo(this)">&#9654; 0:08</span></li>
+<li><span class="crossout">The banker talked about a lot of financial things.</span><span class="ts-chip" data-t="27" data-audio="audio-p63" onclick="jumpTo(this)">&#9654; 0:27</span></li>
+<li><span class="crossout">The</span> man fell asleep.<span class="ts-chip" data-t="53" data-audio="audio-p63" onclick="jumpTo(this)">&#9654; 0:53</span></li>
+<li><span class="crossout">The man was bored because he was</span> financially illiterate.<span class="ts-chip" data-t="80" data-audio="audio-p63" onclick="jumpTo(this)">&#9654; 1:20</span></li>
+<li><span class="crossout">The man doesn&rsquo;t understand the first thing about finances.</span><span class="ts-chip" data-t="86" data-audio="audio-p63" onclick="jumpTo(this)">&#9654; 1:26</span></li>
+<li><i>Forbes</i> <span class="crossout">magazine reported that</span> teenagers are dangerously financially illiterate.<span class="ts-chip" data-t="128" data-audio="audio-p63" onclick="jumpTo(this)">&#9654; 2:08</span></li>
+<li><span class="crossout">It is killing us.</span><span class="ts-chip" data-t="132" data-audio="audio-p63" onclick="jumpTo(this)">&#9654; 2:12</span></li>
+<li><span class="crossout">Young people don&rsquo;t know the difference between an asset and a liability.</span><span class="ts-chip" data-t="149" data-audio="audio-p63" onclick="jumpTo(this)">&#9654; 2:29</span></li>
+<li><span class="crossout">This is happening in the</span> US and in Canada.<span class="ts-chip" data-t="157" data-audio="audio-p63" onclick="jumpTo(this)">&#9654; 2:37</span></li>
+<li><span class="crossout">The government in Canada started the</span> Financial Consumer Agency of Canada in 2001.<span class="ts-chip" data-t="235" data-audio="audio-p63" onclick="jumpTo(this)">&#9654; 3:55</span></li>
+<li><span class="crossout">Its job is to</span> teach young people about finances.<span class="ts-chip" data-t="244" data-audio="audio-p63" onclick="jumpTo(this)">&#9654; 4:04</span></li>
+<li><span class="crossout">It has a</span> month&mdash;November&mdash;to promote financial literacy.<span class="ts-chip" data-t="262" data-audio="audio-p63" onclick="jumpTo(this)">&#9654; 4:22</span></li>
+<li>Schools in Ontario <span class="crossout">have started to</span> talk about money to children in elementary school.<span class="ts-chip" data-t="278" data-audio="audio-p63" onclick="jumpTo(this)">&#9654; 4:38</span></li>
 </ul>
 </div>
-<div class="btnrow"><button class="revealbtn model" data-group="p63" onclick="toggleAnswers(this,'ex17','p63')">Show Sample Notes</button></div></div>
+<div class="btnrow"><button class="revealbtn ts" onclick="toggleTimestamps(this,'ex17')">Show Timestamps</button><button class="revealbtn model" data-group="p63" onclick="toggleAnswers(this,'ex17','p63')">Show Sample Notes</button></div></div>
 <div class="exblock" id="slide18">
 <h3 class="exline"><span class="exlabel">B. Apply</span> Use your notes to summarize the main ideas of the podcast. Complete the sentences.</h3>
 <div id="ex18" class="exwrap">
@@ -1153,6 +1157,25 @@ function toggleScript(btn, boxId, page){
   const box = document.getElementById(boxId);
   const on = box.classList.toggle('shown');
   btn.textContent = on ? 'Hide Script' : 'Show Script';
+}
+
+/* =====================================================================
+   Timestamps — show/hide clickable time chips; clicking one jumps the
+   linked audio player to that point and plays it.
+   ===================================================================== */
+function toggleTimestamps(btn, wrapId){
+  const wrap = document.getElementById(wrapId);
+  const on = wrap.classList.toggle('ts-visible');
+  btn.textContent = on ? 'Hide Timestamps' : 'Show Timestamps';
+}
+function jumpTo(el){
+  const t = parseFloat(el.dataset.t);
+  const audioId = el.dataset.audio;
+  const audio = document.getElementById(audioId);
+  if(audio && !isNaN(t)){
+    audio.currentTime = t;
+    audio.play();
+  }
 }
 
 /* =====================================================================

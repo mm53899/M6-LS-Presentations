@@ -1,0 +1,32 @@
+Q: Skills for Success 4 — Unit 3 (pp. 52–75) — Answer-lock class codes
+========================================================================
+
+Page 53 ......... adulting
+Page 54 ......... quince
+Page 55 ......... laundry
+Page 56 ......... millennial
+Page 57 ......... sheet
+Page 58 ......... debt
+Page 59 ......... milestone
+Page 62 ......... literacy
+Page 63 ......... mortgage
+Page 64 ......... checkbook
+Page 65 ......... pension
+Page 67 ......... synthesize
+Page 71 ......... stress
+Page 72 ......... graduate
+Page 73 ......... suggestion
+Page 74 ......... wheelchair
+
+MASTER CODE (unlocks every page on this deck at once, for the teacher):
+robot234
+
+Notes:
+- Codes reset every time the page is reloaded — nothing is saved/remembered
+  in the browser (no login, no localStorage).
+- To change a code, open index.html, find the PAGES object near the top of
+  the "Answer-lock passcodes" block in the <script> section, and edit the
+  "code:" value for that page.
+- Pages 52 and 75 have no code because they have no answer-reveal button
+  (page 52 is the unit-opener overview; page 75's model answer/rubric are
+  shown plainly, not behind a reveal button).

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Q: Skills for Success 4 &mdash; Unit 3 (pp. 52&ndash;75)</title>
+<title>Q: Skills for Success 4 &mdash; Unit 3 (Pages 52-75)</title>
 <style>
 :root{
   --navy:#1c2a33;
@@ -93,6 +93,20 @@ audio{width:100%;max-width:520px;display:block;margin:8px 0 12px;}
 .btnrow{display:flex;justify-content:flex-end;margin:8px 0;}
 .revealbtn{background:var(--purple);color:#fff;border:none;padding:7px 16px;border-radius:16px;font-size:12.5px;font-weight:700;cursor:pointer;}
 .revealbtn.model{background:var(--modelblue);}
+.revealbtn.script{background:var(--blue);}
+.revealbtn.locked{background:#8a8a8a;}
+.revealbtn.locked::after{content:" \1F512";}
+#lockModal .modal-box{max-width:420px;}
+#lockRow{display:flex;gap:8px;align-items:center;}
+#lockInput{font-size:15px;padding:8px 12px;flex:1;border:1px solid #bbb;border-radius:8px;}
+#lockGo{background:var(--navy);color:#fff;border:none;padding:9px 18px;border-radius:16px;cursor:pointer;font-weight:700;}
+#lockMsg{color:var(--red);font-size:12.5px;min-height:1.2em;margin:8px 0 0;}
+.audiorow{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:8px 0 4px;}
+.audiorow audio{margin:0;flex:1;min-width:220px;}
+.script-box{display:none;background:var(--cream);border:1px solid var(--creamborder);border-left:5px solid var(--blue);border-radius:0 6px 6px 0;padding:12px 16px;margin:0 0 14px;font-size:13px;line-height:1.65;max-height:360px;overflow-y:auto;}
+.script-box.shown{display:block;}
+.script-box p{margin:0 0 8px;}
+.script-box .sp{font-weight:800;color:var(--navy);}
 .ans-ph{display:none;color:var(--red);font-weight:700;}
 .exwrap.revealed .ans-ph{display:inline;}
 .model-ans{display:none;color:var(--modelblue);font-weight:600;}
@@ -189,11 +203,20 @@ mark.user-highlight{background:#fff176;padding:0 1px;}
 .modal-box{background:#fff;border-radius:10px;max-width:640px;width:92%;max-height:82vh;overflow-y:auto;padding:22px 26px;position:relative;box-shadow:0 12px 40px rgba(0,0,0,.4);}
 #wordModal .modal-box{max-width:820px;}
 .modal-box .close{position:absolute;top:10px;right:14px;background:none;border:none;font-size:22px;cursor:pointer;color:#888;}
-.modal-box h3{color:var(--blue);margin:0 4px 4px;font-size:32px;}
-.modal-box .mpos{color:#777;font-style:italic;margin:0 4px 14px;font-size:19px;}
-.modal-box .mdef{font-size:21px;line-height:1.5;margin:0 4px 16px;}
+.modal-box h3{color:var(--blue);margin:0 4px 4px;font-size:32px;display:inline-block;}
+.mpos-row{display:flex;align-items:baseline;gap:14px;margin:0 4px 14px;}
+.modal-box .mpos{color:#777;font-style:italic;font-size:19px;}
+.modal-box .mipa{color:#888;font-size:18px;font-family:'Segoe UI',Arial,sans-serif;}
+.modal-box .mdef{font-size:21px;line-height:1.5;margin:0 4px 10px;}
+.simplifybtn{position:absolute;top:12px;right:46px;background:var(--lav);color:var(--blue);border:1px solid #ccd6ee;padding:5px 12px;border-radius:16px;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap;}
+.simplifybtn:hover{background:#dde3f5;}
+.cambridgelink{color:var(--blue);font-size:13.5px;font-weight:700;text-decoration:none;border-bottom:1px dotted var(--blue);}
+.cambridgelink:hover{color:var(--modelblue);border-bottom-color:var(--modelblue);}
+.cambridgehint{font-size:12px;color:#888;font-style:italic;margin-top:3px;}
 .modal-box .mex{font-size:19px;line-height:1.6;margin:0 4px 10px;padding-left:18px;border-left:3px solid var(--lav);}
 #vocabListModal .modal-box{max-width:560px;}
+.vocabgroup-h{font-size:14px;font-weight:800;color:var(--blue);margin:14px 4px 6px;text-transform:uppercase;letter-spacing:.4px;}
+.vocabgroup-h:first-child{margin-top:0;}
 .chiprow{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;}
 .chip{background:var(--lav);color:var(--blue);border:1px solid #ccd6ee;padding:5px 12px;border-radius:14px;font-size:13px;cursor:pointer;font-weight:600;}
 .chip:hover{background:#dde5fb;}
@@ -219,7 +242,7 @@ mark.user-highlight{background:#fff176;padding:0 1px;}
 </div>
 
 <div id="content">
-<div id="doctitle">Q: Skills for Success 4, Listening &amp; Speaking<br>Unit 3: Developmental Psychology (pp. 52&ndash;75)</div>
+<div id="doctitle">Q: Skills for Success 4, Listening &amp; Speaking<br>Unit 3: Developmental Psychology (Pages 52-75)</div>
 <div id="p52" class="page-anchor"></div>
 <div class="exblock" id="slide1">
 <h2 class="stitle">Unit 3 &middot; Developmental Psychology</h2>
@@ -245,17 +268,32 @@ mark.user-highlight{background:#fff176;padding:0 1px;}
 <li>Look at the photo. What is the person doing? How does this make them an adult?<br><span class="model-ans">Sample answer: The woman is voting. In all countries that I know of, you have to be a certain age before you can vote, usually the same age that makes you legally an adult.</span></li>
 </ol>
 </div>
-<div class="btnrow"><button class="revealbtn model" onclick="toggleAnswers(this,'ex2')">Show Sample Answers</button></div></div>
+<div class="btnrow"><button class="revealbtn model" data-group="p53" onclick="toggleAnswers(this,'ex2','p53')">Show Sample Answers</button></div></div>
 <div class="exblock" id="slide3">
 <h3 class="exline"><span class="exlabel">B.</span> Listen to <i>The Q Classroom</i> online. Then answer these questions.</h3>
+<div class="audiorow">
 <audio controls src="media/audio-qclassroom.mp3"></audio>
+<button class="revealbtn script" data-group="p53" onclick="toggleScript(this,'script-p53','p53')">Show Script</button>
+</div>
+<div class="script-box" id="script-p53">
+<p><span class="sp">Teacher:</span> OK, the Unit 3 question is, &ldquo;What skills make someone an adult?&rdquo; What do you think, uh, Felix? How would you answer this question?</p>
+<p><span class="sp">Felix:</span> I think you start becoming an adult when you have to take care of yourself&mdash;pay your own rent, make your own meals, take yourself to the doctor when you&rsquo;re sick. Those are the things that make you grow up.</p>
+<p><span class="sp">Teacher:</span> It sounds like you associate adulthood with economic independence.</p>
+<p><span class="sp">Felix:</span> Yeah, I guess I do.</p>
+<p><span class="sp">Teacher:</span> What about you, Sophy? What skills make someone an adult?</p>
+<p><span class="sp">Sophy:</span> I agree with Felix about financial independence being important, but I think a lot of people don&rsquo;t really feel like adults until they get married and have children of their own. That&rsquo;s when you start to understand what life was like for your parents and the kinds of responsibilities they had. So, learning how to be a parent is really an important skill for many adults.</p>
+<p><span class="sp">Teacher:</span> Good. What do you think, Yuna? Do you agree with Felix or Sophy?</p>
+<p><span class="sp">Yuna:</span> No, not really. I think of myself as an adult even though my parents help me financially and I&rsquo;m not married. I manage my own life. I make decisions.</p>
+<p><span class="sp">Teacher:</span> OK, well, we have three completely different definitions! Where do you stand on this, Marcus? What skill made a difference between feeling like a child and feeling like an adult for you?</p>
+<p><span class="sp">Marcus:</span> I really felt like I had become an adult when I hosted Thanksgiving dinner at my house for the first time. I cooked all the food, and my parents came as guests. It might seem kind of silly because it&rsquo;s not as serious as having children or paying bills, but that felt like a really defining moment for me. So, I guess hosting a family dinner might be a skill that draws a line between childhood and adulthood.</p>
+</div>
 <div id="ex3" class="exwrap">
 <ol class="qlist">
 <li>What skills do Felix and Sophy give as examples of adult behavior? Do you agree with them?<br><span class="model-ans">Sample answer: Felix thinks you become an adult when you have the skills to take care of yourself financially. Sophy thinks people become adults when they become parents and have families of their own. I agree with Felix &mdash; when you can pay for yourself, you are an adult.</span></li>
 <li>Marcus recalls a specific event as a turning point between childhood and adulthood. What kinds of skills are involved in hosting a family dinner? How are those skills related to being an adult?<br><span class="model-ans">Sample answer: When you host a family dinner, you have to organize a lot of things, cook, and make people feel comfortable. These are all things that adults should be able to do.</span></li>
 </ol>
 </div>
-<div class="btnrow"><button class="revealbtn model" onclick="toggleAnswers(this,'ex3')">Show Sample Answers</button></div></div>
+<div class="btnrow"><button class="revealbtn model" data-group="p53" onclick="toggleAnswers(this,'ex3','p53')">Show Sample Answers</button></div></div>
 <div class="page-divider"><span>PAGE 54</span></div>
 <div id="p54" class="page-anchor"></div>
 <div class="exblock" id="slide4">
@@ -264,7 +302,13 @@ mark.user-highlight{background:#fff176;padding:0 1px;}
 <ul><li>They are directly connected to the topic.</li><li>They communicate the main idea and important supporting details.</li><li>They are usually repeated or rephrased.</li><li>They may be specific names, dates, places, or events.</li></ul>
 Do not try to write complete sentences in your notes. Key words and phrases are all you need to help you summarize what you heard.</div>
 <h3 class="exline"><span class="exlabel">A. Identify</span> Listen to the presentation about two ceremonies that celebrate becoming an adult. Check (&#10003;) the key words and phrases. Compare your answers with a partner and explain why you have chosen them.</h3>
+<div class="audiorow">
 <audio controls src="media/audio-notetaking-a.mp3"></audio>
+<button class="revealbtn script" data-group="p54" onclick="toggleScript(this,'script-p54','p54')">Show Script</button>
+</div>
+<div class="script-box" id="script-p54">
+<p><span class="sp">Speaker:</span> In some cultures, many around the world actually, the question about when a child becomes an adult is easily answered because there is a special ceremony to celebrate it. It&rsquo;s very interesting, really. For example, in Japan, there is a special national holiday every second Monday in January called Seijin no Hi. In English, this translates into the Coming of Age Day. On this day, many young men and women who turned 20 years old that year dress in traditional clothes, participate in a ceremony at a government office, and then attend parties with their friends. Unfortunately, fewer and fewer young people are participating in this holiday these days. One tradition that is still popular, however, is the Quincea&ntilde;era. In Mexico, girls have a Quincea&ntilde;era to celebrate their fifteenth birthday. They wear long, formal dresses, attend church, and then celebrate with a party where they dance with their fathers. So, as you can see, different cultures mark growing up in very different ways.</p>
+</div>
 <div id="ex4" class="exwrap">
 <div class="twocol">
 <div>
@@ -297,13 +341,13 @@ Do not try to write complete sentences in your notes. Key words and phrases are 
 </div>
 </div>
 </div>
-<div class="btnrow"><button class="revealbtn" onclick="toggleAnswers(this,'ex4')">Show Answers</button></div></div>
+<div class="btnrow"><button class="revealbtn" data-group="p54" onclick="toggleAnswers(this,'ex4','p54')">Show Answers</button></div></div>
 <div class="exblock" id="slide5">
 <h3 class="exline"><span class="exlabel">B. Summarize</span> Use your own words to summarize one of the ceremonies discussed in Activity A.</h3>
 <div id="ex5" class="exwrap">
 <p class="model-ans"><b>Model answer:</b> <i>Seijin no Hi</i> is a national holiday in Japan. It is held on the second Monday in January. People who turn 20 years old dress in traditional clothes, attend a ceremony at a government office, and attend parties. / <i>Quinceañera</i> is a holiday in Mexico for girls on their 15th birthdays. They wear long, formal dresses, attend church, and go to a party where they dance with their fathers.</p>
 </div>
-<div class="btnrow"><button class="revealbtn model" onclick="toggleAnswers(this,'ex5')">Show Model Answer</button></div></div>
+<div class="btnrow"><button class="revealbtn model" data-group="p54" onclick="toggleAnswers(this,'ex5','p54')">Show Model Answer</button></div></div>
 <div class="page-divider"><span>PAGE 55</span></div>
 <div id="p55" class="page-anchor"></div>
 <div class="exblock" id="slide6">
@@ -332,7 +376,7 @@ Do not try to write complete sentences in your notes. Key words and phrases are 
 </div>
 <p>2. Which generation do you belong to? What do you know about the characteristics and values of your generation?<br><span class="model-ans">Sample answer: I am a Millennial. I am not sure what that means about my generation. / I am Generation X. I think that people in my generation are often independent but also have trouble trusting authority.</span></p>
 </div>
-<div class="btnrow"><button class="revealbtn" onclick="toggleAnswers(this,'ex6')">Show Answers</button></div></div>
+<div class="btnrow"><button class="revealbtn" data-group="p55" onclick="toggleAnswers(this,'ex6','p55')">Show Answers</button></div></div>
 <div class="page-divider"><span>PAGE 56</span></div>
 <div id="p56" class="page-anchor"></div>
 <div class="exblock" id="slide7">
@@ -355,7 +399,15 @@ Do not try to write complete sentences in your notes. Key words and phrases are 
 <div class="exblock" id="slide8">
 <div class="barhead">WORK WITH THE LISTENING</div>
 <h3 class="exline"><span class="exlabel">A. Listen and Take Notes</span> Listen to the lecture. Then watch the video.* Complete the chart with the main points of the lecture and video. Write down only the important words. Compare your notes with a partner.</h3>
+<div class="audiorow">
 <audio controls src="media/audio-listening1-part1.mp3"></audio>
+<button class="revealbtn script" data-group="p56" onclick="toggleScript(this,'script-p56','p56')">Show Script</button>
+</div>
+<div class="script-box" id="script-p56">
+<p><span class="sp">Professor:</span> OK, so how many of you are Millennials? Remember that people in this category were born between the early 1980s until about the early 2000s. If you are a Millennial, can you raise your hand? Yeah, a lot of you are. You learned from this week&rsquo;s reading that Millennials are generally associated with an increased familiarity with digital technologies and that they tend to have a stronger sense of community, both local and global, than previous generations. However, some research suggests that Millennials may not be learning some of the survival skills that their parents know. So, a couple of entrepreneurs in Portland, Maine, have come up with a school that targets precisely those of you who put up your hands&mdash;Millennials. They claim that many Millennials haven&rsquo;t learned many of the practical life skills they need to be successful adults. We&rsquo;re talking about things like searching for a job, buying insurance, saving for retirement, healthy eating, minor car repairs, buying a home, that sort of thing. They call these skills &ldquo;adulting,&rdquo; basically living as an adult.</p>
+<p><span class="sp">Professor:</span> Now, you might guess by looking at me that I am not a Millennial. In fact, I was born in 1972, so that makes me Generation X. And, a lot of people my age, a lot of Gen Xers, really wonder why &ldquo;adulting&rdquo; lessons are necessary. I mean, I learned how to &ldquo;adult&rdquo; from my parents and from classes in school. If I don&rsquo;t know how to do something, I find a video online. For instance, recently I wanted to make pickled jalapenos with peppers from my garden. I learned how to pickle vegetables from my grandmother, but it&rsquo;s been about 20 years, so I watched a video on YouTube. So, you can see how it might be confusing to people my age why Millennials would pay a monthly fee for these lessons.</p>
+<p><span class="sp">Professor:</span> Before you guys weigh in, and I want to hear from Millennials and Gen Xers and Baby Boomers in the class, too, let&rsquo;s watch a brief video about the &ldquo;Adulting&rdquo; School set up by Katie Brunelle and Rachel Weinstein that combines adult skill development with fun, social events. Then I&rsquo;ll open the floor for some class discussion on the topic.</p>
+</div>
 <div id="ex8" class="exwrap">
 <table class="chart chart-tall">
 <tr><th style="width:32%;">Main ideas</th><th>Details</th></tr>
@@ -365,12 +417,31 @@ Do not try to write complete sentences in your notes. Key words and phrases are 
 <tr><td>Why is this useful to Millennials?</td><td><span class="model-ans">There are real teachers?</span></td></tr>
 </table>
 </div>
-<div class="btnrow"><button class="revealbtn model" onclick="toggleAnswers(this,'ex8')">Show Sample Notes</button></div></div>
+<div class="btnrow"><button class="revealbtn model" data-group="p56" onclick="toggleAnswers(this,'ex8','p56')">Show Sample Notes</button></div></div>
 <div class="page-divider"><span>PAGE 57</span></div>
 <div id="p57" class="page-anchor"></div>
 <div class="exblock" id="slide9">
 <h3 class="exline"><span class="exlabel">B. Identify</span> Read the questions. Then listen again. Put a check (&#10003;) by the &ldquo;adulting&rdquo; skills that the lecture says Millennials might need to learn.</h3>
+<div class="audiorow">
 <audio controls src="media/audio-listening1-part2.mp3"></audio>
+<button class="revealbtn script" data-group="p57" onclick="toggleScript(this,'script-p57','p57')">Show Script</button>
+</div>
+<div class="script-box" id="script-p57">
+<p><span class="sp">Katie Brunelle:</span> How to fold a fitted sheet.</p>
+<p><span class="sp">Teacher 1:</span> Those two corners together. So what I end up with is kind of a halved sheet.</p>
+<p><span class="sp">Rachel Weinstein:</span> If you get a flat tire, how to put on the spare and get to, get yourself where you&rsquo;re going.</p>
+<p><span class="sp">Brunelle:</span> Being healthy with basic exercising and nutrition skills.</p>
+<p><span class="sp">Weinstein:</span> Knowing to start your retirement fund early so that you can take advantage of compound interest.</p>
+<p><span class="sp">Brunelle:</span> Keeping things alive, whether it&rsquo;s your plants or your children or your pet.</p>
+<p><span class="sp">Weinstein:</span> Anyone who is over 18, 22, is an adult. And it&rsquo;s just a matter of how well are you adulting.</p>
+<p><span class="sp">Heather Noe:</span> I came from a generation where our public school system pushed for, you could be whatever you want to be. The sky&rsquo;s the limit. Just go to college and everything&rsquo;s going to be great. You can just go for whatever you want to be and dream as big as you possibly can.</p>
+<p><span class="sp">Heather Noe:</span> What I&rsquo;m hoping to take away from any of the courses that I will be attending in the Adulting School is filling in any gaps that I feel like I have. I was never told anything about credit score or the weight of having to pay back student loans or I have no idea how to buy a house or even how to really get started outside of looking online at pretty houses that seem wonderful and totally out of reach.</p>
+<p><span class="sp">Brunelle:</span> We offer, kind of, you know, what do you do with your debt? How can you budget and live on the income that you&rsquo;re bringing in? We&rsquo;re basically sneaking education into these fun events.</p>
+<p><span class="sp">Teacher 1:</span> You are going to fold your fitted sheet.</p>
+<p><span class="sp">Teacher 2:</span> I want each and every one of you to understand that from birth, you are wired to do value a certain way. So when you leave here tonight, you will know yourself better than you ever knew yourself before. That&rsquo;s pretty cool. She&rsquo;s excited.</p>
+<p><span class="sp">Weinstein:</span> This generation has been encouraged to think outside the box. And that&rsquo;s a beautiful thing, but it comes with some challenges because if you don&rsquo;t have a circumscribed path to follow, you know, you have to figure it out yourself.</p>
+<p><span class="sp">Noe:</span> To me, it seems like the Adulting School is basically a really jazzed-up version of adult ed, which we&rsquo;ve had for a really long time.</p>
+</div>
 <div id="ex9" class="exwrap">
 <div class="twocol">
 <div>
@@ -389,7 +460,7 @@ Do not try to write complete sentences in your notes. Key words and phrases are 
 </div>
 </div>
 </div>
-<div class="btnrow"><button class="revealbtn" onclick="toggleAnswers(this,'ex9')">Show Answers</button></div></div>
+<div class="btnrow"><button class="revealbtn" data-group="p57" onclick="toggleAnswers(this,'ex9','p57')">Show Answers</button></div></div>
 <div class="exblock" id="slide10">
 <h3 class="exline"><span class="exlabel">C. Categorize</span> Read the comments about &ldquo;Adulting 101&rdquo;. Match each quote with the speaker who probably said it. Compare your answers with a partner.</h3>
 <div class="photorow" style="max-width:640px;">
@@ -406,7 +477,7 @@ Do not try to write complete sentences in your notes. Key words and phrases are 
 <li>&ldquo;It can be really helpful to know how to take care of your car. I have always saved a lot of money by being able to do some simple things on my own. It&rsquo;s not hard to learn, and I love seeing students&rsquo; confidence increase.&rdquo; <span class="blank-ph">&nbsp;<span class="ans-ph">c</span></span></li>
 </ol>
 </div>
-<div class="btnrow"><button class="revealbtn" onclick="toggleAnswers(this,'ex10')">Show Answers</button></div></div>
+<div class="btnrow"><button class="revealbtn" data-group="p57" onclick="toggleAnswers(this,'ex10','p57')">Show Answers</button></div></div>
 <div class="page-divider"><span>PAGE 58</span></div>
 <div id="p58" class="page-anchor"></div>
 <div class="exblock" id="slide11">
@@ -420,7 +491,7 @@ Do not try to write complete sentences in your notes. Key words and phrases are 
 <li>Millennials may have been encouraged to think creatively but not practically. <span class="blank-ph">&nbsp;<span class="ans-ph">T</span></span></li>
 </ol>
 </div>
-<div class="btnrow"><button class="revealbtn" onclick="toggleAnswers(this,'ex11')">Show Answers</button></div></div>
+<div class="btnrow"><button class="revealbtn" data-group="p58" onclick="toggleAnswers(this,'ex11','p58')">Show Answers</button></div></div>
 <div class="exblock" id="slide12">
 <h3 class="exline"><span class="exlabel">E. Vocabulary</span> Here are some words from Listening 1. Complete each sentence with the correct word.</h3>
 <p style="font-size:12.5px;color:#777;">debt (n.) &middot; entrepreneur (n.) &middot; insurance (n.) &middot; interest (n.) &middot; minor (adj.) &middot; nutrition (n.) &middot; precisely (adv.) &middot; retirement (n.) &middot; set up (v. phr.) &middot; spare (n.) &middot; weigh in (v. phr.)</p>
@@ -439,7 +510,7 @@ Do not try to write complete sentences in your notes. Key words and phrases are 
 <li>At 60, he will soon be approaching <span class="blank-ph">&nbsp;<span class="ans-ph">retirement</span></span> age.</li>
 </ol>
 </div>
-<div class="btnrow"><button class="revealbtn" onclick="toggleAnswers(this,'ex12')">Show Answers</button></div></div>
+<div class="btnrow"><button class="revealbtn" data-group="p58" onclick="toggleAnswers(this,'ex12','p58')">Show Answers</button></div></div>
 <div class="page-divider"><span>PAGE 59</span></div>
 <div id="p59" class="page-anchor"></div>
 <div class="exblock" id="slide13">
@@ -451,7 +522,7 @@ Do not try to write complete sentences in your notes. Key words and phrases are 
 <li>Can you remember an event or experience that made you feel like you had become an adult? What skills did you need at that time?<br><span class="model-ans">Sample answer: A time I felt like an adult was when I moved to a different country to attend school for a year. I was scared, and my parents couldn&rsquo;t help me easily if I had a problem, but I learned how to take care of myself.</span></li>
 </ol>
 </div>
-<div class="btnrow"><button class="revealbtn model" onclick="toggleAnswers(this,'ex13')">Show Sample Answers</button></div></div>
+<div class="btnrow"><button class="revealbtn model" data-group="p59" onclick="toggleAnswers(this,'ex13','p59')">Show Sample Answers</button></div></div>
 <div class="page-divider"><span>PAGE 62</span></div>
 <div id="p62" class="page-anchor"></div>
 <div class="exblock" id="slide15">
@@ -462,7 +533,7 @@ Do not try to write complete sentences in your notes. Key words and phrases are 
 <div id="ex15" class="exwrap">
 <p class="model-ans">Sample answer: I think the speaker will talk about how young people don&rsquo;t know much about finances. Maybe the speaker will be a financial expert.</p>
 </div>
-<div class="btnrow"><button class="revealbtn model" onclick="toggleAnswers(this,'ex15')">Show Sample Answer</button></div></div>
+<div class="btnrow"><button class="revealbtn model" data-group="p62" onclick="toggleAnswers(this,'ex15','p62')">Show Sample Answer</button></div></div>
 <div class="exblock" id="slide16">
 <h2 class="stitle">Listening 2 &middot; Vocabulary</h2>
 <h3 class="exline"><span class="exlabel">B. Vocabulary</span> Read aloud these words from Listening 2. Check (&#10003;) the ones you know. Use a dictionary to define any new or unknown words. Then discuss with a partner how the words will relate to the unit.</h3>
@@ -486,7 +557,22 @@ Do not try to write complete sentences in your notes. Key words and phrases are 
 <div class="exblock" id="slide17">
 <div class="barhead">WORK WITH THE LISTENING</div>
 <h3 class="exline"><span class="exlabel">A. Listen and Take Notes</span> Listen to the podcast and read the notes. Cross out the words that are not important. Compare your answers with a partner.</h3>
+<div class="audiorow">
 <audio controls src="media/audio-listening2.mp3"></audio>
+<button class="revealbtn script" data-group="p63" onclick="toggleScript(this,'script-p63','p63')">Show Script</button>
+</div>
+<div class="script-box" id="script-p63">
+<p><span class="sp">Speaker:</span> It was not my finest hour. Some years ago, my partner and I were invited into our bank manager&rsquo;s office to discuss, in great detail, the truly remarkable elements of the mortgage we had applied for. As with Stephen Leacock, banks make me nervous, especially when forced to deal with numbers in the six-figure range. The manager began talking about amortization, monthly payments, accrued interest, payment speed-up, principal and interest combinations, and so on. My partner began to question him. She was very good.</p>
+<p><span class="sp">Speaker:</span> I suddenly found my mind drifting. I looked out the window. I tapped my feet. I wrung my hands. I blinked furiously. Quietly and inevitably I fell asleep. I nodded off. After what I guess was a moment or two, a sharp dig in the ribs. &ldquo;Wake up,&rdquo; she said. &ldquo;This is important.&rdquo; The bank manager couldn&rsquo;t believe that I had fallen asleep. But it was important. A house is, after all, the largest purchase most of us will ever make. But talking about money I find can be tedious beyond measure. The reason for that is simple: I am a financial illiterate. I take no comfort in the fact that there are millions like me who don&rsquo;t understand the first or even the second thing about finances. I never have.</p>
+<p><span class="sp">Speaker:</span> Once, as a member of the editorial board of a large newspaper, I had to sit through a lunch with the sitting finance minister. Every other member of the board was asking about trade deficits and current accounts and so on. The editor asked me if I had a question for the minister. I said, &ldquo;What is the difference between fiscal and monetary?&rdquo; The finance minister, Edgar Benson at the time, took a drag on the great log of a pipe and rolled his eyes.</p>
+<p><span class="sp">Speaker:</span> I was reminded&mdash;as if I had to be reminded&mdash;of how badly I deal with things financial when I read a piece in Forbes magazine entitled in bold letters, FINANCIAL ILLITERACY IS KILLING US. The story described the great canyons of ignorance about financial matters among teenagers. Said the writer, quote, &ldquo;That teenagers are allowed to drive, vote, and parent, all while not knowing the difference between an asset and a liability, is nothing short of a travesty.&rdquo; End quote.</p>
+<p><span class="sp">Speaker:</span> While the article naturally focuses on the United States, there are elements which echo the situation in Canada. In the US, efforts to improve financial literacy target high school students, but even there surveys have shown that what is learned lasts a maximum of two years. I was taught nothing about money during a less than distinguished high school career. Nothing about mortgages, interest, pensions, profits, investments, insurance&mdash;nothing. Neither were my children.</p>
+<p><span class="sp">Speaker:</span> I spent a lot of time in the chemistry lab doing God knows what. I sat through long descriptive explanations about physics and algebra, but nothing about personal debt or savings plans. The closest I came to understanding anything at all about money was a weekly allowance and opening what was called a Christmas Club account at our friendly local bank. And of course, learning to play Monopoly, probably the greatest financial educational tool ever created.</p>
+<p><span class="sp">Speaker:</span> When I started a working life, my dream was for a salary of $10,000 a year and buying a house for $25,000. But I still didn&rsquo;t know the difference between a stock and a bond. Which is why it is encouraging to learn, as I did this week, that the Canadian government has an agency called the Financial Consumer Agency of Canada. It was set up in 2001. Part of its mandate is to oversee the operations of financial institutions, but part of it is to expand the financial literacy of Canadians.</p>
+<p><span class="sp">Speaker:</span> It has held national conferences on the subject and conducted surveys on various levels of financial literacy. It issues reports from time to time. It even has its very own financial literacy month: November. As it points out on its website, financial literacy is critical to the prosperity and financial well-being of Canadians, and it is never too early to start acquiring it. Schools in Ontario have started to talk about money to children in elementary school, usually around grades four and five.</p>
+<p><span class="sp">Speaker:</span> A series of surveys across the country shows that the financial literacy among young people is very low. For example, 95 percent of young people interviewed knew what a budget is, but only 20 percent knew how to stick to it. Nearly 55 percent of teenagers say they wouldn&rsquo;t pay off their credit card balance every month. And nearly 40 percent of students said that how to save money was the most important topic in the school curriculum.</p>
+<p><span class="sp">Speaker:</span> Now, if I had gone through a rigorous course in financial literacy and management, I might now be in a position where I could balance my checkbook. Or . . . probably not.</p>
+</div>
 <div id="ex17" class="exwrap">
 <ul class="qlist crossnote">
 <li><span class="crossout">A</span> man and woman <span class="crossout">went to the</span> bank <span class="crossout">to get a</span> mortgage.</li>
@@ -504,7 +590,7 @@ Do not try to write complete sentences in your notes. Key words and phrases are 
 <li>Schools in Ontario <span class="crossout">have started to</span> talk about money to children in elementary school.</li>
 </ul>
 </div>
-<div class="btnrow"><button class="revealbtn model" onclick="toggleAnswers(this,'ex17')">Show Sample Notes</button></div></div>
+<div class="btnrow"><button class="revealbtn model" data-group="p63" onclick="toggleAnswers(this,'ex17','p63')">Show Sample Notes</button></div></div>
 <div class="exblock" id="slide18">
 <h3 class="exline"><span class="exlabel">B. Apply</span> Use your notes to summarize the main ideas of the podcast. Complete the sentences.</h3>
 <div id="ex18" class="exwrap">
@@ -513,12 +599,27 @@ Do not try to write complete sentences in your notes. Key words and phrases are 
 <li>The solution to the problem seems to be <span class="blank-ph">&nbsp;<span class="model-ans">education</span></span>.</li>
 </ol>
 </div>
-<div class="btnrow"><button class="revealbtn model" onclick="toggleAnswers(this,'ex18')">Show Sample Answers</button></div></div>
+<div class="btnrow"><button class="revealbtn model" data-group="p63" onclick="toggleAnswers(this,'ex18','p63')">Show Sample Answers</button></div></div>
 <div class="page-divider"><span>PAGE 64</span></div>
 <div id="p64" class="page-anchor"></div>
 <div class="exblock" id="slide19">
 <h3 class="exline"><span class="exlabel">D. Categorize</span> Read the statements. Then listen again. Write <i>T</i> (true) or <i>F</i> (false). Then correct each false statement to make it true.</h3>
+<div class="audiorow">
 <audio controls src="media/audio-listening2.mp3"></audio>
+<button class="revealbtn script" data-group="p64" onclick="toggleScript(this,'script-p64','p64')">Show Script</button>
+</div>
+<div class="script-box" id="script-p64">
+<p><span class="sp">Speaker:</span> It was not my finest hour. Some years ago, my partner and I were invited into our bank manager&rsquo;s office to discuss, in great detail, the truly remarkable elements of the mortgage we had applied for. As with Stephen Leacock, banks make me nervous, especially when forced to deal with numbers in the six-figure range. The manager began talking about amortization, monthly payments, accrued interest, payment speed-up, principal and interest combinations, and so on. My partner began to question him. She was very good.</p>
+<p><span class="sp">Speaker:</span> I suddenly found my mind drifting. I looked out the window. I tapped my feet. I wrung my hands. I blinked furiously. Quietly and inevitably I fell asleep. I nodded off. After what I guess was a moment or two, a sharp dig in the ribs. &ldquo;Wake up,&rdquo; she said. &ldquo;This is important.&rdquo; The bank manager couldn&rsquo;t believe that I had fallen asleep. But it was important. A house is, after all, the largest purchase most of us will ever make. But talking about money I find can be tedious beyond measure. The reason for that is simple: I am a financial illiterate. I take no comfort in the fact that there are millions like me who don&rsquo;t understand the first or even the second thing about finances. I never have.</p>
+<p><span class="sp">Speaker:</span> Once, as a member of the editorial board of a large newspaper, I had to sit through a lunch with the sitting finance minister. Every other member of the board was asking about trade deficits and current accounts and so on. The editor asked me if I had a question for the minister. I said, &ldquo;What is the difference between fiscal and monetary?&rdquo; The finance minister, Edgar Benson at the time, took a drag on the great log of a pipe and rolled his eyes.</p>
+<p><span class="sp">Speaker:</span> I was reminded&mdash;as if I had to be reminded&mdash;of how badly I deal with things financial when I read a piece in Forbes magazine entitled in bold letters, FINANCIAL ILLITERACY IS KILLING US. The story described the great canyons of ignorance about financial matters among teenagers. Said the writer, quote, &ldquo;That teenagers are allowed to drive, vote, and parent, all while not knowing the difference between an asset and a liability, is nothing short of a travesty.&rdquo; End quote.</p>
+<p><span class="sp">Speaker:</span> While the article naturally focuses on the United States, there are elements which echo the situation in Canada. In the US, efforts to improve financial literacy target high school students, but even there surveys have shown that what is learned lasts a maximum of two years. I was taught nothing about money during a less than distinguished high school career. Nothing about mortgages, interest, pensions, profits, investments, insurance&mdash;nothing. Neither were my children.</p>
+<p><span class="sp">Speaker:</span> I spent a lot of time in the chemistry lab doing God knows what. I sat through long descriptive explanations about physics and algebra, but nothing about personal debt or savings plans. The closest I came to understanding anything at all about money was a weekly allowance and opening what was called a Christmas Club account at our friendly local bank. And of course, learning to play Monopoly, probably the greatest financial educational tool ever created.</p>
+<p><span class="sp">Speaker:</span> When I started a working life, my dream was for a salary of $10,000 a year and buying a house for $25,000. But I still didn&rsquo;t know the difference between a stock and a bond. Which is why it is encouraging to learn, as I did this week, that the Canadian government has an agency called the Financial Consumer Agency of Canada. It was set up in 2001. Part of its mandate is to oversee the operations of financial institutions, but part of it is to expand the financial literacy of Canadians.</p>
+<p><span class="sp">Speaker:</span> It has held national conferences on the subject and conducted surveys on various levels of financial literacy. It issues reports from time to time. It even has its very own financial literacy month: November. As it points out on its website, financial literacy is critical to the prosperity and financial well-being of Canadians, and it is never too early to start acquiring it. Schools in Ontario have started to talk about money to children in elementary school, usually around grades four and five.</p>
+<p><span class="sp">Speaker:</span> A series of surveys across the country shows that the financial literacy among young people is very low. For example, 95 percent of young people interviewed knew what a budget is, but only 20 percent knew how to stick to it. Nearly 55 percent of teenagers say they wouldn&rsquo;t pay off their credit card balance every month. And nearly 40 percent of students said that how to save money was the most important topic in the school curriculum.</p>
+<p><span class="sp">Speaker:</span> Now, if I had gone through a rigorous course in financial literacy and management, I might now be in a position where I could balance my checkbook. Or . . . probably not.</p>
+</div>
 <div id="ex19" class="exwrap">
 <ol class="qlist">
 <li>Banks make the speaker feel relaxed. <span class="blank-ph">&nbsp;<span class="ans-ph">F &mdash; Banks make the speaker feel nervous.</span></span></li>
@@ -531,7 +632,7 @@ Do not try to write complete sentences in your notes. Key words and phrases are 
 <li>The speaker is sure he would be financially literate if he had studied finances when he was young. <span class="blank-ph">&nbsp;<span class="ans-ph">F &mdash; The speaker isn&rsquo;t sure he would be financially literate if he had studied finances when he was young.</span></span></li>
 </ol>
 </div>
-<div class="btnrow"><button class="revealbtn" onclick="toggleAnswers(this,'ex19')">Show Answers</button></div></div>
+<div class="btnrow"><button class="revealbtn" data-group="p64" onclick="toggleAnswers(this,'ex19','p64')">Show Answers</button></div></div>
 <div class="page-divider"><span>PAGE 65</span></div>
 <div id="p65" class="page-anchor"></div>
 <div class="exblock" id="slide20">
@@ -567,7 +668,7 @@ Do not try to write complete sentences in your notes. Key words and phrases are 
 <tr><td>l.</td><td><span class="blank-ph">&nbsp;<span class="ans-ph">stock</span></span></td><td>(n.) a share that somebody has bought in a company</td></tr>
 </table>
 </div>
-<div class="btnrow"><button class="revealbtn" onclick="toggleAnswers(this,'ex20')">Show Answers</button></div>
+<div class="btnrow"><button class="revealbtn" data-group="p65" onclick="toggleAnswers(this,'ex20','p65')">Show Answers</button></div>
 <p style="font-size:11px;color:#888;">Answers sourced from Answer Key, Activity G, pp. 66&ndash;67.</p></div>
 <div class="page-divider"><span>PAGE 67</span></div>
 <div id="p67" class="page-anchor"></div>
@@ -580,7 +681,7 @@ Do not try to write complete sentences in your notes. Key words and phrases are 
 <li>Do you think these skills really make someone a successful adult? If yes, why? If no, what skills might be more important?<br><span class="model-ans">Sample answer: I don&rsquo;t think these skills make someone a successful adult because they don&rsquo;t really mention emotional skills, which are more important.</span></li>
 </ol>
 </div>
-<div class="btnrow"><button class="revealbtn model" onclick="toggleAnswers(this,'ex21')">Show Sample Answers</button></div></div>
+<div class="btnrow"><button class="revealbtn model" data-group="p67" onclick="toggleAnswers(this,'ex21','p67')">Show Sample Answers</button></div></div>
 <div class="page-divider"><span>PAGE 71</span></div>
 <div id="p71" class="page-anchor"></div>
 <div class="exblock" id="slide22">
@@ -612,7 +713,7 @@ Do not try to write complete sentences in your notes. Key words and phrases are 
 <li>The <span class="stress-word">age</span> at which you <span class="stress-word">become</span> an <span class="stress-word">adult</span> <span class="stress-word">varies</span>.</li>
 </ol>
 </div>
-<div class="btnrow"><button class="revealbtn" onclick="toggleAnswers(this,'ex22')">Show Answers</button></div></div>
+<div class="btnrow"><button class="revealbtn" data-group="p71" onclick="toggleAnswers(this,'ex22','p71')">Show Answers</button></div></div>
 <div class="page-divider"><span>PAGE 72</span></div>
 <div id="p72" class="page-anchor"></div>
 <div class="exblock" id="slide23">
@@ -627,7 +728,7 @@ Do not try to write complete sentences in your notes. Key words and phrases are 
 <div class="speakline"><b>A:</b> Well, <span class="stress-word">maybe</span> that will <span class="stress-word">change</span> <span class="stress-word">now</span> that you&rsquo;ve <span class="stress-word">graduated</span>!</div>
 <div class="clearfix"></div>
 </div>
-<div class="btnrow"><button class="revealbtn" onclick="toggleAnswers(this,'ex23')">Show Answers</button></div>
+<div class="btnrow"><button class="revealbtn" data-group="p72" onclick="toggleAnswers(this,'ex23','p72')">Show Answers</button></div>
 <div class="barhead" style="margin-top:16px;">SPEAKING SKILL <span class="sub">Giving a presentation</span></div>
 <div class="tipbox">When you give a presentation, it is important to look and feel confident. People will be more interested in your ideas if they see that you believe in yourself and your ideas. Here are some steps to follow.
 <p><b>Before you give your presentation</b></p>
@@ -641,7 +742,16 @@ Do not try to write complete sentences in your notes. Key words and phrases are 
 <div id="p73" class="page-anchor"></div>
 <div class="exblock" id="slide24">
 <h3 class="exline"><span class="exlabel">A. Create</span> Listen to a presentation about becoming an adult. Then list five suggestions you would give the speaker. Compare your suggestions with a partner.</h3>
+<div class="audiorow">
 <audio controls src="media/audio-speaking-a.mp3"></audio>
+<button class="revealbtn script" data-group="p73" onclick="toggleScript(this,'script-p73','p73')">Show Script</button>
+</div>
+<div class="script-box" id="script-p73">
+<p><span class="sp">Speaker:</span> Uh, hi. Um, today my presentation is about an important turning point in my life. Um, OK. So, a few years ago, I got my first job. I was really, really excited because I was making my own money. I felt completely grown up.</p>
+<p><span class="sp">Speaker:</span> Uh, on the way home from work, I used to stop at stores and buy things I liked just because I could. Uh, I bought clothes and a new watch and books. I really felt like an adult when I paid with my own money.</p>
+<p><span class="sp">Speaker:</span> But this bad habit caught up to me. One day, in the middle of the month, I realized that I had spent all my money already and I, uh, wouldn&rsquo;t get paid again for another two weeks. I didn&rsquo;t even have enough money to buy myself lunch.</p>
+<p><span class="sp">Speaker:</span> Uh, where was I? Oh yeah, um, so I didn&rsquo;t have enough money. I had to ask my parents to give me some. They were happy to help, of course, but, um, I sure didn&rsquo;t feel very grown up having to ask them. Since then, I have learned to budget my money better so my paycheck lasts all month. Um, that&rsquo;s it.</p>
+</div>
 <div id="ex24" class="exwrap">
 <ol class="qlist">
 <li><span class="model-ans">Don&rsquo;t say <i>Um</i> or <i>Uh</i>.</span></li>
@@ -651,7 +761,7 @@ Do not try to write complete sentences in your notes. Key words and phrases are 
 <li><span class="model-ans">You use the word <i>really</i> a lot; try to use different, more academic-sounding vocabulary.</span></li>
 </ol>
 </div>
-<div class="btnrow"><button class="revealbtn model" onclick="toggleAnswers(this,'ex24')">Show Sample Suggestions</button></div>
+<div class="btnrow"><button class="revealbtn model" data-group="p73" onclick="toggleAnswers(this,'ex24','p73')">Show Sample Suggestions</button></div>
 <div class="clearfix"></div>
 <h3 class="exline"><span class="exlabel">B. Synthesize</span> Create a brief presentation to tell about one important event in your life. Practice the presentation once and then present it to a partner. Take note of the suggestions your partner gives you. Take turns presenting and giving suggestions.</h3>
 <div id="ex24b" class="exwrap">
@@ -662,7 +772,7 @@ Do not try to write complete sentences in your notes. Key words and phrases are 
 <tr class="row-concl"><td><b>Conclusion</b><ul class="scriptlist"><li>Realized I could be responsible for something outside school and home</li></ul></td><td>&ldquo;That experience taught me I could be responsible for something outside of school and home.&rdquo;</td></tr>
 </table>
 </div>
-<div class="btnrow"><button class="revealbtn model" onclick="toggleAnswers(this,'ex24b')">Show Model Outline &amp; Script</button></div></div>
+<div class="btnrow"><button class="revealbtn model" data-group="p73" onclick="toggleAnswers(this,'ex24b','p73')">Show Model Outline &amp; Script</button></div></div>
 <div class="page-divider"><span>PAGE 74</span></div>
 <div id="p74" class="page-anchor"></div>
 <div class="exblock" id="slide25">
@@ -670,7 +780,14 @@ Do not try to write complete sentences in your notes. Key words and phrases are 
 <div class="tipbox"><b>Give a presentation to a group</b><br>In this section, you will give a short presentation about a personal story. As you prepare your presentation, think about the Unit Question, &ldquo;What skills make someone an adult?&rdquo; Use information from Listening 1, Listening 2, and your work in this unit to support your presentation.</div>
 <div class="barhead">CONSIDER THE IDEAS</div>
 <h3 class="exline"><span class="exlabel">A. Listen and Take Notes</span> Listen to one person&rsquo;s story about a skill he had to learn as he became an adult. Take notes as you listen.</h3>
+<div class="audiorow">
 <audio controls src="media/audio-unitassignment-a.mp3"></audio>
+<button class="revealbtn script" data-group="p74" onclick="toggleScript(this,'script-p74','p74')">Show Script</button>
+</div>
+<div class="script-box" id="script-p74">
+<p><span class="sp">Speaker:</span> Hello. I&rsquo;m Tony, and today I&rsquo;d like to tell you about an important turning point in my life. When I was 18 years old, I went to Europe for a long vacation. I had a lot of interesting adventures, and I grew up a lot on that trip. However, one event sticks out in my mind as a moment in my life when I really left childhood and entered adulthood. I was traveling in Russia at the time. My father&rsquo;s voice sounded so far away on the phone when he called. I couldn&rsquo;t believe his news: my mother had a problem with her brain, and the doctors didn&rsquo;t know if she was going to live.</p>
+<p><span class="sp">Speaker:</span> I got on a plane the next day and hurried across the planet hoping that my mom would still be alive when I got back home. When I walked into her hospital room, she recognized me but couldn&rsquo;t talk. She got better, bit by bit, and, one day, I was allowed to take her outside in the hospital garden. As I pushed her wheelchair, I realized that my mom would need me for a while. I understood that even though traveling was my dream, it was more important to stay home and take care of my mom. I guess that I learned that being an adult means putting other people&rsquo;s needs first. I think I grew up a little more as my mom and I enjoyed walks in the hospital garden.</p>
+</div>
 <div id="ex25" class="exwrap">
 <table class="chart chart-tall notes-chart">
 <tr><td class="qcell">1. What important event became a turning point in the speaker&rsquo;s life?</td><td><span class="blank-ph">&nbsp;<span class="ans-ph">When he learned his mother had a problem with her brain.</span></span></td></tr>
@@ -678,7 +795,7 @@ Do not try to write complete sentences in your notes. Key words and phrases are 
 <tr><td class="qcell">3. What skill did he learn that made him feel more grown up?</td><td><span class="blank-ph">&nbsp;<span class="ans-ph">He learned to consider other people before himself.</span></span></td></tr>
 </table>
 </div>
-<div class="btnrow"><button class="revealbtn" onclick="toggleAnswers(this,'ex25')">Show Answers</button></div>
+<div class="btnrow"><button class="revealbtn" data-group="p74" onclick="toggleAnswers(this,'ex25','p74')">Show Answers</button></div>
 <p class="exline"><span class="exlabel">B. Discuss</span> Work with a partner. Compare your notes and discuss the speaker&rsquo;s main points.</p></div>
 <div class="exblock" id="slide26">
 <div class="barhead">PREPARE AND SPEAK</div>
@@ -703,7 +820,7 @@ Do not try to write complete sentences in your notes. Key words and phrases are 
 <div class="spiderleaf" style="left:62%;top:82%;"><span class="model-ans">Grocery shopping on a budget</span></div>
 </div>
 </div>
-<div class="btnrow"><button class="revealbtn model" onclick="toggleAnswers(this,'ex26')">Show Model Brainstorm</button></div></div>
+<div class="btnrow"><button class="revealbtn model" data-group="p74" onclick="toggleAnswers(this,'ex26','p74')">Show Model Brainstorm</button></div></div>
 <div class="page-divider"><span>PAGE 75</span></div>
 <div id="p75" class="page-anchor"></div>
 <div class="exblock" id="slide27">
@@ -748,10 +865,17 @@ Do not try to write complete sentences in your notes. Key words and phrases are 
 <div class="modal-backdrop" id="wordModal">
   <div class="modal-box">
     <button class="close" onclick="closeModal('wordModal')">&times;</button>
+    <button class="simplifybtn" id="wm-simplify-btn" onclick="toggleSimple()">Show simplified definition</button>
     <h3 id="wm-word"></h3>
-    <div class="mpos" id="wm-pos"></div>
+    <div class="mpos-row">
+      <span class="mpos" id="wm-pos"></span>
+      <span class="mipa" id="wm-ipa"></span>
+    </div>
     <div class="mdef" id="wm-def"></div>
     <div id="wm-examples"></div>
+    <div style="margin:14px 4px 0;">
+      <a id="wm-cambridge" class="cambridgelink" href="#" target="_blank" rel="noopener">Look up definition &#8599;</a>
+    </div>
   </div>
 </div>
 
@@ -760,7 +884,21 @@ Do not try to write complete sentences in your notes. Key words and phrases are 
   <div class="modal-box">
     <button class="close" onclick="closeModal('vocabListModal')">&times;</button>
     <h3 style="font-size:20px;">Unit 3 Vocabulary</h3>
-    <div class="chiprow" id="vocabChips"></div>
+    <div id="vocabChips"></div>
+  </div>
+</div>
+
+<!-- Answer-lock modal -->
+<div class="modal-backdrop" id="lockModal">
+  <div class="modal-box">
+    <button class="close" onclick="closeModal('lockModal')">&times;</button>
+    <h3 id="lockTitle">&#128274; Answers locked</h3>
+    <p class="lock-sub">Enter the class code for this page to see the answers.</p>
+    <div id="lockRow">
+      <input type="password" id="lockInput" placeholder="class code" autocomplete="off">
+      <button type="button" id="lockGo">Unlock</button>
+    </div>
+    <p id="lockMsg"></p>
   </div>
 </div>
 
@@ -769,114 +907,141 @@ Do not try to write complete sentences in your notes. Key words and phrases are 
    WORD DEFINITIONS (pp. 56 & 62 vocabulary)
    ===================================================================== */
 const WORD_DEFS = {
-"debt":{pos:"(n.)",def:"an amount of money that you owe to a person, bank, or company",examples:[
+"debt":{group:"Listening 1 Target Vocabulary",ipa:"/dɛt/",pos:"(n.)",def:"an amount of money that you owe to a person, bank, or company",simple:"Money that you owe and need to pay back.",examples:[
  "She worked hard to pay off her college debt.",
  "The small business took on debt to buy new equipment.",
  "From the listening: &ldquo;We offer, kind of, you know, what do you do with your <b>debt</b>? How can you budget and live on the income that you&rsquo;re bringing in?&rdquo;"]},
-"minor":{pos:"(adj.)",def:"not very big, serious, or important, especially compared with other things of the same kind",examples:[
+"minor":{group:"Listening 1 Target Vocabulary",ipa:"/ˈmaɪnər/",pos:"(adj.)",def:"not very big, serious, or important, especially compared with other things of the same kind",simple:"Small, or not very important.",examples:[
  "It was only a minor problem, so nobody worried about it.",
  "He suffered a few minor injuries in the accident.",
  "From the listening: &ldquo;We&rsquo;re talking about things like searching for a job, buying insurance, saving for retirement, healthy eating, <b>minor</b> car repairs, buying a home, that sort of thing.&rdquo;"]},
-"set-up":{pos:"(v. phr.)",def:"to start a business, organization, or system",examples:[
+"set-up":{group:"Listening 1 Target Vocabulary",ipa:"/sɛt ʌp/",pos:"(v. phr.)",def:"to start a business, organization, or system",simple:"To start something new, like a business or a program.",examples:[
  "They set up a small bakery in their neighborhood.",
  "The city set up a new program to help young families.",
  "From the listening: &ldquo;&lsquo;Adulting&rsquo; School <b>set up</b> by Katie Brunelle and Rachel Weinstein that combines adult skill development with fun, social events.&rdquo;"]},
-"entrepreneur":{pos:"(n.)",def:"a person who starts their own business, especially when this involves taking financial risks",examples:[
+"entrepreneur":{group:"Listening 1 Target Vocabulary",ipa:"/ˌɑntrəprəˈnɜr/",pos:"(n.)",def:"a person who starts their own business, especially when this involves taking financial risks",simple:"Someone who starts and runs their own business.",examples:[
  "My cousin is a young entrepreneur who runs three companies.",
  "Entrepreneurs need to be comfortable with uncertainty.",
  "From the listening: &ldquo;So, a couple of <b>entrepreneurs</b> in Portland, Maine, have come up with a school that targets precisely those of you who put up your hands&mdash;Millennials.&rdquo;"]},
-"nutrition":{pos:"(n.)",def:"the food that you eat and the way it affects your health",examples:[
+"nutrition":{group:"Listening 1 Target Vocabulary",ipa:"/nuˈtrɪʃən/",pos:"(n.)",def:"the food that you eat and the way it affects your health",simple:"Eating in a way that's healthy for your body.",examples:[
  "The doctor gave her some advice about nutrition.",
  "Good nutrition is important for children&rsquo;s growth.",
  "From the listening: &ldquo;Being healthy with basic exercising and <b>nutrition</b> skills.&rdquo;"]},
-"spare":{pos:"(n.)",def:"an extra thing of the same type that you keep in case you need it",examples:[
+"spare":{group:"Listening 1 Target Vocabulary",ipa:"/spɛr/",pos:"(n.)",def:"an extra thing of the same type that you keep in case you need it",simple:"An extra one that you keep in case you need it.",examples:[
  "I keep a spare key under the mat.",
  "Do you have a spare I could borrow?",
  "From the listening: &ldquo;If you get a flat tire, how to put on the <b>spare</b> and get to, get yourself where you&rsquo;re going.&rdquo;"]},
-"insurance":{pos:"(n.)",def:"an arrangement in which you pay a company money and they pay the costs if something bad happens, such as an accident or illness",examples:[
+"insurance":{group:"Listening 1 Target Vocabulary",ipa:"/ɪnˈʃʊrəns/",pos:"(n.)",def:"an arrangement in which you pay a company money and they pay the costs if something bad happens, such as an accident or illness",simple:"A plan where you pay a company so they'll help pay for damage or accidents.",examples:[
  "You should get insurance before you travel abroad.",
  "Our car insurance covers accidents and theft.",
  "From the listening: &ldquo;...buying <b>insurance</b>, saving for retirement, healthy eating, minor car repairs, buying a home, that sort of thing.&rdquo;"]},
-"precisely":{pos:"(adv.)",def:"exactly and accurately",examples:[
+"precisely":{group:"Listening 1 Target Vocabulary",ipa:"/prɪˈsaɪsli/",pos:"(adv.)",def:"exactly and accurately",simple:"Exactly.",examples:[
  "I don&rsquo;t know precisely what happened.",
  "The train arrived precisely on time.",
  "From the listening: &ldquo;...have come up with a school that targets <b>precisely</b> those of you who put up your hands&mdash;Millennials.&rdquo;"]},
-"weigh-in":{pos:"(v. phr.)",def:"to give your opinion about something, especially during a discussion or argument",examples:[
+"weigh-in":{group:"Listening 1 Target Vocabulary",ipa:"/weɪ ɪn/",pos:"(v. phr.)",def:"to give your opinion about something, especially during a discussion or argument",simple:"To share your opinion about something.",examples:[
  "Everyone was invited to weigh in on the new schedule.",
  "The manager finally weighed in on the debate.",
  "From the listening: &ldquo;Before you guys <b>weigh in</b>, and I want to hear from Millennials and Gen Xers and Baby Boomers in the class, too, let&rsquo;s watch a brief video...&rdquo;"]},
-"interest":{pos:"(n.)",def:"an extra amount of money that a bank pays you for keeping your money there, or that you pay a bank for borrowing money",examples:[
+"interest":{group:"Listening 1 Target Vocabulary",ipa:"/ˈɪntrəst/",pos:"(n.)",def:"an extra amount of money that a bank pays you for keeping your money there, or that you pay a bank for borrowing money",simple:"Extra money you earn on savings, or extra money you owe on a loan.",examples:[
  "The bank pays 2% interest on savings accounts.",
  "You&rsquo;ll pay less interest if you repay the loan quickly.",
  "From the listening: &ldquo;Knowing to start your retirement fund early so that you can take advantage of compound <b>interest</b>.&rdquo;"]},
-"retirement":{pos:"(n.)",def:"the time in someone&rsquo;s life after they stop working, usually because of their age",examples:[
+"retirement":{group:"Listening 1 Target Vocabulary",ipa:"/rɪˈtaɪərmənt/",pos:"(n.)",def:"the time in someone's life after they stop working, usually because of their age",simple:"The time after someone stops working, usually because they're older.",examples:[
  "She&rsquo;s looking forward to a peaceful retirement.",
  "He started saving for retirement in his twenties.",
  "From the listening: &ldquo;...buying insurance, saving for <b>retirement</b>, healthy eating, minor car repairs, buying a home, that sort of thing.&rdquo;"]},
-"agency":{pos:"(n.)",def:"a government department or organization that provides a particular service",examples:[
+"agency":{group:"Listening 2 Target Vocabulary",ipa:"/ˈeɪdʒənsi/",pos:"(n.)",def:"a government department or organization that provides a particular service",simple:"An organization, often part of the government, that provides a service.",examples:[
  "The environmental agency issued a new report on air quality.",
  "She works for a travel agency downtown.",
  "From the listening: &ldquo;...it is encouraging to learn...that the Canadian government has an <b>agency</b> called the Financial Consumer Agency of Canada.&rdquo;"]},
-"mortgage":{pos:"(n.)",def:"a loan of money that you get from a bank to buy a house, which you pay back over many years",examples:[
+"mortgage":{group:"Listening 2 Target Vocabulary",ipa:"/ˈmɔrgɪdʒ/",pos:"(n.)",def:"a loan of money that you get from a bank to buy a house, which you pay back over many years",simple:"A loan from a bank that you use to buy a house.",examples:[
  "They took out a mortgage to buy their first home.",
  "Mortgage rates have gone up this year.",
  "From the listening: &ldquo;...I was taught nothing about money...Nothing about <b>mortgages</b>, interest, pensions, profits, investments, insurance&mdash;nothing.&rdquo;"]},
-"stock":{pos:"(n.)",def:"a share that somebody has bought in a company, or the shares of a particular company",examples:[
+"stock":{group:"Listening 2 Target Vocabulary",ipa:"/stɑk/",pos:"(n.)",def:"a share that somebody has bought in a company, or the shares of a particular company",simple:"A small piece of a company that people can buy and own.",examples:[
  "He bought stock in a small tech company.",
  "The value of the stock rose sharply this month.",
  "From the listening: &ldquo;But I still didn&rsquo;t know the difference between a <b>stock</b> and a bond.&rdquo;"]},
-"asset":{pos:"(n.)",def:"a thing or person that is valuable or useful to someone",examples:[
+"asset":{group:"Listening 2 Target Vocabulary",ipa:"/ˈæsɛt/",pos:"(n.)",def:"a thing or person that is valuable or useful to someone",simple:"Something valuable or useful.",examples:[
  "Good communication skills are a real asset in this job.",
  "The company&rsquo;s biggest asset is its loyal customers.",
  "From the listening: &ldquo;...teenagers are allowed to drive, vote, and parent, all while not knowing the difference between an <b>asset</b> and a liability, is nothing short of a travesty.&rdquo;"]},
-"naturally":{pos:"(adv.)",def:"used to say that something is exactly what you would expect",examples:[
+"naturally":{group:"Listening 2 Target Vocabulary",ipa:"/ˈnætʃərəli/",pos:"(adv.)",def:"used to say that something is exactly what you would expect",simple:"As you would expect; of course.",examples:[
  "Naturally, she was upset when she heard the news.",
  "The children were, naturally, excited about the trip.",
  "From the listening: &ldquo;While the article <b>naturally</b> focuses on the United States, there are elements which echo the situation in Canada.&rdquo;"]},
-"tool":{pos:"(n.)",def:"a thing that helps you do a particular job or activity",examples:[
+"tool":{group:"Listening 2 Target Vocabulary",ipa:"/tul/",pos:"(n.)",def:"a thing that helps you do a particular job or activity",simple:"Something that helps you do a job.",examples:[
  "A hammer is a basic tool for most repairs.",
  "Email is a useful tool for staying in touch with clients.",
  "From the listening: &ldquo;...learning to play Monopoly, probably the greatest financial educational <b>tool</b> ever created.&rdquo;"]},
-"balance":{pos:"(v.)",def:"to make sure that the amount of money spent equals the amount received, so the accounts add up correctly",examples:[
+"balance":{group:"Listening 2 Target Vocabulary",ipa:"/ˈbæləns/",pos:"(v.)",def:"to make sure that the amount of money spent equals the amount received, so the accounts add up correctly",simple:"To make sure the money in and the money out add up correctly.",examples:[
  "It&rsquo;s important to balance your checkbook every month.",
  "The accountant balanced the company&rsquo;s books.",
  "From the listening: &ldquo;...I might now be in a position where I could <b>balance</b> my checkbook. Or . . . probably not.&rdquo;"]},
-"current":{pos:"(adj.)",def:"happening or existing now; belonging to the present time",examples:[
+"current":{group:"Listening 2 Target Vocabulary",ipa:"/ˈkɜrənt/",pos:"(adj.)",def:"happening or existing now; belonging to the present time",simple:"Happening right now.",examples:[
  "What is your current address?",
  "The current situation is different from last year.",
  "From the listening: &ldquo;Every other member of the board was asking about trade deficits and <b>current</b> accounts and so on.&rdquo;"]},
-"series":{pos:"(n.)",def:"a number of similar events or things that come one after the other",examples:[
+"series":{group:"Listening 2 Target Vocabulary",ipa:"/ˈsɪriz/",pos:"(n.)",def:"a number of similar events or things that come one after the other",simple:"A group of similar things that happen one after another.",examples:[
  "There has been a series of accidents on that road.",
  "She&rsquo;s taking a series of classes on personal finance.",
  "From the listening: &ldquo;A <b>series</b> of surveys across the country shows that the financial literacy among young people is very low.&rdquo;"]},
-"pension":{pos:"(n.)",def:"money that is paid regularly by a government or company to someone who is retired or too old or ill to work",examples:[
+"pension":{group:"Listening 2 Target Vocabulary",ipa:"/ˈpɛnʃən/",pos:"(n.)",def:"money that is paid regularly by a government or company to someone who is retired or too old or ill to work",simple:"Money paid regularly to someone after they stop working.",examples:[
  "He receives a small pension every month.",
  "Many young workers don&rsquo;t think about their pension.",
  "From the listening: &ldquo;Nothing about mortgages, interest, <b>pensions</b>, profits, investments, insurance&mdash;nothing.&rdquo;"]},
-"tedious":{pos:"(adj.)",def:"boring and lasting for too long",examples:[
+"tedious":{group:"Listening 2 Target Vocabulary",ipa:"/ˈtidiəs/",pos:"(adj.)",def:"boring and lasting for too long",simple:"Boring, especially because it goes on too long.",examples:[
  "Filling out tax forms can be tedious.",
  "The lecture was long and tedious.",
  "From the listening: &ldquo;But talking about money I find can be <b>tedious</b> beyond measure.&rdquo;"]},
-"truly":{pos:"(adv.)",def:"in a way that is real, accurate, or sincere; genuinely",examples:[
+"truly":{group:"Listening 2 Target Vocabulary",ipa:"/ˈtruli/",pos:"(adv.)",def:"in a way that is real, accurate, or sincere; genuinely",simple:"Really; genuinely.",examples:[
  "I am truly sorry for the mistake.",
  "It was a truly amazing performance.",
  "From the listening: &ldquo;...my partner and I were invited into our bank manager&rsquo;s office to discuss, in great detail, the <b>truly</b> remarkable elements of the mortgage we had applied for.&rdquo;"]}
 };
 
-function openWordModal(key){
-  const d = WORD_DEFS[key];
+let currentWordKey = null;
+let showingSimple = false;
+
+function renderWordModal(){
+  const d = WORD_DEFS[currentWordKey];
   if(!d) return;
-  document.getElementById('wm-word').textContent = key.replace('-', ' ');
+  document.getElementById('wm-word').textContent = currentWordKey.replace(/-/g,' ');
   document.getElementById('wm-pos').textContent = d.pos;
-  document.getElementById('wm-def').textContent = d.def;
+  document.getElementById('wm-ipa').textContent = d.ipa;
+  document.getElementById('wm-def').textContent = showingSimple ? d.simple : d.def;
+  document.getElementById('wm-simplify-btn').textContent = showingSimple ? 'Show standard definition' : 'Show simplified definition';
   document.getElementById('wm-examples').innerHTML = d.examples.map(e=>'<div class="mex">'+e+'</div>').join('');
+  document.getElementById('wm-cambridge').href = 'https://www.google.com/search?q=' + encodeURIComponent(currentWordKey.replace(/-/g,' ') + ' ' + d.pos + " meaning '" + d.simple + "'. define this specific meaning in simple language suitable for A2 level. make it brief and to the point with at least 5 examples matching this meaning") + '&newwindow=1';
+}
+function openWordModal(key){
+  if(!WORD_DEFS[key]) return;
+  currentWordKey = key;
+  showingSimple = false;
+  renderWordModal();
   document.getElementById('wordModal').classList.add('open');
+}
+function toggleSimple(){
+  showingSimple = !showingSimple;
+  renderWordModal();
 }
 function closeModal(id){ document.getElementById(id).classList.remove('open'); }
 
 function buildVocabChips(){
   const box = document.getElementById('vocabChips');
-  box.innerHTML = Object.keys(WORD_DEFS).map(k=>'<div class="chip" onclick="closeModal(\'vocabListModal\');openWordModal(\''+k+'\')">'+k.replace('-',' ')+'</div>').join('');
+  const groups = {};
+  Object.keys(WORD_DEFS).forEach(k=>{
+    const g = WORD_DEFS[k].group || 'Vocabulary';
+    (groups[g] = groups[g] || []).push(k);
+  });
+  let html = '';
+  Object.keys(groups).forEach(g=>{
+    html += '<div class="vocabgroup-h">'+g+'</div><div class="chiprow">';
+    html += groups[g].map(k=>'<div class="chip" onclick="closeModal(\'vocabListModal\');openWordModal(\''+k+'\')">'+k.replace(/-/g,' ')+'</div>').join('');
+    html += '</div>';
+  });
+  box.innerHTML = html;
 }
 document.getElementById('vocabListBtn').addEventListener('click', ()=>{ buildVocabChips(); document.getElementById('vocabListModal').classList.add('open'); });
 document.querySelectorAll('.modal-backdrop').forEach(m=>{
@@ -887,15 +1052,108 @@ document.addEventListener('keydown', e=>{
 });
 
 /* =====================================================================
+   Answer-lock passcodes — "Longman style"
+   ===================================================================== */
+const PAGES = {
+  p53: { label:'Page 53', code:'adulting'   },
+  p54: { label:'Page 54', code:'quince'     },
+  p55: { label:'Page 55', code:'laundry'    },
+  p56: { label:'Page 56', code:'millennial' },
+  p57: { label:'Page 57', code:'sheet'      },
+  p58: { label:'Page 58', code:'debt'       },
+  p59: { label:'Page 59', code:'milestone'  },
+  p62: { label:'Page 62', code:'literacy'   },
+  p63: { label:'Page 63', code:'mortgage'   },
+  p64: { label:'Page 64', code:'checkbook'  },
+  p65: { label:'Page 65', code:'pension'    },
+  p67: { label:'Page 67', code:'synthesize' },
+  p71: { label:'Page 71', code:'stress'     },
+  p72: { label:'Page 72', code:'graduate'   },
+  p73: { label:'Page 73', code:'suggestion' },
+  p74: { label:'Page 74', code:'wheelchair' }
+};
+const MASTER_CODE = 'robot234'; // unlocks every page at once — for the teacher
+const unlockedPages = new Set(); // resets every reload — nothing persisted (no localStorage)
+
+function isUnlocked(page){ return !page || unlockedPages.has(page); }
+
+function tryUnlock(page, code){
+  if(code === MASTER_CODE){
+    Object.keys(PAGES).forEach(p=>{ unlockedPages.add(p); refreshLockUI(p); });
+    return true;
+  }
+  if(PAGES[page] && code === PAGES[page].code){
+    unlockedPages.add(page);
+    refreshLockUI(page);
+    return true;
+  }
+  return false;
+}
+
+function refreshLockUI(page){
+  document.querySelectorAll('.revealbtn[data-group="'+page+'"]').forEach(b=> b.classList.remove('locked'));
+}
+
+let pendingUnlock = null; // { page, onSuccess }
+function openLockModal(page, onSuccess){
+  pendingUnlock = { page, onSuccess };
+  document.getElementById('lockTitle').innerHTML = '&#128274; ' + (PAGES[page] ? PAGES[page].label : 'Answers') + ' is locked';
+  document.getElementById('lockMsg').textContent = '';
+  const input = document.getElementById('lockInput');
+  input.value = '';
+  document.getElementById('lockModal').classList.add('open');
+  setTimeout(()=>input.focus(), 50);
+}
+function submitLockCode(){
+  if(!pendingUnlock) return;
+  const input = document.getElementById('lockInput');
+  const val = (input.value || '').trim();
+  if(tryUnlock(pendingUnlock.page, val)){
+    const cb = pendingUnlock.onSuccess;
+    pendingUnlock = null;
+    closeModal('lockModal');
+    if(cb) cb();
+  } else {
+    document.getElementById('lockMsg').textContent = 'Incorrect code. Try again.';
+    input.value = '';
+    input.focus();
+  }
+}
+document.getElementById('lockGo').addEventListener('click', submitLockCode);
+document.getElementById('lockInput').addEventListener('keydown', e=>{ if(e.key==='Enter') submitLockCode(); });
+
+/* =====================================================================
    Reveal-answer toggling
    ===================================================================== */
-function toggleAnswers(btn, wrapId){
+function toggleAnswers(btn, wrapId, page){
+  if(page && !isUnlocked(page)){
+    openLockModal(page, ()=> toggleAnswers(btn, wrapId, page));
+    return;
+  }
   const wrap = document.getElementById(wrapId);
   const revealed = wrap.classList.toggle('revealed');
   const isModel = btn.classList.contains('model');
   btn.textContent = revealed ? (isModel ? 'Hide Model Answer' : 'Hide Answers') : btn.dataset.label;
 }
 document.querySelectorAll('.revealbtn').forEach(b=>{ b.dataset.label = b.textContent; });
+
+// Lock every answer button whose page hasn't been unlocked yet (i.e. all of them, on load)
+document.querySelectorAll('.revealbtn[data-group]').forEach(b=>{
+  if(!isUnlocked(b.getAttribute('data-group'))) b.classList.add('locked');
+});
+
+/* =====================================================================
+   Script reveal — shows the full audio transcript next to the player.
+   ===================================================================== */
+function toggleScript(btn, boxId, page){
+  if(page && !isUnlocked(page)){
+    openLockModal(page, ()=> toggleScript(btn, boxId, page));
+    return;
+  }
+  const box = document.getElementById(boxId);
+  const on = box.classList.toggle('shown');
+  btn.textContent = on ? 'Hide Script' : 'Show Script';
+}
 
 /* =====================================================================
    Highlighter / eraser tool

@@ -1,0 +1,1568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Q: Skills for Success 4 &mdash; Unit 6 (Pages 126-139)</title>
+<style>
+:root{
+  --navy:#1c2a33;
+  --purple:#5b4fa0;
+  --blue:#1f5fa8;
+  --pink:#d6266b;
+  --lav:#eef0fa;
+  --cream:#fdf3d9;
+  --creamborder:#e8d9a0;
+  --red:#c0392b;
+  --modelblue:#1d4f91;
+  --line:#c9ccd6;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:auto;}
+body{
+  margin:0;font-family:'Segoe UI',Arial,sans-serif;color:#222;background:#dfe3ea;
+  padding:46px 24px 90px;
+}
+
+/* ===== Top page controls: one link per textbook page ===== */
+#pagenav{
+  position:fixed;top:0;left:0;right:0;z-index:199;
+  background:var(--purple);padding:6px 16px;display:flex;flex-wrap:wrap;
+  gap:6px;align-items:center;box-shadow:0 2px 5px rgba(0,0,0,.2);
+}
+#pagenav span.lbl{font-size:11px;font-weight:700;color:#efe9ff;margin-right:4px;}
+#pagenav a{
+  color:#fff;text-decoration:none;font-size:12.5px;font-weight:700;
+  border:1px solid rgba(255,255,255,.5);border-radius:4px;padding:3px 9px;
+  background:rgba(255,255,255,.12);
+}
+#pagenav a:hover{background:rgba(255,255,255,.28);}
+#pagenav a.active{background:#fff;color:var(--purple);border-color:#fff;}
+
+/* ===== Right-edge control panel: zoom / vocab / highlighter / eraser ===== */
+#rightctrl{
+  position:fixed;right:14px;top:50%;transform:translateY(-50%);z-index:198;
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  background:#fff;border:1px solid var(--line);border-radius:12px;
+  padding:12px 8px;box-shadow:0 3px 12px rgba(0,0,0,.22);
+}
+#rightctrl button.round{width:42px;height:42px;border-radius:50%;border:2px solid var(--purple);background:var(--navy);color:#fff;font-size:15px;cursor:pointer;}
+#rightctrl button.round:hover{background:var(--purple);}
+#zoomlabel{color:#444;font-size:11px;margin:0 0 2px;}
+.toolsep{width:30px;height:1px;background:var(--line);margin:2px 0;}
+#rightctrl button.tool{width:42px;height:42px;border-radius:50%;border:2px solid #b8c0cc;background:#eef1f5;color:var(--navy);font-size:17px;cursor:pointer;}
+#rightctrl button.tool.on{background:var(--pink);border-color:var(--pink);color:#fff;}
+#rightctrl button.tool#eraseBtn.on{background:#888;border-color:#888;color:#fff;}
+
+/* ===== Continuous content column ===== */
+#content{
+  max-width:980px;margin:0 auto;background:#fff;border-radius:8px;
+  box-shadow:0 2px 14px rgba(0,0,0,.2);padding:30px 40px 50px;
+  transform-origin:top center;font-size:15px;line-height:1.55;
+}
+#doctitle{
+  color:var(--navy);text-align:center;font-weight:800;font-size:22px;
+  line-height:1.4;margin:0 0 28px;padding-bottom:18px;border-bottom:3px solid var(--purple);
+}
+.page-anchor{position:relative;top:-56px;visibility:hidden;height:0;}
+.exblock{clear:both;margin:0 0 22px;overflow:auto;}
+.page-divider{border:none;border-top:2px dashed var(--line);margin:34px 0 26px;position:relative;clear:both;}
+.page-divider span{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:#fff;padding:0 16px;font-family:Arial,sans-serif;font-size:11.5px;color:var(--purple);font-weight:800;letter-spacing:.5px;}
+
+h2.stitle{color:var(--blue);font-size:22px;margin:0 0 4px;font-weight:800;clear:both;}
+h3.exline{font-size:15px;margin:14px 0 8px;}
+.exlabel{color:var(--pink);font-weight:800;text-transform:uppercase;}
+.barhead{background:var(--navy);color:#fff;font-weight:800;padding:7px 14px;border-radius:5px 5px 0 0;font-size:13px;letter-spacing:.3px;}
+.barhead span.sub{font-weight:400;text-transform:none;margin-left:8px;color:#cfd6e8;}
+.tipbox{background:var(--cream);border:1px solid var(--creamborder);border-top:none;padding:12px 16px;border-radius:0 0 5px 5px;margin-bottom:14px;font-size:13.5px;}
+.tipbox ul{margin:6px 0;padding-left:20px;}
+.tipbox p{margin:6px 0;}
+.tipbox .eg{background:#fff;border-left:4px solid var(--purple);padding:6px 12px;margin:6px 0;border-radius:0 4px 4px 0;}
+.smallbox{background:var(--cream);border:1px solid var(--creamborder);padding:10px 12px;border-radius:6px;font-size:12.5px;float:left;width:210px;margin:0 16px 10px 0;}
+.smallbox b.boxhead{display:block;color:var(--blue);font-size:12px;margin-bottom:4px;text-transform:uppercase;}
+img.fig{max-width:100%;border-radius:4px;display:block;margin:10px 0;box-shadow:0 1px 4px rgba(0,0,0,.25);}
+img.fig.center{float:none;display:block;margin:16px auto;}
+.clearfix{clear:both;}
+audio{width:100%;max-width:520px;display:block;margin:8px 0 12px;}
+video{width:100%;max-width:640px;display:block;margin:8px 0 4px;background:#000;border-radius:4px;}
+.btnrow{display:flex;justify-content:flex-end;flex-wrap:wrap;gap:8px;margin:8px 0;}
+.revealbtn{background:var(--purple);color:#fff;border:none;padding:7px 16px;border-radius:16px;font-size:12.5px;font-weight:700;cursor:pointer;}
+.revealbtn.model{background:var(--modelblue);}
+.revealbtn.script{background:var(--blue);}
+.revealbtn.ts{background:#7a5c1e;}
+.revealbtn.locked{background:#8a8a8a;}
+.revealbtn.locked::after{content:" \1F512";}
+.ts-chip{display:none;background:var(--lav);color:var(--blue);border:1px solid #ccd6ee;border-radius:10px;padding:1px 8px;font-size:11px;font-weight:700;cursor:pointer;margin-left:6px;white-space:nowrap;font-family:'Segoe UI',Arial,sans-serif;font-style:normal;}
+.ts-chip:hover{background:#dde6f7;}
+.exwrap.ts-visible .ts-chip{display:inline-block;}
+.audiorow{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:8px 0 4px;}
+.audiorow audio{margin:0;flex:1;min-width:220px;}
+.medialabel{font-size:11.5px;font-weight:800;color:var(--purple);text-transform:uppercase;letter-spacing:.4px;margin:10px 0 0;}
+.script-box{display:none;background:var(--cream);border:1px solid var(--creamborder);border-left:5px solid var(--blue);border-radius:0 6px 6px 0;padding:12px 16px;margin:0 0 14px;font-size:13px;line-height:1.65;max-height:360px;overflow-y:auto;}
+.script-box.shown{display:block;}
+.script-box p{margin:0 0 8px;}
+.script-box .sp{font-weight:800;color:var(--navy);}
+
+/* Answer-lock modal */
+#lockModal .modal-box{max-width:420px;}
+#lockModal h3{font-size:20px;display:block;}
+#lockModal p.lock-sub{font-size:13px;color:#666;margin:0 0 12px;}
+#lockRow{display:flex;gap:8px;align-items:center;}
+#lockInput{font-family:'Segoe UI',Arial,sans-serif;font-size:15px;padding:8px 12px;flex:1;border:1px solid #bbb;border-radius:8px;}
+#lockGo{background:var(--navy);color:#fff;border:none;padding:9px 18px;border-radius:16px;font-size:13.5px;cursor:pointer;font-weight:700;}
+#lockGo:hover{background:var(--purple);}
+#lockMsg{color:var(--red);font-size:12.5px;min-height:1.2em;margin:8px 0 0;}
+
+/* answers = red, model/sample answers = blue (revealed one item per click) */
+.ans-ph{display:none;color:var(--red);font-weight:700;}
+.ans-ph.shown{display:inline;}
+.model-ans{display:none;color:var(--modelblue);font-weight:600;}
+.model-ans.shown{display:inline;}
+.blank-ph{display:inline-block;min-width:120px;border-bottom:2px solid #999;transition:min-width .15s, border-color .15s;}
+.blank-ph.short{min-width:48px;text-align:center;}
+.blank-ph.wide{min-width:60%;}
+.blank-ph.shown{min-width:0;border-bottom-color:transparent;}
+.ans-ph .wterm{color:var(--red);border-bottom-color:var(--red);}
+
+table.simple{border-collapse:collapse;margin:10px 0;font-size:13.5px;}
+table.simple td,table.simple th{border:1px solid var(--line);padding:5px 10px;}
+table.simple th{background:var(--lav);color:var(--navy);}
+ol.qlist,ul.qlist{padding-left:22px;margin:6px 0;}
+ol.qlist li,ul.qlist li{margin-bottom:6px;}
+ol.qlist.nm li,ul.nm li{margin-bottom:8px;}
+.chart{width:100%;border-collapse:collapse;margin:8px 0;font-size:13px;}
+.chart th{background:var(--purple);color:#fff;padding:6px 10px;text-align:left;}
+.chart td{border:1px solid var(--line);padding:6px 10px;vertical-align:top;}
+.chart.skills th{background:var(--navy);width:170px;font-size:12px;letter-spacing:.3px;text-transform:uppercase;}
+.chart.notes td{height:90px;}
+.chart.notes td ul{margin:0;padding-left:18px;}
+.chart.notes td li{margin-bottom:6px;min-height:1.4em;}
+.chart.notes td.rowlab{width:120px;font-weight:700;background:var(--lav);color:var(--navy);}
+.chart.notes td.pcell{width:150px;text-align:center;background:var(--lav);}
+.chart.notes td.pcell figure{margin:0;}
+.chart.notes td.pcell img{width:100%;border-radius:3px;display:block;}
+.chart.notes td.pcell figcaption{font-weight:700;font-size:12.5px;margin-top:4px;color:var(--navy);}
+.chart.check td.cc,.chart.check th.cc{text-align:center;width:110px;}
+.chart.check td.cc{height:50px;font-size:18px;}
+.chart.check td.lab{width:44%;}
+.vocabgrid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px 20px;margin:10px 0;font-size:14px;}
+.vocabgrid.two{grid-template-columns:1fr 1fr;}
+.vocabbox{background:var(--cream);border:1px solid var(--creamborder);border-radius:6px;padding:10px 18px;margin:8px 0;}
+.vocabbox .vocabgrid{margin:4px 0;}
+.wordbank{background:var(--lav);border:1px solid #ccd6ee;border-radius:6px;padding:10px 16px;margin:8px 0 14px;font-size:13.5px;}
+.wordbank .vocabgrid{grid-template-columns:repeat(4,1fr);margin:0;}
+.wterm{color:var(--blue);font-weight:700;cursor:pointer;border-bottom:1px dotted var(--blue);}
+.wterm:hover{background:#e7effa;}
+.pos{font-style:italic;color:#666;font-weight:400;font-size:12px;}
+.vocab-subhead{font-size:12px;font-weight:800;color:var(--blue);text-transform:uppercase;letter-spacing:.4px;margin:14px 0 4px;}
+.figrow{display:flex;gap:14px;margin:10px 0;}
+mark.user-highlight{background:#fff176;padding:0 1px;}
+
+/* multiple-choice circled answers */
+.mcopt{display:inline-block;margin:2px 10px 2px 0;padding:2px 8px;border-radius:14px;border:2px solid transparent;}
+.mcopt.circled{border-color:var(--red);color:var(--red);font-weight:700;}
+.exline-sm{font-size:14px;margin:8px 0 4px;}
+.cite{font-size:12px;color:#777;font-style:italic;margin:2px 0 0;}
+
+/* Modals */
+.modal-backdrop{display:none;position:fixed;inset:0;background:rgba(15,20,26,.6);z-index:400;align-items:center;justify-content:center;}
+.modal-backdrop.open{display:flex;}
+.modal-box{background:#fff;border-radius:10px;max-width:640px;width:92%;max-height:82vh;overflow-y:auto;padding:22px 26px;position:relative;box-shadow:0 12px 40px rgba(0,0,0,.4);}
+#wordModal .modal-box{max-width:820px;}
+.modal-box .close{position:absolute;top:10px;right:14px;background:none;border:none;font-size:22px;cursor:pointer;color:#888;}
+.modal-box h3{color:var(--blue);margin:0 4px 4px;font-size:32px;display:inline-block;}
+.mpos-row{display:flex;align-items:baseline;gap:14px;margin:0 4px 14px;flex-wrap:wrap;}
+.modal-box .mpos{color:#777;font-style:italic;font-size:19px;}
+.modal-box .mipa{color:#888;font-size:18px;font-family:'Segoe UI',Arial,sans-serif;}
+.modal-box .mdef{font-size:21px;line-height:1.5;margin:0 4px 10px;}
+.simplifybtn{position:absolute;top:12px;right:46px;background:var(--lav);color:var(--blue);border:1px solid #ccd6ee;padding:5px 12px;border-radius:16px;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap;}
+.simplifybtn:hover{background:#dde3f5;}
+.cambridgelink{color:var(--blue);font-size:13.5px;font-weight:700;text-decoration:none;border-bottom:1px dotted var(--blue);}
+.cambridgelink:hover{color:var(--modelblue);border-bottom-color:var(--modelblue);}
+.modal-box .mex{font-size:19px;line-height:1.6;margin:0 4px 10px;padding-left:18px;border-left:3px solid var(--lav);color:var(--modelblue);}
+#vocabListModal .modal-box{max-width:620px;}
+.vocabgroup-h{font-size:12.5px;font-weight:800;color:var(--navy);margin:14px 4px 2px;text-transform:uppercase;letter-spacing:.4px;}
+.vocabgroup-h:first-child{margin-top:0;}
+.chiprow{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px;margin-bottom:6px;}
+.chip{background:var(--lav);color:var(--blue);border:1px solid #ccd6ee;padding:5px 12px;border-radius:14px;font-size:13px;cursor:pointer;font-weight:600;}
+.chip:hover{background:#dde5fb;}
+
+@media (max-width:720px){
+  #content{padding:22px 18px 40px;}
+  #rightctrl{right:6px;padding:8px 5px;}
+  .vocabgrid{grid-template-columns:1fr 1fr;}
+  .wordbank .vocabgrid{grid-template-columns:1fr 1fr;}
+}
+
+.vocabcols{display:flex;gap:26px;flex-wrap:wrap;font-size:14px;}
+.vocabcols>div{flex:1;min-width:130px;}
+.vocabcols>div>div{margin:3px 0;}
+
+</style>
+</head>
+<body>
+
+<div id="pagenav"><span class="lbl">PAGE:</span><a href="#p126" data-p="p126">126</a><a href="#p127" data-p="p127">127</a><a href="#p128" data-p="p128">128</a><a href="#p129" data-p="p129">129</a><a href="#p130" data-p="p130">130</a><a href="#p131" data-p="p131">131</a><a href="#p132" data-p="p132">132</a><a href="#p133" data-p="p133">133</a><a href="#p134" data-p="p134">134</a><a href="#p135" data-p="p135">135</a><a href="#p136" data-p="p136">136</a><a href="#p137" data-p="p137">137</a><a href="#p138" data-p="p138">138</a><a href="#p139" data-p="p139">139</a></div>
+
+<div id="rightctrl">
+  <button class="round" id="zoomIn" title="Zoom in">A+</button>
+  <div id="zoomlabel">100%</div>
+  <button class="round" id="zoomOut" title="Zoom out">A&minus;</button>
+  <div class="toolsep"></div>
+  <button class="tool" id="vocabListBtn" title="Vocabulary list">&#128214;</button>
+  <button class="tool" id="highlightBtn" title="Highlighter">&#9998;</button>
+  <button class="tool" id="eraseBtn" title="Eraser">&#9003;</button>
+</div>
+
+<div id="content">
+<div id="doctitle">Q: Skills for Success 4, Listening &amp; Speaking<br>Unit 6: Education (Pages 126-139)</div>
+
+<div id="p126" class="page-anchor"></div>
+<div class="exblock" id="s126">
+<h2 class="stitle">Unit 6 &middot; Education</h2>
+<img class="fig center" src="media/p126_hero.jpg" alt="Three mountain climbers on a snowy cliff, reaching out to help one another" style="max-width:560px">
+<table class="chart skills clearfix" style="max-width:700px;margin:auto;">
+<tr><th>Note-Taking</th><td>comparing and contrasting multiple topics</td></tr>
+<tr><th>Listening</th><td>listening for contrasting ideas</td></tr>
+<tr><th>Critical Thinking</th><td>ranking options</td></tr>
+<tr><th>Vocabulary</th><td>using the dictionary: formal and informal words</td></tr>
+<tr><th>Grammar</th><td>simple, compound, and complex sentences</td></tr>
+<tr><th>Pronunciation</th><td>highlighted words</td></tr>
+<tr><th>Speaking</th><td>changing the topic</td></tr>
+</table></div>
+
+<div class="page-divider"><span>PAGE 127</span></div><div id="p127" class="page-anchor"></div>
+<div class="exblock" id="s127a">
+<div class="unitq" style="font-size:12px;font-weight:800;color:var(--purple);text-transform:uppercase;letter-spacing:.5px;">Unit Question</div>
+<h2 class="stitle" style="font-size:26px;color:var(--navy);margin-bottom:12px;">Is one road to success better than another?</h2>
+<h3 class="exline"><span class="exlabel">A.</span> Discuss these questions with your classmates.</h3>
+<div id="ex127a" class="exwrap">
+<ol class="qlist">
+<li>What does being successful mean to you?<br><span class="model-ans">Sample answer: Being successful means that I accomplish all of my personal goals.</span></li>
+<li>In your life, have you taken a traditional path or a nontraditional path to reach your educational and career goals? What are the advantages and disadvantages of each path?<br><span class="model-ans">Sample answer: I have taken a traditional path to success. I work hard, and I am going to school. The advantage to a traditional path is that it has worked for a lot of people for a long time. / I have taken a nontraditional path. I didn’t go to school, and I didn’t have good jobs when I was younger. However, I have become successful because I was given an opportunity later in life.</span></li>
+<li>Look at the photo. What are the people doing? How is teamwork a part of success?<br><span class="model-ans">Sample answer: They are climbing a mountain. It is important for people on a team to work together to be successful. It is also important for people on the team to see other people’s strengths and weaknesses. And in situations like this, working well as a team is critical to staying safe!</span></li>
+</ol></div>
+<div class="btnrow"><button class="revealbtn model" data-group="p127" onclick="toggleAnswers(this,'ex127a','p127')">Show Sample Answers</button></div></div>
+
+<div class="exblock" id="s127b">
+<h3 class="exline"><span class="exlabel">B.</span> Listen to <i>The Q Classroom</i> online. Then answer these questions.</h3>
+<div class="audiorow"><audio controls preload="none" id="au-qclass" src="media/audio-qclassroom.mp3"></audio><button class="revealbtn script" data-group="p127" onclick="toggleScript(this,'script-au-qclass','p127')">Show Script</button></div>
+<div class="script-box" id="script-au-qclass">
+<p><span class="sp">Teacher:</span> “Is one road to success better than another?” Marcus, what do you think? Is there a best road to success?</p>
+<p><span class="sp">Marcus:</span> I think that in most cases it’s better to take a nontraditional road. If you have a different kind of experience than other people in your career, then you’ll have a different perspective. You might know things other people don’t know.</p>
+<p><span class="sp">Teacher:</span> Good point. What do you think, Sophy, is one road to success better than another?</p>
+<p><span class="sp">Sophy:</span> I guess I’d say no, that there are many different ways of reaching your goals. The best way for one person might not be the best for someone else. Maybe a nontraditional road works for Marcus, but a more traditional one works for someone else.</p>
+<p><span class="sp">Teacher:</span> What do you think, Felix? Marcus feels it’s best to find your own unique path, and Sophy feels that while that might work for some people, it won’t work for everyone. What do you think?</p>
+<p><span class="sp">Felix:</span> I agree with Sophy in the sense that everyone is different and everyone needs to find their own way. But one argument for a more traditional path to success—say, studying hard, getting a degree, getting an entry-level job, and working your way up—is that you gain a lot of work experience along the way. If you take a less traditional path, you might miss out on that valuable work experience.</p>
+<p><span class="sp">Teacher:</span> OK. How about you, Yuna? Would you say that one road to success is better than another?</p>
+<p><span class="sp">Yuna:</span> No. I agree that there are advantages and disadvantages to every choice.</p>
+</div>
+<div id="ex127b" class="exwrap">
+<ol class="qlist">
+<li>Marcus thinks that different experiences give workers different perspectives. What is an example of this kind of nontraditional path to success?<br><span class="model-ans">Possible answer: Someone might work as a fashion designer and then decide that they want to teach textiles in a high school. Their experience in the fashion industry would give them unique ideas about sewing.</span></li>
+<li>Felix lists many steps on a traditional road to success: studying hard, getting a degree, getting work experience, getting an entry-level job, and working your way up. Which do you think is the most important step? Why?<br><span class="model-ans">Possible answer: I think getting a degree is the most important of the steps that Felix lists because if you don’t have that piece of paper, it can be very hard to get even an entry-level job.</span></li>
+</ol></div>
+<div class="btnrow"><button class="revealbtn model" data-group="p127" onclick="toggleAnswers(this,'ex127b','p127')">Show Sample Answers</button></div>
+<div class="barhead" style="margin-top:18px;">UNIT OBJECTIVE</div>
+<div class="tipbox">Listen to two conversations, watch a video, and listen to a lecture and gather information and ideas to have a discussion and make a group decision.</div>
+</div>
+
+<div class="page-divider"><span>PAGE 128</span></div><div id="p128" class="page-anchor"></div>
+<div class="exblock" id="s128a">
+<div class="barhead">NOTE-TAKING SKILL <span class="sub">Comparing and contrasting multiple topics</span></div>
+<div class="tipbox">When you hear information about related topics, it can be helpful to build a chart so you can easily compare and contrast the main ideas about each topic. Label the columns of your chart with the topics, and label the rows with the examples. Then write notes about each topic in the appropriate box. This is a great way to review and edit your notes after a lecture and to make connections between lectures and readings.</div>
+<h3 class="exline"><span class="exlabel">A. Categorize</span> Listen to the class discussion about nontraditional approaches some businesses have taken to success. Complete the chart.</h3>
+<div class="audiorow"><audio controls preload="none" id="au-note" src="media/audio-notetaking-a.mp3"></audio><button class="revealbtn script" data-group="p128" onclick="toggleScript(this,'script-au-note','p128')">Show Script</button></div>
+<div class="script-box" id="script-au-note">
+<p><span class="sp">Professor:</span> OK, so in the reading you did to prepare for this class, you learned about several different businesses that have taken kind of a nontraditional approach to success. In other words, these companies have achieved success without focusing only on making money. Who can tell me about one of the businesses from the chapter you read? Yes, Brian.</p>
+<p><span class="sp">Brian:</span> Well, one of the examples was the American ice cream maker, Ben and Jerry’s. The two guys who started the company, Ben and Jerry, were childhood friends. They took a college course in ice cream making, and they opened their first ice cream shop in, um, 1979, I think. What made Ben and Jerry’s different from many other ice cream companies was their focus on charities and their opposition to using any chemicals. They wanted to build a company that had a conscience. They received the US Small Business Persons of the Year award in 1989, and they sold their company in 2000 for a huge profit. They had some problems along the way, though. They were involved in lawsuits with another ice cream company, and they needed help with their business to deal with the fast growth of their company.</p>
+<p><span class="sp">Professor:</span> Right. Very good, thank you. OK, how about another company . . . Kurumi.</p>
+<p><span class="sp">Kurumi:</span> Another company that has succeeded because of its nontraditional approach is Lululemon. It’s a Canadian sportswear company. It was started in 1998 by Chip Wilson in Vancouver. His idea was for the store to be like a community meeting place where people could learn about healthy living. Now the company is valued at $10 billion! But, some people think the company grew too fast. Chip Wilson has disagreed with board members about the new focus on making more money.</p>
+<p><span class="sp">Professor:</span> Thanks for the summary, Kurumi. We have time for one more. Um, OK, Ali. How about you?</p>
+<p><span class="sp">Ali:</span> Well, since I love coffee, I was the most interested in Starbucks. OK, so it opened in 1971, and there has always been a focus on creating a feeling of community for its customers. But, like with Lululemon, the company has grown really quickly. There are more than 21,000 stores in 65 different countries. But, in 2008, the company had some financial problems. Now it seems that Starbucks is interested in returning to its core values.</p>
+<p><span class="sp">Professor:</span> Thanks everyone! Now, for next class, please read . . .</p>
+</div>
+<div id="ex128a" class="exwrap">
+<table class="chart notes">
+<tr><th>Company</th><th>History</th><th>Successes</th><th>Problems</th></tr>
+<tr><td class="rowlab">Ben and Jerry’s<span class="ts-chip" data-t="26" data-audio="au-note" onclick="jumpTo(this)">&#9654; 0:26</span></td><td><ul><li><span class="ans-ph">childhood friends</span>&nbsp;</li><li><span class="ans-ph">opened in 1979</span>&nbsp;</li><li><span class="ans-ph">focus on charities</span>&nbsp;</li><li><span class="ans-ph">against using chemicals</span>&nbsp;</li></ul></td><td><ul><li><span class="ans-ph">US Small Business Persons award (1989)</span>&nbsp;</li><li><span class="ans-ph">made a profit when sold</span>&nbsp;</li></ul></td><td><ul><li><span class="ans-ph">lawsuits</span>&nbsp;</li><li><span class="ans-ph">needed help with business to deal with growth</span>&nbsp;</li></ul></td></tr>
+<tr><td class="rowlab">Lululemon<span class="ts-chip" data-t="76" data-audio="au-note" onclick="jumpTo(this)">&#9654; 1:16</span></td><td><ul><li><span class="ans-ph">Chip Wilson</span>&nbsp;</li><li><span class="ans-ph">opened in 1998</span>&nbsp;</li><li><span class="ans-ph">a place where people could learn about healthy living</span>&nbsp;</li></ul></td><td><ul><li><span class="ans-ph">valued at $10 billion</span>&nbsp;</li></ul></td><td><ul><li><span class="ans-ph">some people think growth too fast</span>&nbsp;</li><li><span class="ans-ph">disagreement with board members</span>&nbsp;</li></ul></td></tr>
+<tr><td class="rowlab">Starbucks<span class="ts-chip" data-t="119" data-audio="au-note" onclick="jumpTo(this)">&#9654; 1:59</span></td><td><ul><li><span class="ans-ph">opened in 1971</span>&nbsp;</li><li><span class="ans-ph">create a feeling of community</span>&nbsp;</li></ul></td><td><ul><li><span class="ans-ph">more than 21,000 stores in 65 countries</span>&nbsp;</li></ul></td><td><ul><li><span class="ans-ph">financial problems in 2008</span>&nbsp;</li></ul></td></tr>
+</table></div>
+<div class="btnrow"><button class="revealbtn ts" onclick="toggleTimestamps(this,'ex128a')">Show Timestamps</button><button class="revealbtn" data-group="p128" onclick="toggleAnswers(this,'ex128a','p128')">Show Answers</button></div></div>
+
+<div class="exblock" id="s128b">
+<h3 class="exline"><span class="exlabel">B. Synthesize</span> Use your notes to write a paragraph comparing and contrasting the three companies.</h3>
+<div id="ex128b" class="exwrap"><p><span class="model-ans">Possible answer: Ben and Jerry’s, Lululemon, and Starbucks are three companies that have achieved financial success even though that might not be their main goal. Ben and Jerry’s focuses on charities and producing ice cream without any chemicals, but they’ve still been successful. They won a business award in 1989, and the company was sold at a profit. Lululemon was created as a place where people could learn about healthy living. It is now worth ten billion dollars. Finally, the people who started Starbucks wanted to create a feeling of connection. Now there are over 21,000 Starbucks in 65 countries. All of these companies were started with a different goal in mind, but they have all made a lot of money.</span></p></div>
+<div class="btnrow"><button class="revealbtn model" data-group="p128" onclick="toggleAnswers(this,'ex128b','p128')">Show Model Answer</button></div></div>
+
+<div class="page-divider"><span>PAGE 129</span></div><div id="p129" class="page-anchor"></div>
+<div class="exblock" id="s129a">
+<div class="barhead">LISTENING</div>
+<h2 class="stitle" style="margin-top:8px;">Listening 1 &middot; Failure and Success in Startups</h2>
+<div class="tipbox"><b>Objective</b><br>You are going to listen to a conversation in a business class and then watch a video. As you listen and watch, gather information and ideas about whether one road to success is better than another.</div>
+<img class="fig center" src="media/p129_office.jpg" alt="Three businessmen talking at a desk in an office, with building plans and a model on the desk" style="max-width:640px">
+</div>
+
+<div class="exblock" id="s129b">
+<h2 class="stitle" style="font-size:19px;">Preview the Listening</h2>
+<h3 class="exline"><span class="exlabel">A. Preview</span> Before you listen, discuss the questions in a small group.</h3>
+<div id="ex129a" class="exwrap">
+<ol class="qlist">
+<li>Do you know of anyone who has started their own small business? Were they successful? What kinds of problems have they had?<br><span class="model-ans">Sample answer: My uncle opened a small store when he was young. He has been very successful, though in the first few years he had to work seven days a week. He retired a few years ago and his daughter manages the store now.</span></li>
+<li>If you tried to start a company and it failed, what would you do? Would you try again? Would you give up? Why?<br><span class="model-ans">Sample answer: I think I would probably give up if my business failed. I think it would be really hard to get more money to try again.</span></li>
+</ol></div>
+<div class="btnrow"><button class="revealbtn model" data-group="p129" onclick="toggleAnswers(this,'ex129a','p129')">Show Sample Answers</button></div></div>
+
+<div class="exblock" id="s129c">
+<h3 class="exline"><span class="exlabel">B. Vocabulary</span> Read aloud these words from Listening 1. Check (&#10003;) the ones you know. Use a dictionary to define any new or unknown words. Then discuss with a partner how the words will relate to the unit.</h3>
+<p style="font-size:12.5px;color:#777;">Click any word below to see its definition and an example.</p>
+<div class="vocabbox"><div class="vocabcols"><div><div><span class="wterm" onclick="openWordModal('burst')">burst</span> <span class="pos">(v.)</span></div><div><span class="wterm" onclick="openWordModal('confidence')">confidence</span> <span class="pos">(n.)</span></div><div><span class="wterm" onclick="openWordModal('expand')">expand</span> <span class="pos">(v.)</span></div><div><span class="wterm" onclick="openWordModal('genius')">genius</span> <span class="pos">(n.)</span></div></div><div><div><span class="wterm" onclick="openWordModal('investor')">investor</span> <span class="pos">(n.)</span></div><div><span class="wterm" onclick="openWordModal('launch')">launch</span> <span class="pos">(v.)</span></div><div><span class="wterm" onclick="openWordModal('massive')">massive</span> <span class="pos">(adj.)</span></div><div><span class="wterm" onclick="openWordModal('pressure')">pressure</span> <span class="pos">(n.)</span></div></div><div><div><span class="wterm" onclick="openWordModal('profit')">profit</span> <span class="pos">(n.)</span></div><div><span class="wterm" onclick="openWordModal('steadily')">steadily</span> <span class="pos">(adv.)</span></div><div><span class="wterm" onclick="openWordModal('values')">values</span> <span class="pos">(n.)</span></div><div><span class="wterm" onclick="openWordModal('vision')">vision</span> <span class="pos">(n.)</span></div></div></div></div>
+</div>
+
+<div class="page-divider"><span>PAGE 130</span></div><div id="p130" class="page-anchor"></div>
+<div class="exblock" id="s130v">
+<h2 class="stitle" style="font-size:19px;">Work with the Listening</h2>
+<div class="medialabel">Video</div>
+<video controls preload="metadata" id="vid-p130" src="media/video-unit6.mp4"></video><div class="audiorow" style="margin-top:4px"><button class="revealbtn script" data-group="p130" onclick="toggleScript(this,'script-vid-p130','p130')">Show Script</button></div>
+<div class="script-box" id="script-vid-p130">
+<p><span class="sp">Peter:</span> So, Michael, I’d love to know where it all started and what was your first business?</p>
+<p><span class="sp">Michael:</span> Went to university up in Birmingham and met a friend of mine called Tom Boardman. And we had this idea to sell toys and gadgets and games. And a wonderful <span class="wterm" onclick="openWordModal('chap')">chap</span> called Tom Teichman decided to invest half a million pounds into our business. And we decided to do it on the Internet, which was very new and shiny back in 1998. And the great thing then was that there weren’t many competitors. The downside was there were hardly any customers either.</p>
+<p><span class="sp">Peter:</span> And then from there where did—</p>
+<p><span class="sp">Michael:</span> Well, then—</p>
+<p><span class="sp">Peter:</span> What was your next—</p>
+<p><span class="sp">Michael:</span> Then we almost lost everything in the <span class="wterm" onclick="openWordModal('dot-com-bust')">dot-com bust</span> in early 2000. We <span class="wterm" onclick="openWordModal('overextended')">overextended</span> ourselves. We spent too much money. We <span class="wterm" onclick="openWordModal('get-carried-away')">got carried away</span>. We teetered on the brink of bankruptcy. It was a pretty, pretty scary time.</p>
+<p><span class="sp">Peter:</span> Michael’s business might now be a multimillion-pound hit, but he’s clearly had more than his fair share of near misses. After the dot-com bubble burst, Michael swapped selling gadgets for developing an adventure game. Perplex City launched in 2005. Players bought puzzle cards and followed clues in a bid to find buried treasure worth a hundred thousand pounds. Amazingly, having nearly lost it all, Michael persuaded his previous investor and others to give him another chance and more money.</p>
+<p><span class="sp">Michael:</span> I’d managed to raise further <span class="wterm" onclick="openWordModal('financing')">financing</span>, and in total, I’d raised about six million pounds for this business. Yes, so I got some very, very well respected, huge <span class="wterm" onclick="openWordModal('venture-capital')">venture capital</span> firms came in and invested between them many millions of pounds. So the pressure and the <span class="wterm" onclick="openWordModal('stakes')">stakes</span> really, really raised at that point.</p>
+<p><span class="sp">Peter:</span> Did it succeed? Was it good for you?</p>
+<p><span class="sp">Michael:</span> There were people in different countries around the world helping expand this treasure hunt. It was a pretty big operation, but unfortunately there weren’t enough people playing to cover the costs of running this very expensive business.</p>
+<p><span class="sp">Peter:</span> But what did you put—you didn’t spend six million, surely, on a website and a treasure hunt?</p>
+<p><span class="sp">Michael:</span> Well, helicopters are pretty expensive.</p>
+<p><span class="sp">Peter:</span> Real helicopters, you mean?</p>
+<p><span class="sp">Michael:</span> Real helicopters we hired to do flyovers of these live events we did. We had a massive <span class="wterm" onclick="openWordModal('burn-rate')">burn rate</span>, and our outgoings were a lot higher than our incomings.</p>
+<p><span class="sp">Peter:</span> Wow.</p>
+<p><span class="sp">Michael:</span> Very, very—</p>
+<p><span class="sp">Peter:</span> Six million.</p>
+<p><span class="sp">Michael:</span> Six million pounds. And you can imagine how stressful and tense it was to have all this money, but the business not working.</p>
+<p><span class="sp">Peter:</span> So did you lose all the money then?</p>
+<p><span class="sp">Michael:</span> Well, we had about six hundred thousand pounds left in the bank, about a million dollars.</p>
+<p><span class="sp">Peter:</span> And how did you front the investors? Were they camping outside, like sort of protestors?</p>
+<p><span class="sp">Michael:</span> Well, we had to go to the board and tell them in a very stressful board meeting that, you know, that six million pounds you’d given me? Well, most of it has gone. I’m really sorry this idea hasn’t worked out. But I’ve got one more idea, one final roll of the dice.</p>
+<p><span class="sp">Peter:</span> What did they say? I mean, if you came in to me and said, “Peter, look, it’s not all bad. You gave me six million and I’ve got six hundred <span class="wterm" onclick="openWordModal('k')">K</span> left. So, hey, we’re all right.” No, we’re not all right. It’s like what is going on?</p>
+<p><span class="sp">Michael:</span> I was terrified. But to their credit the board were supportive. You know, they listened and they said, “Michael, fair enough. You know, we invested in you more than the idea. And if you’ve got one more idea, let’s see what happens.” I think if I’d <span class="wterm" onclick="openWordModal('screw-up')">screwed up</span> with Moshi Monsters, there wouldn’t have been a third chance. So fortunately it worked.</p>
+<p><span class="sp">Peter:</span> Have you been told that you were mad before?</p>
+<p><span class="sp">Michael:</span> Well, I think there’s always been a very fine line between insanity and genius. And a lot of entrepreneurs with big visions kind of weave between that line.</p>
+<p><span class="sp">Peter:</span> Insane or genius, Michael certainly doesn’t lack confidence. 9 burn rate: noun the rate at which the money available for a project or new company is spent</p>
+</div>
+</div>
+
+<div class="exblock" id="s130a">
+<h3 class="exline"><span class="exlabel">A. Listen and Take Notes</span> Listen to the conversation. Then watch the video. Take notes in the chart.</h3>
+<div class="medialabel">Conversation</div>
+<div class="audiorow"><audio controls preload="none" id="au-p130" src="media/audio-listening1-part1.mp3"></audio><button class="revealbtn script" data-group="p130" onclick="toggleScript(this,'script-au-p130','p130')">Show Script</button></div>
+<div class="script-box" id="script-au-p130">
+<p><span class="sp">Professor:</span> So, for the past few weeks, we’ve been talking about starting a business and what it takes to be successful. Over the weekend, your assignment was to research a successful startup. Can I get a couple of people to start off? Yes, how about Elena and . . . Rob.</p>
+<p><span class="sp">Elena:</span> So, I read about Scott Nash, who is the founder of MOM’s Organic Market. He started his business with only a hundred dollars. When he was 22 years old, he opened a business in his mother’s house. First, he delivered food to people. He even brought people food in the middle of the night. Then he opened a store selling organic stuff. Because his company grew slowly, he could focus on his values, which were the environment and his customers. That was good. However, he didn’t really start making a profit for the first 20 years. Then, in 2009, there was an economic crisis in the United States, and he had to start thinking more about money and not just about the environment. He says it was a very scary time. However, he just took it step by step, and slowly his small company grew into a chain of stores that makes 200 million dollars every year.</p>
+<p><span class="sp">Rob:</span> Hmm. That’s interesting. Some of it sounds a little like the business owner I researched, the chairman of John Paul Mitchell Systems.</p>
+<p><span class="sp">Elena:</span> The shampoo guy?</p>
+<p><span class="sp">Rob:</span> Exactly! His real name is John Paul Dejoria. He started his career by trying to sell all sorts of things to people at their doors. Unlike Scott Nash, he wasn’t a very successful salesperson at the start, and he was even homeless a couple of times and had to sleep in his car. However, he thinks these failures were important lessons, because he learned how to deal with rejection. He became a better salesperson than he was before. Then he met Paul Mitchell, a good hairdresser. Paul had quality hair products to sell, and John Paul was a good salesman. They started their company with only $700. Now, the company sells more than 80 hair products and is very successful. Like Scott Nash, John Paul Dejoria also focused on his values as his business expanded. He gives a lot of his money to help solve environmental and social problems.</p>
+<p><span class="sp">Professor:</span> OK. Thank you for sharing. So, sometimes entrepreneurs start small and steadily grow a business. More often, starting a new business is a journey of mistakes and failures. Now, we’re going to watch a video about another famous businessperson whose journey to success was full of failures. This is an interview with Michael Acton Smith, the creator of Moshi Monsters, a children’s website.</p>
+</div>
+<div id="ex130a" class="exwrap">
+<table class="chart notes">
+<tr><th>Businessperson</th><th>History</th><th>Problems</th><th>Successes</th></tr>
+<tr><td class="pcell"><figure><img src="media/p130_scott.jpg" alt="Scott Nash"><figcaption>Scott Nash<span class="ts-chip" data-t="24" data-audio="au-p130" onclick="jumpTo(this)">&#9654; 0:24</span></figcaption></figure></td><td><ul style="list-style:none;padding-left:0"><li><span class="ans-ph">started with $100</span>&nbsp;</li><li><span class="ans-ph">opened in mom’s house</span>&nbsp;</li><li><span class="ans-ph">delivered food to people</span>&nbsp;</li></ul></td><td><ul style="list-style:none;padding-left:0"><li><span class="ans-ph">he didn’t make a profit for 20 years</span>&nbsp;</li><li><span class="ans-ph">economic crisis in 2009</span>&nbsp;</li></ul></td><td><ul style="list-style:none;padding-left:0"><li><span class="ans-ph">focus on values: environment and customers</span>&nbsp;</li><li><span class="ans-ph">chain of stores</span>&nbsp;</li><li><span class="ans-ph">$200 million every year</span>&nbsp;</li></ul></td></tr>
+<tr><td class="pcell"><figure><img src="media/p130_jpd.jpg" alt="John Paul DeJoria"><figcaption>John Paul DeJoria (right)<span class="ts-chip" data-t="97" data-audio="au-p130" onclick="jumpTo(this)">&#9654; 1:37</span></figcaption></figure></td><td><ul style="list-style:none;padding-left:0"><li><span class="ans-ph">sold things door to door</span>&nbsp;</li><li><span class="ans-ph">met Paul Mitchell</span>&nbsp;</li><li><span class="ans-ph">Paul had quality hair products</span>&nbsp;</li><li><span class="ans-ph">started their company with $700</span>&nbsp;</li></ul></td><td><ul style="list-style:none;padding-left:0"><li><span class="ans-ph">was a bad salesperson at the beginning</span>&nbsp;</li><li><span class="ans-ph">was rejected a lot</span>&nbsp;</li></ul></td><td><ul style="list-style:none;padding-left:0"><li><span class="ans-ph">learned to deal with rejection, became much better salesperson</span>&nbsp;</li><li><span class="ans-ph">hair product company sells more than 80 products, very successful</span>&nbsp;</li><li><span class="ans-ph">lots of money for environmental and social problems</span>&nbsp;</li></ul></td></tr>
+<tr><td class="pcell"><figure><img src="media/p130_mas.jpg" alt="Michael Acton Smith"><figcaption>Michael Acton Smith<span class="ts-chip" data-t="10" data-audio="vid-p130" onclick="jumpTo(this)">&#9654; 0:10</span></figcaption></figure></td><td><ul style="list-style:none;padding-left:0"><li><span class="ans-ph">with a friend, sold toys, gadgets, and games on the Internet</span>&nbsp;</li><li><span class="ans-ph">developed an adventure game</span>&nbsp;</li></ul></td><td><ul style="list-style:none;padding-left:0"><li><span class="ans-ph">not enough customers</span>&nbsp;</li><li><span class="ans-ph">spent too much money launching it</span>&nbsp;</li><li><span class="ans-ph">dot-com bubble burst</span>&nbsp;</li></ul></td><td><ul style="list-style:none;padding-left:0"><li><span class="ans-ph">created Moshi Monsters</span>&nbsp;</li><li><span class="ans-ph">multimillion-pound business</span>&nbsp;</li></ul></td></tr>
+</table></div>
+<div class="btnrow"><button class="revealbtn ts" onclick="toggleTimestamps(this,'ex130a')">Show Timestamps</button><button class="revealbtn" data-group="p130" onclick="toggleAnswers(this,'ex130a','p130')">Show Answers</button></div></div>
+
+<div class="exblock" id="s130b">
+<h3 class="exline"><span class="exlabel">B. Restate</span> Work with a partner. Using your notes, take turns telling the story of each businessperson’s journey to success.</h3>
+<div id="ex130b" class="exwrap"><p><span class="model-ans">Possible answer: Scott Nash didn’t make a profit for 20 years and there was an economic crisis in 2009 that really scared him. But he grew his company slowly and focused on protecting the environment and his customers, and now his company makes more than $200 million every year.</span></p></div>
+<div class="btnrow"><button class="revealbtn model" data-group="p130" onclick="toggleAnswers(this,'ex130b','p130')">Show Model Answer</button></div></div>
+
+<div class="page-divider"><span>PAGE 131</span></div><div id="p131" class="page-anchor"></div>
+<div class="exblock" id="s131a">
+<h3 class="exline"><span class="exlabel">C. Discuss</span> Look at your notes. Whose journey to success do you think was the easiest? Whose was the most difficult? Discuss your opinion with a partner. Use your notes to support your opinion.</h3>
+<div id="ex131a" class="exwrap"><p><span class="model-ans">Sample answer: I think Michael Acton Smith’s journey to success was the easiest because he spent other people’s money, not his own. I think John Paul DeJoria’s was the most difficult because he had to sleep in his car.</span></p></div>
+<div class="btnrow"><button class="revealbtn model" data-group="p131" onclick="toggleAnswers(this,'ex131a','p131')">Show Sample Answer</button></div></div>
+
+<div class="exblock" id="s131b">
+<h3 class="exline"><span class="exlabel">D. Categorize</span> Listen and watch again. Read the statements. Write <i>T</i> (true) or <i>F</i> (false). Then correct each false statement to make it true.</h3>
+<div class="medialabel">Conversation</div>
+<div class="audiorow"><audio controls preload="none" id="au-p131" src="media/audio-listening1-part1.mp3"></audio><button class="revealbtn script" data-group="p131" onclick="toggleScript(this,'script-au-p131','p131')">Show Script</button></div>
+<div class="script-box" id="script-au-p131">
+<p><span class="sp">Professor:</span> So, for the past few weeks, we’ve been talking about starting a business and what it takes to be successful. Over the weekend, your assignment was to research a successful startup. Can I get a couple of people to start off? Yes, how about Elena and . . . Rob.</p>
+<p><span class="sp">Elena:</span> So, I read about Scott Nash, who is the founder of MOM’s Organic Market. He started his business with only a hundred dollars. When he was 22 years old, he opened a business in his mother’s house. First, he delivered food to people. He even brought people food in the middle of the night. Then he opened a store selling organic stuff. Because his company grew slowly, he could focus on his values, which were the environment and his customers. That was good. However, he didn’t really start making a profit for the first 20 years. Then, in 2009, there was an economic crisis in the United States, and he had to start thinking more about money and not just about the environment. He says it was a very scary time. However, he just took it step by step, and slowly his small company grew into a chain of stores that makes 200 million dollars every year.</p>
+<p><span class="sp">Rob:</span> Hmm. That’s interesting. Some of it sounds a little like the business owner I researched, the chairman of John Paul Mitchell Systems.</p>
+<p><span class="sp">Elena:</span> The shampoo guy?</p>
+<p><span class="sp">Rob:</span> Exactly! His real name is John Paul Dejoria. He started his career by trying to sell all sorts of things to people at their doors. Unlike Scott Nash, he wasn’t a very successful salesperson at the start, and he was even homeless a couple of times and had to sleep in his car. However, he thinks these failures were important lessons, because he learned how to deal with rejection. He became a better salesperson than he was before. Then he met Paul Mitchell, a good hairdresser. Paul had quality hair products to sell, and John Paul was a good salesman. They started their company with only $700. Now, the company sells more than 80 hair products and is very successful. Like Scott Nash, John Paul Dejoria also focused on his values as his business expanded. He gives a lot of his money to help solve environmental and social problems.</p>
+<p><span class="sp">Professor:</span> OK. Thank you for sharing. So, sometimes entrepreneurs start small and steadily grow a business. More often, starting a new business is a journey of mistakes and failures. Now, we’re going to watch a video about another famous businessperson whose journey to success was full of failures. This is an interview with Michael Acton Smith, the creator of Moshi Monsters, a children’s website.</p>
+</div>
+<div class="medialabel">Video</div>
+<video controls preload="metadata" id="vid-p131" src="media/video-unit6.mp4"></video><div class="audiorow" style="margin-top:4px"><button class="revealbtn script" data-group="p131" onclick="toggleScript(this,'script-vid-p131','p131')">Show Script</button></div>
+<div class="script-box" id="script-vid-p131">
+<p><span class="sp">Peter:</span> So, Michael, I’d love to know where it all started and what was your first business?</p>
+<p><span class="sp">Michael:</span> Went to university up in Birmingham and met a friend of mine called Tom Boardman. And we had this idea to sell toys and gadgets and games. And a wonderful chap called Tom Teichman decided to invest half a million pounds into our business. And we decided to do it on the Internet, which was very new and shiny back in 1998. And the great thing then was that there weren’t many competitors. The downside was there were hardly any customers either.</p>
+<p><span class="sp">Peter:</span> And then from there where did—</p>
+<p><span class="sp">Michael:</span> Well, then—</p>
+<p><span class="sp">Peter:</span> What was your next—</p>
+<p><span class="sp">Michael:</span> Then we almost lost everything in the dot-com bust in early 2000. We overextended ourselves. We spent too much money. We got carried away. We teetered on the brink of bankruptcy. It was a pretty, pretty scary time.</p>
+<p><span class="sp">Peter:</span> Michael’s business might now be a multimillion-pound hit, but he’s clearly had more than his fair share of near misses. After the dot-com bubble burst, Michael swapped selling gadgets for developing an adventure game. Perplex City launched in 2005. Players bought puzzle cards and followed clues in a bid to find buried treasure worth a hundred thousand pounds. Amazingly, having nearly lost it all, Michael persuaded his previous investor and others to give him another chance and more money.</p>
+<p><span class="sp">Michael:</span> I’d managed to raise further financing, and in total, I’d raised about six million pounds for this business. Yes, so I got some very, very well respected, huge venture capital firms came in and invested between them many millions of pounds. So the pressure and the stakes really, really raised at that point.</p>
+<p><span class="sp">Peter:</span> Did it succeed? Was it good for you?</p>
+<p><span class="sp">Michael:</span> There were people in different countries around the world helping expand this treasure hunt. It was a pretty big operation, but unfortunately there weren’t enough people playing to cover the costs of running this very expensive business.</p>
+<p><span class="sp">Peter:</span> But what did you put—you didn’t spend six million, surely, on a website and a treasure hunt?</p>
+<p><span class="sp">Michael:</span> Well, helicopters are pretty expensive.</p>
+<p><span class="sp">Peter:</span> Real helicopters, you mean?</p>
+<p><span class="sp">Michael:</span> Real helicopters we hired to do flyovers of these live events we did. We had a massive burn rate, and our outgoings were a lot higher than our incomings.</p>
+<p><span class="sp">Peter:</span> Wow.</p>
+<p><span class="sp">Michael:</span> Very, very—</p>
+<p><span class="sp">Peter:</span> Six million.</p>
+<p><span class="sp">Michael:</span> Six million pounds. And you can imagine how stressful and tense it was to have all this money, but the business not working.</p>
+<p><span class="sp">Peter:</span> So did you lose all the money then?</p>
+<p><span class="sp">Michael:</span> Well, we had about six hundred thousand pounds left in the bank, about a million dollars.</p>
+<p><span class="sp">Peter:</span> And how did you front the investors? Were they camping outside, like sort of protestors?</p>
+<p><span class="sp">Michael:</span> Well, we had to go to the board and tell them in a very stressful board meeting that, you know, that six million pounds you’d given me? Well, most of it has gone. I’m really sorry this idea hasn’t worked out. But I’ve got one more idea, one final roll of the dice.</p>
+<p><span class="sp">Peter:</span> What did they say? I mean, if you came in to me and said, “Peter, look, it’s not all bad. You gave me six million and I’ve got six hundred K left. So, hey, we’re all right.” No, we’re not all right. It’s like what is going on?</p>
+<p><span class="sp">Michael:</span> I was terrified. But to their credit the board were supportive. You know, they listened and they said, “Michael, fair enough. You know, we invested in you more than the idea. And if you’ve got one more idea, let’s see what happens.” I think if I’d screwed up with Moshi Monsters, there wouldn’t have been a third chance. So fortunately it worked.</p>
+<p><span class="sp">Peter:</span> Have you been told that you were mad before?</p>
+<p><span class="sp">Michael:</span> Well, I think there’s always been a very fine line between insanity and genius. And a lot of entrepreneurs with big visions kind of weave between that line.</p>
+<p><span class="sp">Peter:</span> Insane or genius, Michael certainly doesn’t lack confidence. 9 burn rate: noun the rate at which the money available for a project or new company is spent</p>
+</div>
+<div id="ex131b" class="exwrap">
+<ol class="qlist nm" style="margin-top:12px;">
+<li><span class="blank-ph short">&nbsp;<span class="ans-ph">F</span></span> Scott Nash started his business with $700. <span class="ans-ph follow">&rarr; $100</span><span class="ts-chip" data-t="29" data-audio="au-p131" onclick="jumpTo(this)">&#9654; 0:29</span></li>
+<li><span class="blank-ph short">&nbsp;<span class="ans-ph">T</span></span> Scott Nash delivered food to people from his mother’s house.<span class="ts-chip" data-t="32" data-audio="au-p131" onclick="jumpTo(this)">&#9654; 0:32</span></li>
+<li><span class="blank-ph short">&nbsp;<span class="ans-ph">F</span></span> MOM’s Organic Market’s profits are around $200,000 every year. <span class="ans-ph follow">&rarr; $200,000,000</span><span class="ts-chip" data-t="80" data-audio="au-p131" onclick="jumpTo(this)">&#9654; 1:20</span></li>
+<li><span class="blank-ph short">&nbsp;<span class="ans-ph">F</span></span> John Paul DeJoria was successful as a door-to-door salesperson from the start. <span class="ans-ph follow">&rarr; unsuccessful</span><span class="ts-chip" data-t="107" data-audio="au-p131" onclick="jumpTo(this)">&#9654; 1:47</span></li>
+<li><span class="blank-ph short">&nbsp;<span class="ans-ph">F</span></span> John Paul DeJoria started a hair products company alone. <span class="ans-ph follow">&rarr; with Paul Mitchell</span><span class="ts-chip" data-t="125" data-audio="au-p131" onclick="jumpTo(this)">&#9654; 2:05</span></li>
+<li><span class="blank-ph short">&nbsp;<span class="ans-ph">T</span></span> John Paul Mitchell Systems sells more than 80 products.<span class="ts-chip" data-t="138" data-audio="au-p131" onclick="jumpTo(this)">&#9654; 2:18</span></li>
+<li><span class="blank-ph short">&nbsp;<span class="ans-ph">T</span></span> Michael Acton Smith’s first business plan was to sell toys, gadgets, and games on the Internet.<span class="ts-chip" data-t="15" data-audio="vid-p131" onclick="jumpTo(this)">&#9654; 0:15</span></li>
+<li><span class="blank-ph short">&nbsp;<span class="ans-ph">T</span></span> Investors in Michael Acton Smith’s second business lost £6,000,000.<span class="ts-chip" data-t="174" data-audio="vid-p131" onclick="jumpTo(this)">&#9654; 2:54</span></li>
+<li><span class="blank-ph short">&nbsp;<span class="ans-ph">F</span></span> Michael Acton Smith believes that he would have gotten more money if Moshi Monsters had failed. <span class="ans-ph follow">&rarr; would not have</span><span class="ts-chip" data-t="212" data-audio="vid-p131" onclick="jumpTo(this)">&#9654; 3:32</span></li>
+<li><span class="blank-ph short">&nbsp;<span class="ans-ph">F</span></span> Protecting the environment is important to all three of the businesspeople. <span class="ans-ph follow">&rarr; it is important to Scott Nash and John Paul DeJoria</span><span class="ts-chip" data-t="48" data-audio="au-p131" onclick="jumpTo(this)">&#9654; 0:48</span></li>
+</ol></div>
+<div class="btnrow"><button class="revealbtn ts" onclick="toggleTimestamps(this,'ex131b')">Show Timestamps</button><button class="revealbtn" data-group="p131" onclick="toggleAnswers(this,'ex131b','p131')">Show Answers</button></div></div>
+
+<div class="exblock" id="s131c">
+<h3 class="exline"><span class="exlabel">E. Interpret</span> Look at the statements. Who might have made them? Write <i>SN</i> (Scott Nash), <i>JPD</i> (John Paul DeJoria), or <i>MAS</i> (Michael Acton Smith).</h3>
+<div id="ex131c" class="exwrap">
+<ol class="qlist nm">
+<li><span class="blank-ph short">&nbsp;<span class="ans-ph">MAS</span></span> &ldquo;Finding investors is an important part of starting a business.&rdquo;<span class="ts-chip" data-t="22" data-audio="vid-p131" onclick="jumpTo(this)">&#9654; 0:22</span></li>
+<li><span class="blank-ph short">&nbsp;<span class="ans-ph">JPD</span></span> &ldquo;When you are selling something, you have to be just as excited about the product even after hundreds of doors have closed in your face.&rdquo;<span class="ts-chip" data-t="119" data-audio="au-p131" onclick="jumpTo(this)">&#9654; 1:59</span></li>
+<li><span class="blank-ph short">&nbsp;<span class="ans-ph">JPD</span></span> &ldquo;Meeting the right person early on was essential for my career. I could not have been as good a salesperson without my partner’s excellent product.&rdquo;<span class="ts-chip" data-t="125" data-audio="au-p131" onclick="jumpTo(this)">&#9654; 2:05</span></li>
+<li><span class="blank-ph short">&nbsp;<span class="ans-ph">SN</span></span> &ldquo;Slow growth is strong growth.&rdquo;<span class="ts-chip" data-t="75" data-audio="au-p131" onclick="jumpTo(this)">&#9654; 1:15</span></li>
+<li><span class="blank-ph short">&nbsp;<span class="ans-ph">MAS</span></span> &ldquo;Don’t waste a lot of your investors’ money on launch events.&rdquo;<span class="ts-chip" data-t="132" data-audio="vid-p131" onclick="jumpTo(this)">&#9654; 2:12</span></li>
+<li><span class="blank-ph short">&nbsp;<span class="ans-ph">SN</span></span> &ldquo;My mother supported me early in my career when I really needed the help.&rdquo;<span class="ts-chip" data-t="32" data-audio="au-p131" onclick="jumpTo(this)">&#9654; 0:32</span></li>
+</ol></div>
+<div class="btnrow"><button class="revealbtn ts" onclick="toggleTimestamps(this,'ex131c')">Show Timestamps</button><button class="revealbtn" data-group="p131" onclick="toggleAnswers(this,'ex131c','p131')">Show Answers</button></div></div>
+
+<div class="page-divider"><span>PAGE 132</span></div><div id="p132" class="page-anchor"></div>
+<div class="exblock" id="s132">
+<h3 class="exline"><span class="exlabel">F. Vocabulary</span> Here are some words from Listening 1. Complete each sentence with the correct word.</h3>
+<div class="wordbank"><div class="vocabcols"><div><div>burst <span class="pos">(v.)</span></div><div>confidence <span class="pos">(n.)</span></div><div>expand <span class="pos">(v.)</span></div></div><div><div>genius <span class="pos">(n.)</span></div><div>investor <span class="pos">(n.)</span></div><div>launch <span class="pos">(v.)</span></div></div><div><div>massive <span class="pos">(adj.)</span></div><div>pressure <span class="pos">(n.)</span></div><div>profit <span class="pos">(n.)</span></div></div><div><div>steadily <span class="pos">(adv.)</span></div><div>values <span class="pos">(n.)</span></div><div>vision <span class="pos">(n.)</span></div></div></div></div>
+<div id="ex132" class="exwrap">
+<ol class="qlist nm">
+<li>The new car will <span class="blank-ph ">&nbsp;<span class="ans-ph">launch</span></span> in July with a big celebration.</li>
+<li>He is under a lot of <span class="blank-ph ">&nbsp;<span class="ans-ph">pressure</span></span> at work. I am worried about his health.</li>
+<li>He is incredibly smart. He might even be a(n) <span class="blank-ph ">&nbsp;<span class="ans-ph">genius</span></span>.</li>
+<li>When he was young, he didn’t believe in himself, but now he has more <span class="blank-ph ">&nbsp;<span class="ans-ph">confidence</span></span>.</li>
+<li>When people talk about their <span class="blank-ph ">&nbsp;<span class="ans-ph">values</span></span>, it’s easy to see what is really important to them.</li>
+<li>When you climb a mountain, you don’t want to move too quickly. It’s better to go up slowly and <span class="blank-ph ">&nbsp;<span class="ans-ph">steadily</span></span>.</li>
+<li>That balloon will <span class="blank-ph ">&nbsp;<span class="ans-ph">burst</span></span> if you add any more air to it.</li>
+<li>New companies often put their <span class="blank-ph ">&nbsp;<span class="ans-ph">profit</span></span> back into the business so it can continue to grow.</li>
+<li>I believe the business will <span class="blank-ph ">&nbsp;<span class="ans-ph">expand</span></span> into new markets under a new manager.</li>
+<li>A strong leader needs to have <span class="blank-ph ">&nbsp;<span class="ans-ph">vision</span></span> so he or she can see what the future might hold.</li>
+<li>Her new business needs to look for a(n) <span class="blank-ph ">&nbsp;<span class="ans-ph">investor</span></span>. They need more money to grow.</li>
+<li>The government is talking about a <span class="blank-ph ">&nbsp;<span class="ans-ph">massive</span></span> increase in spending.</li>
+</ol></div>
+<div class="btnrow"><button class="revealbtn" data-group="p132" onclick="toggleAnswers(this,'ex132','p132')">Show Answers</button></div></div>
+
+<div class="page-divider"><span>PAGE 133</span></div><div id="p133" class="page-anchor"></div>
+<div class="exblock" id="s133a">
+<h2 class="stitle" style="font-size:19px;">Say What You Think</h2>
+<h3 class="exline"><span class="exlabel">Discuss</span> Work in a group to discuss the questions.</h3>
+<div id="ex133a" class="exwrap">
+<ol class="qlist">
+<li>The businesspeople in the conversation and video understand that failure is a necessary part of success. Why do they believe this is true? Do you agree? Why or why not?<br><span class="model-ans">Sample answer: I think they believe this because they have learned things from their failures and improved their businesses. I think failure is an important part of success. It’s usually how we learn new things.</span></li>
+<li>Were you surprised by the challenges these people experienced? Explain.<br><span class="model-ans">Sample answer: I was surprised about the challenges. I didn’t realize a new business could take so long to make a profit. / I wasn’t surprised. I think people who start a business work harder than people with regular jobs.</span></li>
+</ol></div>
+<div class="btnrow"><button class="revealbtn model" data-group="p133" onclick="toggleAnswers(this,'ex133a','p133')">Show Sample Answers</button></div></div>
+
+<div class="exblock" id="s133b">
+<div class="barhead">LISTENING SKILL <span class="sub">Listening for contrasting ideas</span></div>
+<div class="tipbox">
+<p>When speakers <b>contrast</b> things or ideas, they use special words and phrases to point out different characteristics of the things being discussed.</p>
+<p>The simplest way to show a contrast is to use a comparative adjective + <i>than</i>.</p>
+<div class="eg">He became a <b>better</b> salesperson <b>than</b> he was before.</div>
+<p>Speakers also contrast things and ideas by using words and phrases such as <i>in contrast to, instead of, however, on the other hand, but, rather than,</i> and <i>whereas</i>.</p>
+<div class="eg"><b>In contrast to</b> Scott Nash, John Paul DeJoria wasn’t a very successful salesperson at the start.<br>So, sometimes entrepreneurs start small and steadily grow. <b>But</b> more often, starting a new business is a journey of mistakes and failures.</div>
+</div>
+<div class="smallbox"><b class="boxhead">Tip for Success</b>To understand a speaker’s meaning, it’s important to analyze the words and phrases they use. The way a speaker organizes and presents information is usually an important clue about what the speaker wants you to know.</div>
+<h3 class="exline"><span class="exlabel">A. Apply</span> Listen to a discussion about two candidates for a job. Fill in the blanks with the contrasting words and phrases you hear.</h3>
+<div class="audiorow"><audio controls preload="none" id="au-p133" src="media/audio-listeningskill-a.mp3"></audio><button class="revealbtn script" data-group="p133" onclick="toggleScript(this,'script-au-p133','p133')">Show Script</button></div>
+<div class="script-box" id="script-au-p133">
+<p><span class="sp">Mr. Doshi:</span> Bob Quintero and Susan Miyamoto are the final candidates for the marketing position at our company. Bob has a degree from Harvard University in the USA, whereas Susan has a degree from Keio Business School in Japan.</p>
+<p><span class="sp">Ms. Stanz:</span> Bob and Susan both have good work experience. Bob has worked for five years at a small marketing company. But Susan has worked for eight years at our company.</p>
+<p><span class="sp">Doshi:</span> Susan speaks more languages. Bob speaks Arabic and Spanish. However, Susan speaks French, Spanish, and Japanese.</p>
+<p><span class="sp">Stanz:</span> Bob has a lot of sales experience. On the other hand, Susan has a lot of experience at our company.</p>
+<p><span class="sp">Doshi:</span> Hmm. This is going to be a tough decision!</p>
+</div>
+<div id="ex133b" class="exwrap">
+<p><b>Mr. Doshi:</b> Bob Quintero and Susan Miyamoto are the final candidates for the marketing position at our company. Bob has a degree from Harvard University in the USA, <span class="blank-ph"><small>1</small>&nbsp;<span class="ans-ph">whereas</span></span><span class="ts-chip" data-t="14" data-audio="au-p133" onclick="jumpTo(this)">&#9654; 0:14</span> Susan has a degree from Keio Business School in Japan.</p>
+<p><b>Ms. Stanz:</b> Bob and Susan both have good work experience. Bob has worked for five years at a small marketing company. <span class="blank-ph"><small>2</small>&nbsp;<span class="ans-ph">But</span></span><span class="ts-chip" data-t="26" data-audio="au-p133" onclick="jumpTo(this)">&#9654; 0:26</span> Susan has worked for eight years at our company.</p>
+<p><b>Mr. Doshi:</b> Susan speaks more languages. Bob speaks Arabic and Spanish. <span class="blank-ph"><small>3</small>&nbsp;<span class="ans-ph">However</span></span><span class="ts-chip" data-t="35" data-audio="au-p133" onclick="jumpTo(this)">&#9654; 0:35</span>, Susan speaks French, Spanish, and Japanese.</p>
+<p><b>Ms. Stanz:</b> Bob has a lot of sales experience. <span class="blank-ph"><small>4</small>&nbsp;<span class="ans-ph">On the other hand</span></span><span class="ts-chip" data-t="42" data-audio="au-p133" onclick="jumpTo(this)">&#9654; 0:42</span>, Susan has a lot of experience at our company.</p>
+<p><b>Mr. Doshi:</b> Hmmm. This is going to be a tough decision!</p>
+</div>
+<div class="btnrow"><button class="revealbtn ts" onclick="toggleTimestamps(this,'ex133b')">Show Timestamps</button><button class="revealbtn" data-group="p133" onclick="toggleAnswers(this,'ex133b','p133')">Show Answers</button></div></div>
+
+<div class="page-divider"><span>PAGE 134</span></div><div id="p134" class="page-anchor"></div>
+<div class="exblock" id="s134a">
+<h3 class="exline"><span class="exlabel">B. Categorize</span> Listen to the conversation and watch the video from Listening 1 again. As you listen and watch, check (&#10003;) the person or people each statement describes.</h3>
+<div class="medialabel">Conversation</div>
+<div class="audiorow"><audio controls preload="none" id="au-p134" src="media/audio-listening1-part1.mp3"></audio><button class="revealbtn script" data-group="p134" onclick="toggleScript(this,'script-au-p134','p134')">Show Script</button></div>
+<div class="script-box" id="script-au-p134">
+<p><span class="sp">Professor:</span> So, for the past few weeks, we’ve been talking about starting a business and what it takes to be successful. Over the weekend, your assignment was to research a successful startup. Can I get a couple of people to start off? Yes, how about Elena and . . . Rob.</p>
+<p><span class="sp">Elena:</span> So, I read about Scott Nash, who is the founder of MOM’s Organic Market. He started his business with only a hundred dollars. When he was 22 years old, he opened a business in his mother’s house. First, he delivered food to people. He even brought people food in the middle of the night. Then he opened a store selling organic stuff. Because his company grew slowly, he could focus on his values, which were the environment and his customers. That was good. However, he didn’t really start making a profit for the first 20 years. Then, in 2009, there was an economic crisis in the United States, and he had to start thinking more about money and not just about the environment. He says it was a very scary time. However, he just took it step by step, and slowly his small company grew into a chain of stores that makes 200 million dollars every year.</p>
+<p><span class="sp">Rob:</span> Hmm. That’s interesting. Some of it sounds a little like the business owner I researched, the chairman of John Paul Mitchell Systems.</p>
+<p><span class="sp">Elena:</span> The shampoo guy?</p>
+<p><span class="sp">Rob:</span> Exactly! His real name is John Paul Dejoria. He started his career by trying to sell all sorts of things to people at their doors. Unlike Scott Nash, he wasn’t a very successful salesperson at the start, and he was even homeless a couple of times and had to sleep in his car. However, he thinks these failures were important lessons, because he learned how to deal with rejection. He became a better salesperson than he was before. Then he met Paul Mitchell, a good hairdresser. Paul had quality hair products to sell, and John Paul was a good salesman. They started their company with only $700. Now, the company sells more than 80 hair products and is very successful. Like Scott Nash, John Paul Dejoria also focused on his values as his business expanded. He gives a lot of his money to help solve environmental and social problems.</p>
+<p><span class="sp">Professor:</span> OK. Thank you for sharing. So, sometimes entrepreneurs start small and steadily grow a business. More often, starting a new business is a journey of mistakes and failures. Now, we’re going to watch a video about another famous businessperson whose journey to success was full of failures. This is an interview with Michael Acton Smith, the creator of Moshi Monsters, a children’s website.</p>
+</div>
+<div class="medialabel">Video</div>
+<video controls preload="metadata" id="vid-p134" src="media/video-unit6.mp4"></video><div class="audiorow" style="margin-top:4px"><button class="revealbtn script" data-group="p134" onclick="toggleScript(this,'script-vid-p134','p134')">Show Script</button></div>
+<div class="script-box" id="script-vid-p134">
+<p><span class="sp">Peter:</span> So, Michael, I’d love to know where it all started and what was your first business?</p>
+<p><span class="sp">Michael:</span> Went to university up in Birmingham and met a friend of mine called Tom Boardman. And we had this idea to sell toys and gadgets and games. And a wonderful chap called Tom Teichman decided to invest half a million pounds into our business. And we decided to do it on the Internet, which was very new and shiny back in 1998. And the great thing then was that there weren’t many competitors. The downside was there were hardly any customers either.</p>
+<p><span class="sp">Peter:</span> And then from there where did—</p>
+<p><span class="sp">Michael:</span> Well, then—</p>
+<p><span class="sp">Peter:</span> What was your next—</p>
+<p><span class="sp">Michael:</span> Then we almost lost everything in the dot-com bust in early 2000. We overextended ourselves. We spent too much money. We got carried away. We teetered on the brink of bankruptcy. It was a pretty, pretty scary time.</p>
+<p><span class="sp">Peter:</span> Michael’s business might now be a multimillion-pound hit, but he’s clearly had more than his fair share of near misses. After the dot-com bubble burst, Michael swapped selling gadgets for developing an adventure game. Perplex City launched in 2005. Players bought puzzle cards and followed clues in a bid to find buried treasure worth a hundred thousand pounds. Amazingly, having nearly lost it all, Michael persuaded his previous investor and others to give him another chance and more money.</p>
+<p><span class="sp">Michael:</span> I’d managed to raise further financing, and in total, I’d raised about six million pounds for this business. Yes, so I got some very, very well respected, huge venture capital firms came in and invested between them many millions of pounds. So the pressure and the stakes really, really raised at that point.</p>
+<p><span class="sp">Peter:</span> Did it succeed? Was it good for you?</p>
+<p><span class="sp">Michael:</span> There were people in different countries around the world helping expand this treasure hunt. It was a pretty big operation, but unfortunately there weren’t enough people playing to cover the costs of running this very expensive business.</p>
+<p><span class="sp">Peter:</span> But what did you put—you didn’t spend six million, surely, on a website and a treasure hunt?</p>
+<p><span class="sp">Michael:</span> Well, helicopters are pretty expensive.</p>
+<p><span class="sp">Peter:</span> Real helicopters, you mean?</p>
+<p><span class="sp">Michael:</span> Real helicopters we hired to do flyovers of these live events we did. We had a massive burn rate, and our outgoings were a lot higher than our incomings.</p>
+<p><span class="sp">Peter:</span> Wow.</p>
+<p><span class="sp">Michael:</span> Very, very—</p>
+<p><span class="sp">Peter:</span> Six million.</p>
+<p><span class="sp">Michael:</span> Six million pounds. And you can imagine how stressful and tense it was to have all this money, but the business not working.</p>
+<p><span class="sp">Peter:</span> So did you lose all the money then?</p>
+<p><span class="sp">Michael:</span> Well, we had about six hundred thousand pounds left in the bank, about a million dollars.</p>
+<p><span class="sp">Peter:</span> And how did you front the investors? Were they camping outside, like sort of protestors?</p>
+<p><span class="sp">Michael:</span> Well, we had to go to the board and tell them in a very stressful board meeting that, you know, that six million pounds you’d given me? Well, most of it has gone. I’m really sorry this idea hasn’t worked out. But I’ve got one more idea, one final roll of the dice.</p>
+<p><span class="sp">Peter:</span> What did they say? I mean, if you came in to me and said, “Peter, look, it’s not all bad. You gave me six million and I’ve got six hundred K left. So, hey, we’re all right.” No, we’re not all right. It’s like what is going on?</p>
+<p><span class="sp">Michael:</span> I was terrified. But to their credit the board were supportive. You know, they listened and they said, “Michael, fair enough. You know, we invested in you more than the idea. And if you’ve got one more idea, let’s see what happens.” I think if I’d screwed up with Moshi Monsters, there wouldn’t have been a third chance. So fortunately it worked.</p>
+<p><span class="sp">Peter:</span> Have you been told that you were mad before?</p>
+<p><span class="sp">Michael:</span> Well, I think there’s always been a very fine line between insanity and genius. And a lot of entrepreneurs with big visions kind of weave between that line.</p>
+<p><span class="sp">Peter:</span> Insane or genius, Michael certainly doesn’t lack confidence. 9 burn rate: noun the rate at which the money available for a project or new company is spent</p>
+</div>
+<div id="ex134a" class="exwrap">
+<table class="chart check" style="margin-top:12px;">
+<tr><th></th><th class="cc">Scott Nash</th><th class="cc">John Paul DeJoria</th><th class="cc">Michael Acton Smith</th></tr>
+<tr><td class="lab">Started a business with a little money<span class="ts-chip" data-t="29" data-audio="au-p134" onclick="jumpTo(this)">&#9654; 0:29</span></td><td class="cc"><span class="ans-ph">&#10003;</span></td><td class="cc"><span class="ans-ph">&#10003;</span></td><td class="cc"></td></tr>
+<tr><td class="lab">Started a business with a lot of money from investors<span class="ts-chip" data-t="22" data-audio="vid-p134" onclick="jumpTo(this)">&#9654; 0:22</span></td><td class="cc"></td><td class="cc"></td><td class="cc"><span class="ans-ph">&#10003;</span></td></tr>
+<tr><td class="lab">Expanded his company slowly<span class="ts-chip" data-t="46" data-audio="au-p134" onclick="jumpTo(this)">&#9654; 0:46</span></td><td class="cc"><span class="ans-ph">&#10003;</span></td><td class="cc"></td><td class="cc"></td></tr>
+<tr><td class="lab">Learned from his early failures<span class="ts-chip" data-t="116" data-audio="au-p134" onclick="jumpTo(this)">&#9654; 1:56</span></td><td class="cc"></td><td class="cc"><span class="ans-ph">&#10003;</span></td><td class="cc"><span class="ans-ph">&#10003;</span></td></tr>
+<tr><td class="lab">Failed because he spent too much money<span class="ts-chip" data-t="45" data-audio="vid-p134" onclick="jumpTo(this)">&#9654; 0:45</span></td><td class="cc"></td><td class="cc"></td><td class="cc"><span class="ans-ph">&#10003;</span></td></tr>
+<tr><td class="lab">Focused on his values<span class="ts-chip" data-t="48" data-audio="au-p134" onclick="jumpTo(this)">&#9654; 0:48</span></td><td class="cc"><span class="ans-ph">&#10003;</span></td><td class="cc"><span class="ans-ph">&#10003;</span></td><td class="cc"></td></tr>
+<tr><td class="lab">Failed two times before he succeeded<span class="ts-chip" data-t="213" data-audio="vid-p134" onclick="jumpTo(this)">&#9654; 3:33</span></td><td class="cc"></td><td class="cc"></td><td class="cc"><span class="ans-ph">&#10003;</span></td></tr>
+</table></div>
+<div class="btnrow"><button class="revealbtn ts" onclick="toggleTimestamps(this,'ex134a')">Show Timestamps</button><button class="revealbtn" data-group="p134" onclick="toggleAnswers(this,'ex134a','p134')">Show Answers</button></div></div>
+
+<div class="exblock" id="s134b">
+<h3 class="exline"><span class="exlabel">C. Compose</span> Work with a partner. Take turns making sentences that compare Scott Nash, John Paul DeJoria, and Michael Acton Smith using words and phrases to show contrast.</h3>
+<div class="wordbank"><div class="vocabcols"><div><div>in contrast to <span class="pos"></span></div><div>but <span class="pos"></span></div></div><div><div>instead of <span class="pos"></span></div><div>rather than <span class="pos"></span></div></div><div><div>however <span class="pos"></span></div><div>whereas <span class="pos"></span></div></div><div><div>on the other hand <span class="pos"></span></div></div></div></div>
+<div id="ex134b" class="exwrap"><p><span class="model-ans">Possible answers: In contrast to Scott Nash, Michael Acton Smith failed because he spent too much money. / John Paul DeJoria and Scott Nash started with a little money, but Michael Acton Smith got a lot of money from investors.</span></p></div>
+<div class="btnrow"><button class="revealbtn model" data-group="p134" onclick="toggleAnswers(this,'ex134b','p134')">Show Sample Answers</button></div></div>
+
+<div class="exblock" id="s134c">
+<h2 class="stitle" style="margin-top:8px;">Listening 2 &middot; Interns in New York</h2>
+<div class="tipbox"><b>Objective</b><br>You are going to listen to a lecture and then listen to a conversation between two friends about the advantages and disadvantages of doing an internship. As you listen, gather information and ideas about whether one road to success is better than another.</div>
+</div>
+
+<div class="page-divider"><span>PAGE 135</span></div><div id="p135" class="page-anchor"></div>
+<div class="exblock" id="s135a">
+<img class="fig center" src="media/p135_men.jpg" alt="An older man leans over a younger man seated at a desk while they look at a paper together" style="max-width:600px">
+<h2 class="stitle" style="font-size:19px;">Preview the Listening</h2>
+<h3 class="exline"><span class="exlabel">A. Preview</span> An internship is work experience available to students and new graduates for a short period of time. The interns are sometimes not paid or paid very little. Discuss the questions in a small group.</h3>
+<div id="ex135a" class="exwrap">
+<ol class="qlist">
+<li>Would you consider working for free in order to learn more about a job you might want to do in the future? If yes, what job would you like to try?<br><span class="model-ans">Sample answer: I would consider working for free if I knew that I would be hired by the company in the future. I would like to try working on a movie set. / I would never work for free. How would I support myself?</span></li>
+<li>Do you know of anyone who has done an internship? What was his or her experience like?<br><span class="model-ans">Sample answer: My friend did two internships. One was with his father’s company. One was with a bigger international company.</span></li>
+</ol></div>
+<div class="btnrow"><button class="revealbtn model" data-group="p135" onclick="toggleAnswers(this,'ex135a','p135')">Show Sample Answers</button></div></div>
+
+<div class="exblock" id="s135b">
+<div class="smallbox"><b class="boxhead">Academic Language</b>According to the corpus, <i><span class="wterm" onclick="openWordModal('basically')">basically</span></i> is more commonly used in academic speaking than in academic writing.</div>
+<h3 class="exline"><span class="exlabel">B. Vocabulary</span> Read aloud these words from Listening 2. Check (&#10003;) the ones you know. Use a dictionary to define any new or unknown words. Then discuss with a partner how the words will relate to the unit.</h3>
+<p style="font-size:12.5px;color:#777;">Click any word below to see its definition and an example.</p>
+<div class="vocabbox"><div class="vocabcols"><div><div><span class="wterm" onclick="openWordModal('altogether')">altogether</span> <span class="pos">(adv.)</span></div><div>basically <span class="pos">(adv.)</span></div><div><span class="wterm" onclick="openWordModal('decent')">decent</span> <span class="pos">(adj.)</span></div><div><span class="wterm" onclick="openWordModal('disposable')">disposable</span> <span class="pos">(adj.)</span></div><div><span class="wterm" onclick="openWordModal('fairness')">fairness</span> <span class="pos">(n.)</span></div><div><span class="wterm" onclick="openWordModal('fierce')">fierce</span> <span class="pos">(adj.)</span></div></div><div><div><span class="wterm" onclick="openWordModal('in-particular')">in particular</span> <span class="pos">(idm.)</span></div><div><span class="wterm" onclick="openWordModal('meaningful')">meaningful</span> <span class="pos">(adj.)</span></div><div><span class="wterm" onclick="openWordModal('miserable')">miserable</span> <span class="pos">(adj.)</span></div><div><span class="wterm" onclick="openWordModal('predecessor')">predecessor</span> <span class="pos">(n.)</span></div><div><span class="wterm" onclick="openWordModal('rate')">rate</span> <span class="pos">(n.)</span></div><div><span class="wterm" onclick="openWordModal('workforce')">workforce</span> <span class="pos">(n.)</span></div></div></div></div>
+</div>
+
+<div class="page-divider"><span>PAGE 136</span></div><div id="p136" class="page-anchor"></div>
+<div class="exblock" id="s136a">
+<h2 class="stitle" style="font-size:19px;">Work with the Listening</h2>
+<h3 class="exline"><span class="exlabel">A. Listen and Take Notes</span> Listen to the lecture and the conversation. In the chart, list advantages and disadvantages of doing an internship.</h3>
+<div class="audiorow"><audio controls preload="none" id="au-p136" src="media/audio-listening2.mp3"></audio><button class="revealbtn script" data-group="p136" onclick="toggleScript(this,'script-au-p136','p136')">Show Script</button></div>
+<div class="script-box" id="script-au-p136">
+<p><span class="sp">Instructor:</span> OK. Last class, we talked about the benefits of internships, both for companies and for individuals. Today, we’re going to look at the biggest downside of being an intern. So, we learned last class that some industries in particular, such as film production, journalism, and politics, are the most likely to employ interns. Let’s start by taking a closer look at journalism. According to the National Union of Journalists, a group in the United Kingdom, 82 percent of people who start to work in journalism do so as interns, and 92 percent of these interns are unpaid. That’s right, almost all of the people who start careers related to reporting the news are unpaid interns! It’s gotten so bad that some interns have even sued their employers for unpaid wages, and they are winning these legal battles. For example, one former intern, Lucy Bickerton, sued a famous New York film production company. Her lawsuit claimed that, as an unpaid intern, Lucy worked an average of six hours a day for several days a week over four months. In interviews, Lucy has said that she isn’t against internships altogether. She learned a lot through her internship and was grateful for her experience, but she believed that the job she was doing was that of a full-time production assistant and that she should have been paid for her work. Her complaint was about the fairness of the internship system. So, in the end, a judge agreed with her and awarded Lucy and some of her predecessors $110,000. Other interns have joined groups such as Intern Aware and the Global Intern Coalition that have protested and organized strikes to draw attention to the problem of unpaid internships. According to experts, while internships are valuable opportunities for young people to get a taste of working in an industry, many have become unpaid entry-level positions. Interns are not always thought of as students and instead can be viewed by some companies as free, disposable workers. Why has this change come about? Many researchers point to the high youth unemployment rate for this trend. It was 12.5 percent last year for 20- to 24-year-olds. Young people are graduating from university and <span class="wterm" onclick="openWordModal('flood')">flooding</span> the workforce, and the competition for jobs is fierce. So, we might conclude that government policies that lower the unemployment rate might be a good way to ensure that interns are paid. Until then, companies can take advantage of these young workers. OK, so, what do you think? Is an unpaid internship worth it? I’d like to hear your thoughts on this. For homework, please participate in the online discussion in our class website. Give your opinion and respond to two other classmates. See you next week!</p>
+<p><span class="sp">Nicholas:</span> Well, what did you think of the lecture today, HyoJin?</p>
+<p><span class="sp">HyoJin:</span> Hmm. It was pretty interesting, since I’m actually planning to do an internship after I graduate from university next year. I mean, I’ve heard that interning can be hit or miss. It could be a really great chance to learn a lot if I’m lucky and get hired by a good company. My older brother landed an internship at a big tech company a few years ago, and he said it was amazing. He got to work with <span class="wterm" onclick="openWordModal('cutting-edge')">cutting-edge</span> technology, and he was given a lot of responsibility. He was paid for his work, not a lot, but enough to cover his rent and living expenses. But my older sister had a very different experience. She studied history at university, so she interned at a museum. It was terrible. She was stuck scanning papers in a windowless office eight hours a day all summer long. Her co-workers treated her really badly and made her get coffee for them and do the boring jobs that no one wanted to do. She basically hated every minute of her internship, and because it was an internship, she wasn’t paid anything for her work.</p>
+<p><span class="sp">Nicholas:</span> Oh, wow. That sounds pretty miserable. So, why are you going to do it, if you can’t really be sure that you’re going to get an internship with a decent company?</p>
+<p><span class="sp">HyoJin:</span> Well, my brother wound up meeting some really important people in the tech community. He made a lot of great contacts that he could call on when he started up his own small company. My sister obviously didn’t want to work in the museum where she did her internship, but having that work experience made her more competitive when she applied for jobs at other places. The employers were impressed that she had a big, important museum on her <span class="wterm" onclick="openWordModal('cv')">CV</span>, and she also got a job pretty quickly. If you ask her now, she says it was totally worth it.</p>
+<p><span class="sp">Nicholas:</span> I guess that makes sense. So, where are you going to intern?</p>
+<p><span class="sp">HyoJin:</span> Well, I’ve applied at two different nonprofit organizations. One is really big and well known. The other is a smaller, <span class="wterm" onclick="openWordModal('grassroots')">grassroots</span> group. I’m not really sure which I would prefer, to be honest.</p>
+<p><span class="sp">Nicholas:</span> What are the pros and cons of each of them?</p>
+<p><span class="sp">HyoJin:</span> Well, the internship with the big nonprofit is paid and the other one isn’t. But from what I’ve heard, it seems like I’d be able to work on more interesting and meaningful projects at the smaller organization.</p>
+<p><span class="sp">Nicholas:</span> Hmm. That’s a tough choice.</p>
+<p><span class="sp">HyoJin:</span> Right?</p>
+<p><span class="sp">Nicholas:</span> I guess you need to ask yourself where you think you might like to really work. I mean, after your internship.</p>
+<p><span class="sp">HyoJin:</span> Yeah, I have some thinking to do. So, what are you up to this summer? Are you doing an internship?</p>
+<p><span class="sp">Nicholas:</span> I’ll be working all summer at my father’s landscaping company. It’ll be hot, dirty, hard work, but the pay is pretty good, and I like the guys I’ll be working with. Besides, I’ll get to be outside a lot, which I really like, and I’ll be finished every day by five.</p>
+<p><span class="sp">HyoJin:</span> That doesn’t sound too bad. It sounds like both of us will be pretty busy for the next few months.</p>
+</div>
+<div id="ex136a" class="exwrap">
+<table class="chart notes">
+<tr><th>Advantages of an internship<span class="ts-chip" data-t="120" data-audio="au-p136" onclick="jumpTo(this)">&#9654; 2:00</span></th><th>Disadvantages of an internship<span class="ts-chip" data-t="12" data-audio="au-p136" onclick="jumpTo(this)">&#9654; 0:12</span></th></tr>
+<tr><td style="width:50%"><ul style="list-style:none;padding-left:0"><li><span class="ans-ph">good work experience</span>&nbsp;</li><li><span class="ans-ph">educational</span>&nbsp;</li><li><span class="ans-ph">can meet important people</span>&nbsp;</li><li><span class="ans-ph">can make students more competitive when they apply for a job</span>&nbsp;</li></ul></td>
+<td><ul style="list-style:none;padding-left:0"><li><span class="ans-ph">unpaid / paid badly</span>&nbsp;</li><li><span class="ans-ph">sometimes entry-level positions</span>&nbsp;</li><li><span class="ans-ph">sometimes viewed as disposable workers</span>&nbsp;</li><li><span class="ans-ph">long hours</span>&nbsp;</li></ul></td></tr>
+</table></div>
+<div class="btnrow"><button class="revealbtn ts" onclick="toggleTimestamps(this,'ex136a')">Show Timestamps</button><button class="revealbtn" data-group="p136" onclick="toggleAnswers(this,'ex136a','p136')">Show Answers</button></div></div>
+
+<div class="exblock" id="s136b">
+<h3 class="exline"><span class="exlabel">B. Evaluate</span> In the Listening, HyoJin is talking with a friend, Nicholas. Do you think HyoJin’s summer plans sound better than Nicholas’s? Use your notes to explain your choice to a partner.</h3>
+<div id="ex136b" class="exwrap"><p><span class="model-ans">Possible answer: I think HyoJin’s summer plans sound better. He will learn a lot for his future career. / I think Nicholas’s job sounds better. I think he’d make more money and work shorter hours.</span></p></div>
+<div class="btnrow"><button class="revealbtn model" data-group="p136" onclick="toggleAnswers(this,'ex136b','p136')">Show Sample Answers</button></div></div>
+
+<div class="exblock" id="s136c">
+<h3 class="exline"><span class="exlabel">C. Identify</span> Check (&#10003;) the solutions to the problem of unpaid internships that are mentioned in Listening 2.</h3>
+<div id="ex136c" class="exwrap">
+<ol class="qlist nm">
+<li><span class="blank-ph short">&nbsp;<span class="ans-ph">&#10003;</span></span> <span class="wterm" onclick="openWordModal('sue')">sue</span> the employer<span class="ts-chip" data-t="53" data-audio="au-p136" onclick="jumpTo(this)">&#9654; 0:53</span></li>
+<li><span class="blank-ph short">&nbsp;<span class="ans-ph"></span></span> create a union to reject unpaid internships</li>
+<li><span class="blank-ph short">&nbsp;<span class="ans-ph">&#10003;</span></span> reduce the unemployment rate<span class="ts-chip" data-t="165" data-audio="au-p136" onclick="jumpTo(this)">&#9654; 2:45</span></li>
+<li><span class="blank-ph short">&nbsp;<span class="ans-ph"></span></span> complain to the government</li>
+<li><span class="blank-ph short">&nbsp;<span class="ans-ph"></span></span> write a letter to the management</li>
+</ol></div>
+<div class="btnrow"><button class="revealbtn ts" onclick="toggleTimestamps(this,'ex136c')">Show Timestamps</button><button class="revealbtn" data-group="p136" onclick="toggleAnswers(this,'ex136c','p136')">Show Answers</button></div></div>
+
+<div class="exblock" id="s136d">
+<h3 class="exline"><span class="exlabel">D. Identify</span> Read the questions. Then listen again. Circle the correct answers.</h3>
+<div id="ex136d" class="exwrap">
+<ol class="qlist nm">
+<li data-correct="b">Why did Lucy Bickerton sue the company where she did her internship?<span class="ts-chip" data-t="61" data-audio="au-p136" onclick="jumpTo(this)">&#9654; 1:01</span><br><span class="mcopt" data-letter="a">a. Because she had to work too many hours every day</span><br><span class="mcopt" data-letter="b">b. Because she wasn’t paid, even though she was doing a real job</span><br><span class="mcopt" data-letter="c">c. Because the company didn’t hire her after she did the internship</span><span class="ans-ph mc-marker"></span></li>
+<li data-correct="c">What do the groups Intern Aware and the Global Intern Coalition do?<span class="ts-chip" data-t="108" data-audio="au-p136" onclick="jumpTo(this)">&#9654; 1:48</span><br><span class="mcopt" data-letter="a">a. Help match interns and companies</span><br><span class="mcopt" data-letter="b">b. Sue companies so they pay the interns</span><br><span class="mcopt" data-letter="c">c. Work to improve conditions for interns</span><span class="ans-ph mc-marker"></span></li>
+</ol>
+<div class="page-divider"><span>PAGE 137</span></div><div id="p137" class="page-anchor"></div>
+<ol class="qlist nm" start="3">
+<li data-correct="a">According to the lecture, what was the unemployment rate for young people last year?<span class="ts-chip" data-t="150" data-audio="au-p136" onclick="jumpTo(this)">&#9654; 2:30</span><br><span class="mcopt" data-letter="a">a. 12.5%</span><br><span class="mcopt" data-letter="b">b. 20%</span><br><span class="mcopt" data-letter="c">c. 24%</span><span class="ans-ph mc-marker"></span></li>
+<li data-correct="c">How did HyoJin’s brother benefit from his internship?<span class="ts-chip" data-t="276" data-audio="au-p136" onclick="jumpTo(this)">&#9654; 4:36</span><br><span class="mcopt" data-letter="a">a. He learned how to work at a big company.</span><br><span class="mcopt" data-letter="b">b. He was more competitive when he applied at other tech companies.</span><br><span class="mcopt" data-letter="c">c. He met people in the tech industry who helped him start his own company.</span><span class="ans-ph mc-marker"></span></li>
+<li data-correct="b">Why might HyoJin choose to take the unpaid internship?<span class="ts-chip" data-t="333" data-audio="au-p136" onclick="jumpTo(this)">&#9654; 5:33</span><br><span class="mcopt" data-letter="a">a. It would not be hot, dirty, or hard work.</span><br><span class="mcopt" data-letter="b">b. The projects will be interesting and meaningful.</span><br><span class="mcopt" data-letter="c">c. It will make her more competitive for other jobs.</span><span class="ans-ph mc-marker"></span></li>
+</ol></div>
+<div class="btnrow"><span style="font-size:11.5px;color:#777;align-self:center;">Uses the page 136 code for items 1&ndash;5</span><button class="revealbtn ts" onclick="toggleTimestamps(this,'ex136d')">Show Timestamps</button><button class="revealbtn" data-group="p136" onclick="toggleAnswers(this,'ex136d','p136')">Show Answers</button></div></div>
+
+<div class="exblock" id="s137a">
+<h3 class="exline"><span class="exlabel">E. Restate</span> HyoJin’s brother and sister had very different internship experiences. Work with a partner. Imagine and discuss what advice they might give HyoJin.</h3>
+<div id="ex137a" class="exwrap">
+<p>HyoJin’s brother: &ldquo;<span class="blank-ph wide">&nbsp;<span class="model-ans">I think you should take the internship in the big company. You will meet more people and it will be more impressive on your CV.</span></span>&rdquo;</p>
+<p>HyoJin’s sister: &ldquo;<span class="blank-ph wide">&nbsp;<span class="model-ans">I think you should work in the small company. You will do more meaningful work and you might learn more.</span></span>&rdquo;</p>
+</div>
+<div class="btnrow"><button class="revealbtn model" data-group="p137" onclick="toggleAnswers(this,'ex137a','p137')">Show Sample Answers</button></div></div>
+
+<div class="exblock" id="s137b">
+<h3 class="exline"><span class="exlabel">F. Discuss</span> Work in a small group to discuss the questions.</h3>
+<div id="ex137b" class="exwrap">
+<ol class="qlist">
+<li>Would internships work better in some industries than in others? What are some workplaces that would be more accommodating to interns? What are some that would not be? Why?<br><span class="model-ans">Sample answer: I think it would be better to do an internship for a tech company. It would be interesting to learn about new technology. I would not want to intern in a law firm. It would be boring.</span></li>
+<li>Interns are typically younger people in their early 20s. However, older workers who are changing their careers might also be interns. Are there any advantages or disadvantages to hiring an older intern? If you were a manager of a company, would you prefer to hire an older or a younger intern? Why?<br><span class="model-ans">Sample answer: I think I would hire an older intern. He/She would have more life experience.</span></li>
+<li>Think of a company you might like to work at in the future. What would you be able to learn as an intern? What kinds of tasks would you do?<br><span class="model-ans">Sample answer: I would like to be a teacher someday, so it would be good for me to be an intern in a school. I would be able to learn how to manage a class and plan lessons. I think the teacher would expect me to grade papers and help with activities. Maybe I would work with a small group of students who need extra help.</span></li>
+</ol></div>
+<div class="btnrow"><button class="revealbtn model" data-group="p137" onclick="toggleAnswers(this,'ex137b','p137')">Show Sample Answers</button></div></div>
+
+<div class="page-divider"><span>PAGE 138</span></div><div id="p138" class="page-anchor"></div>
+<div class="exblock" id="s138a">
+<div class="smallbox"><b class="boxhead">Vocabulary Skill Review</b>In Unit 5, you learned to use prefixes and suffixes to help determine the meaning of new vocabulary words. Identify two words containing a suffix used for adverbs in Activity G.
+<div id="ex138r" class="exwrap" style="margin-top:8px;"><span class="blank-ph short" style="min-width:150px;">&nbsp;<span class="ans-ph">altogether, basically</span></span></div>
+<div class="btnrow"><button class="revealbtn" data-group="p138" onclick="toggleAnswers(this,'ex138r','p138')">Show Answer</button></div></div>
+<h3 class="exline"><span class="exlabel">G. Vocabulary</span> Here are some words from Listening 2. Read the sentences. Then write each bold word next to the correct definition.</h3>
+<ol class="qlist nm" style="clear:none;">
+<li>When I started my new job, I changed many of the policies of my <b>predecessor</b>.</li>
+<li>It is completely wrong for corporations to view workers as <b>disposable</b>.</li>
+<li>I want a job that I like, but it’s also important to make a <b>decent</b> salary. I need to pay rent and buy food.</li>
+<li>The new leader wanted to make <b>meaningful</b> changes that would make life better for her country.</li>
+<li>The pay <b>rate</b> for new employees is usually not very good.</li>
+<li>He wanted to quit smoking <b>altogether</b>.</li>
+<li>She has strong ideas about justice and <b>fairness</b>. She should be a judge.</li>
+<li>There are more men in the <b>workforce</b> than women right now.</li>
+<li>I hated my job and my boss was angry all the time. Going to work every day was a <b>miserable</b> experience.</li>
+<li>The competition between the two athletes was <b>fierce</b>, and the results were very close.</li>
+<li>She had some problems at her new school, but <b>basically</b>, she likes it.</li>
+<li>Do you like any music <b>in particular</b>, or do you listen to all music?</li>
+</ol>
+<div id="ex138" class="exwrap" style="clear:both;">
+<ol class="qlist nm" type="a" style="list-style:lower-alpha;">
+<li><span class="blank-ph ">&nbsp;<span class="ans-ph">altogether</span></span> (adv.) completely</li>
+<li><span class="blank-ph ">&nbsp;<span class="ans-ph">fierce</span></span> (adj.) showing strong feelings or a lot of activity</li>
+<li><span class="blank-ph ">&nbsp;<span class="ans-ph">decent</span></span> (adj.) of a good enough standard or quality</li>
+<li><span class="blank-ph ">&nbsp;<span class="ans-ph">miserable</span></span> (adj.) unpleasant</li>
+<li><span class="blank-ph ">&nbsp;<span class="ans-ph">in particular</span></span> (idm.) special, specific</li>
+<li><span class="blank-ph ">&nbsp;<span class="ans-ph">workforce</span></span> (n.) the people who are available for work</li>
+<li><span class="blank-ph ">&nbsp;<span class="ans-ph">meaningful</span></span> (adj.) serious or important</li>
+<li><span class="blank-ph ">&nbsp;<span class="ans-ph">basically</span></span> (adv.) in the most important ways; essentially</li>
+<li><span class="blank-ph ">&nbsp;<span class="ans-ph">predecessor</span></span> (n.) a person who did a job before someone else</li>
+<li><span class="blank-ph ">&nbsp;<span class="ans-ph">fairness</span></span> (n.) treating people equally</li>
+<li><span class="blank-ph ">&nbsp;<span class="ans-ph">disposable</span></span> (adj.) that you can easily stop employing or thinking about</li>
+<li><span class="blank-ph ">&nbsp;<span class="ans-ph">rate</span></span> (n.) an amount of money that is charged or paid for something</li>
+</ol></div>
+<div class="btnrow"><button class="revealbtn" data-group="p138" onclick="toggleAnswers(this,'ex138','p138')">Show Answers</button></div></div>
+
+<div class="page-divider"><span>PAGE 139</span></div><div id="p139" class="page-anchor"></div>
+<div class="exblock" id="s139">
+<h2 class="stitle" style="font-size:19px;">Say What You Think</h2>
+<h3 class="exline"><span class="exlabel">Synthesize</span> Think about Listening 1 and Listening 2 as you discuss the questions.</h3>
+<div id="ex139" class="exwrap">
+<ol class="qlist">
+<li>Would you prefer to start your own business, like the businesspeople in Listening 1, or work for an established company, like the interns in Listening 2? Why?<br><span class="model-ans">Sample answer: I would rather work in an established company. I don’t like the risk of starting a new business.</span></li>
+<li>In Listening 1, the businesspeople learned from mistakes they made. In Listening 2, the interns learned from working with people who were more experienced than they were. In your opinion, which way is better? How would you prefer to learn?<br><span class="model-ans">Sample answer: I think learning from my own mistakes is better because then I really learn something. If I learn from others, I might still make the same mistakes.</span></li>
+</ol></div>
+<div class="btnrow"><button class="revealbtn model" data-group="p139" onclick="toggleAnswers(this,'ex139','p139')">Show Sample Answers</button></div></div>
+
+</div>
+
+<!-- Word popup modal -->
+<div class="modal-backdrop" id="wordModal">
+  <div class="modal-box">
+    <button class="close" onclick="closeModal('wordModal')">&times;</button>
+    <button class="simplifybtn" id="wm-simplify-btn" onclick="toggleSimple()">Show simplified definition</button>
+    <h3 id="wm-word"></h3>
+    <div class="mpos-row">
+      <span class="mpos" id="wm-pos"></span>
+      <span class="mipa" id="wm-ipa"></span>
+    </div>
+    <div class="mdef" id="wm-def"></div>
+    <div id="wm-examples"></div>
+    <div style="margin:14px 4px 0;">
+      <a id="wm-cambridge" class="cambridgelink" href="#" target="_blank" rel="noopener">Look up definition &#8599;</a>
+    </div>
+  </div>
+</div>
+
+<!-- Vocab list modal -->
+<div class="modal-backdrop" id="vocabListModal">
+  <div class="modal-box">
+    <button class="close" onclick="closeModal('vocabListModal')">&times;</button>
+    <h3 style="font-size:20px;display:block;">Unit 6 Vocabulary (pp. 126&ndash;139)</h3>
+    <div id="vocabGroups"></div>
+  </div>
+</div>
+
+<!-- Answer-lock modal -->
+<div class="modal-backdrop" id="lockModal">
+  <div class="modal-box">
+    <button class="close" onclick="closeModal('lockModal')">&times;</button>
+    <h3 id="lockTitle">&#128274; Answers locked</h3>
+    <p class="lock-sub">Enter the class code for this page to see the answers.</p>
+    <div id="lockRow">
+      <input type="password" id="lockInput" placeholder="class code" autocomplete="off">
+      <button type="button" id="lockGo">Unlock</button>
+    </div>
+    <p id="lockMsg"></p>
+  </div>
+</div>
+
+<script>
+/* =====================================================================
+   WORD DEFINITIONS
+   ===================================================================== */
+const WORD_DEFS = {
+ "burst": {
+  "group": "Listening 1 Target Vocabulary",
+  "ipa": "/bɜrst/",
+  "pos": "(v.)",
+  "def": "If something bursts, it suddenly breaks open or apart, usually because there is too much pressure inside it or on it.",
+  "simple": "To break open suddenly.",
+  "examples": [
+   "The water pipe burst during the cold winter.",
+   "Don’t put any more air in that tire, or it will burst.",
+   "From the text: “That balloon will <b>burst</b> if you add any more air to it.”"
+  ]
+ },
+ "confidence": {
+  "group": "Listening 1 Target Vocabulary",
+  "ipa": "/ˈkɑnfɪdəns/",
+  "pos": "(n.)",
+  "def": "Confidence is a feeling of trust in your own abilities, qualities, or judgment.",
+  "simple": "Belief in yourself.",
+  "examples": [
+   "She spoke to the whole school with great confidence.",
+   "Good teachers give their students confidence.",
+   "From the text: “When he was young, he didn’t believe in himself, but now he has more <b>confidence</b>.”"
+  ]
+ },
+ "expand": {
+  "group": "Listening 1 Target Vocabulary",
+  "ipa": "/ɪkˈspænd/",
+  "pos": "(v.)",
+  "def": "If something expands, or if you expand it, it becomes larger in size, number, or importance.",
+  "simple": "To grow bigger.",
+  "examples": [
+   "The restaurant expanded and opened a second location.",
+   "Metal expands when it gets hot.",
+   "From the text: “I believe the business will <b>expand</b> into new markets under a new manager.”"
+  ]
+ },
+ "genius": {
+  "group": "Listening 1 Target Vocabulary",
+  "ipa": "/ˈdʒinjəs/",
+  "pos": "(n.)",
+  "def": "A genius is a person who has an extremely high level of intelligence or a very special ability in a particular area.",
+  "simple": "A very, very smart person.",
+  "examples": [
+   "Einstein is often called a genius.",
+   "She is a genius at solving math problems.",
+   "From the text: “He is incredibly smart. He might even be a <b>genius</b>.”"
+  ]
+ },
+ "investor": {
+  "group": "Listening 1 Target Vocabulary",
+  "ipa": "/ɪnˈvɛstər/",
+  "pos": "(n.)",
+  "def": "An investor is a person who puts money into a business or project in order to make a profit later.",
+  "simple": "A person who gives money to a business to make more money later.",
+  "examples": [
+   "The young company is looking for investors.",
+   "Several investors lost money when the business closed.",
+   "From the text: “Her new business needs to look for a(n) <b>investor</b>. They need more money to grow.”"
+  ]
+ },
+ "launch": {
+  "group": "Listening 1 Target Vocabulary",
+  "ipa": "/lɔntʃ/",
+  "pos": "(v.)",
+  "def": "To launch a product, business, or project is to start it or make it available to the public for the first time.",
+  "simple": "To start something new or put a new product on sale.",
+  "examples": [
+   "The company will launch its new phone next month.",
+   "They launched the business with only two employees.",
+   "From the listening: “Perplex City <b>launched</b> in 2005.”"
+  ]
+ },
+ "massive": {
+  "group": "Listening 1 Target Vocabulary",
+  "ipa": "/ˈmæsɪv/",
+  "pos": "(adj.)",
+  "def": "Something that is massive is extremely large, heavy, or serious.",
+  "simple": "Very big.",
+  "examples": [
+   "A massive storm hit the coast last night.",
+   "The company made a massive profit this year.",
+   "From the listening: “We had a <b>massive</b> burn rate.”"
+  ]
+ },
+ "pressure": {
+  "group": "Listening 1 Target Vocabulary",
+  "ipa": "/ˈprɛʃər/",
+  "pos": "(n.)",
+  "def": "Pressure is the feeling of stress you have when you must do something difficult or achieve something important.",
+  "simple": "A stressful feeling when you have to do or achieve something.",
+  "examples": [
+   "Students often feel pressure before final exams.",
+   "She works well under pressure.",
+   "From the listening: “So the <b>pressure</b> and the stakes really, really raised at that point.”"
+  ]
+ },
+ "profit": {
+  "group": "Listening 1 Target Vocabulary",
+  "ipa": "/ˈprɑfɪt/",
+  "pos": "(n.)",
+  "def": "Profit is the money a business makes when it sells something for more than it cost to produce or buy.",
+  "simple": "Money you make after you pay your costs.",
+  "examples": [
+   "The bakery made a small profit in its first year.",
+   "They sold the company for a huge profit.",
+   "From the text: “New companies often put their <b>profits</b> back into the business so it can continue to grow.”"
+  ]
+ },
+ "steadily": {
+  "group": "Listening 1 Target Vocabulary",
+  "ipa": "/ˈstɛdɪli/",
+  "pos": "(adv.)",
+  "def": "If something happens steadily, it happens in a regular, continuous way, without sudden changes.",
+  "simple": "Slowly and in a regular way.",
+  "examples": [
+   "The number of customers grew steadily all year.",
+   "It rained steadily until the evening.",
+   "From the listening: “...sometimes entrepreneurs start small and <b>steadily</b> grow a business.”"
+  ]
+ },
+ "values": {
+  "group": "Listening 1 Target Vocabulary",
+  "ipa": "/ˈvæljuz/",
+  "pos": "(n.)",
+  "def": "Your values are your beliefs about what is right and wrong and what is important in life.",
+  "simple": "What you believe is important.",
+  "examples": [
+   "Honesty is one of my most important values.",
+   "The company’s values are respect and hard work.",
+   "From the text: “When people talk about their <b>values</b>, it’s easy to see what is really important to them.”"
+  ]
+ },
+ "vision": {
+  "group": "Listening 1 Target Vocabulary",
+  "ipa": "/ˈvɪʒən/",
+  "pos": "(n.)",
+  "def": "A vision is the ability to imagine how something could be in the future and to plan for it.",
+  "simple": "A clear idea of what the future could be.",
+  "examples": [
+   "The founder had a vision of a world without waste.",
+   "A good leader needs vision.",
+   "From the text: “A strong leader needs to have <b>vision</b> so he or she can see what the future might hold.”"
+  ]
+ },
+ "altogether": {
+  "group": "Listening 2 Target Vocabulary",
+  "ipa": "/ˌɔltəˈgɛðər/",
+  "pos": "(adv.)",
+  "def": "Altogether means completely or in every way.",
+  "simple": "Completely.",
+  "examples": [
+   "I gave up sugar altogether last year.",
+   "That is a different question altogether.",
+   "From the listening: “...she isn’t against internships <b>altogether</b>.”"
+  ]
+ },
+ "basically": {
+  "group": "Listening 2 Target Vocabulary",
+  "ipa": "/ˈbeɪsɪkli/",
+  "pos": "(adv.)",
+  "def": "You use basically when you are giving the most important facts or ideas about something, without going into detail.",
+  "simple": "In the most important ways.",
+  "examples": [
+   "Basically, the plan is to save money and buy a car.",
+   "The two phones are basically the same.",
+   "From the listening: “She <b>basically</b> hated every minute of her internship.”"
+  ]
+ },
+ "decent": {
+  "group": "Listening 2 Target Vocabulary",
+  "ipa": "/ˈdisənt/",
+  "pos": "(adj.)",
+  "def": "Something that is decent is of a good enough standard or quality.",
+  "simple": "Good enough.",
+  "examples": [
+   "I’m looking for a decent place to live.",
+   "The food at the cafeteria is decent and cheap.",
+   "From the listening: “...an internship with a <b>decent</b> company?”"
+  ]
+ },
+ "disposable": {
+  "group": "Listening 2 Target Vocabulary",
+  "ipa": "/dɪˈspoʊzəbəl/",
+  "pos": "(adj.)",
+  "def": "If you describe a person as disposable, you mean that they can easily be replaced, so you can stop employing them or thinking about them. Disposable can also describe things that are made to be thrown away after use.",
+  "simple": "Easy to replace and not valued.",
+  "examples": [
+   "Disposable cups are cheap, but they create a lot of trash.",
+   "No worker should feel disposable.",
+   "From the listening: “...can be viewed by some companies as free, <b>disposable</b> workers.”"
+  ]
+ },
+ "fairness": {
+  "group": "Listening 2 Target Vocabulary",
+  "ipa": "/ˈfɛrnəs/",
+  "pos": "(n.)",
+  "def": "Fairness is the quality of treating people equally and according to what is right.",
+  "simple": "Treating everyone equally.",
+  "examples": [
+   "Children care a lot about fairness.",
+   "The teacher is known for her fairness.",
+   "From the listening: “Her complaint was about the <b>fairness</b> of the internship system.”"
+  ]
+ },
+ "fierce": {
+  "group": "Listening 2 Target Vocabulary",
+  "ipa": "/fɪrs/",
+  "pos": "(adj.)",
+  "def": "Something that is fierce is very strong, intense, or aggressive.",
+  "simple": "Very strong and intense.",
+  "examples": [
+   "There is fierce competition for the prize.",
+   "A fierce wind blew across the field.",
+   "From the listening: “...the competition for jobs is <b>fierce</b>.”"
+  ]
+ },
+ "in-particular": {
+  "group": "Listening 2 Target Vocabulary",
+  "ipa": "/ɪn pərˈtɪkjələr/",
+  "pos": "(idm.)",
+  "def": "You use in particular to show that you are talking about one special thing or person among others.",
+  "simple": "Especially; one special thing.",
+  "examples": [
+   "I like fruit, mangoes in particular.",
+   "Is there anything in particular you want to eat?",
+   "From the listening: “...some industries <b>in particular</b>, such as film production, journalism, and politics...”"
+  ]
+ },
+ "meaningful": {
+  "group": "Listening 2 Target Vocabulary",
+  "ipa": "/ˈminɪŋfəl/",
+  "pos": "(adj.)",
+  "def": "Something that is meaningful is serious, important, or worth doing, because it has a purpose or a real effect.",
+  "simple": "Important and worth doing.",
+  "examples": [
+   "She wants a meaningful job that helps people.",
+   "They had a meaningful conversation about the future.",
+   "From the listening: “...work on more interesting and <b>meaningful</b> projects at the smaller organization.”"
+  ]
+ },
+ "miserable": {
+  "group": "Listening 2 Target Vocabulary",
+  "ipa": "/ˈmɪzərəbəl/",
+  "pos": "(adj.)",
+  "def": "If a situation or a place is miserable, it makes you feel very unhappy and uncomfortable.",
+  "simple": "Very unpleasant and unhappy.",
+  "examples": [
+   "It was a cold, wet, miserable day.",
+   "He felt miserable after he lost his job.",
+   "From the listening: “Oh, wow. That sounds pretty <b>miserable</b>.”"
+  ]
+ },
+ "predecessor": {
+  "group": "Listening 2 Target Vocabulary",
+  "ipa": "/ˈprɛdəˌsɛsər/",
+  "pos": "(n.)",
+  "def": "Your predecessor is the person who had your job or position before you.",
+  "simple": "The person who did a job before you.",
+  "examples": [
+   "The new manager changed many of her predecessor’s rules.",
+   "He thanked his predecessor for her help.",
+   "From the listening: “...a judge agreed with her and awarded Lucy and some of her <b>predecessors</b> $110,000.”"
+  ]
+ },
+ "rate": {
+  "group": "Listening 2 Target Vocabulary",
+  "ipa": "/reɪt/",
+  "pos": "(n.)",
+  "def": "A rate is an amount of money that is charged or paid for something, or a measurement of how often something happens.",
+  "simple": "An amount of money charged or paid for something.",
+  "examples": [
+   "The hourly rate for this job is twelve dollars.",
+   "The rate of unemployment is falling.",
+   "From the listening: “It was 12.5 percent last year...” (the unemployment <b>rate</b>)"
+  ]
+ },
+ "workforce": {
+  "group": "Listening 2 Target Vocabulary",
+  "ipa": "/ˈwɜrkˌfɔrs/",
+  "pos": "(n.)",
+  "def": "The workforce is all the people who are available for work, either in a particular company, industry, or country.",
+  "simple": "All the people who can work.",
+  "examples": [
+   "The company has a workforce of about 500 people.",
+   "More women are joining the workforce every year.",
+   "From the listening: “Young people are graduating from university and flooding the <b>workforce</b>...”"
+  ]
+ },
+ "get-carried-away": {
+  "group": "Useful Chunks from the Listening",
+  "ipa": "/gɛt ˈkærid əˈweɪ/",
+  "pos": "(phr. v.)",
+  "def": "If you get carried away, you become so excited about something that you lose control of your feelings or actions.",
+  "simple": "To get so excited that you lose control.",
+  "examples": [
+   "I got carried away and bought five pairs of shoes.",
+   "Don’t get carried away. We have not won yet.",
+   "From the listening: “We spent too much money. We <b>got carried away</b>.”"
+  ]
+ },
+ "screw-up": {
+  "group": "Useful Chunks from the Listening",
+  "ipa": "/skru ʌp/",
+  "pos": "(phr. v.)",
+  "def": "If you screw up, you do something badly or spoil something. (This is informal.)",
+  "simple": "To make a big mistake or ruin something.",
+  "examples": [
+   "I screwed up my first interview.",
+   "Please don’t screw up this chance.",
+   "From the listening: “I think if I’d <b>screwed up</b> with Moshi Monsters, there wouldn’t have been a third chance.”"
+  ]
+ },
+ "burn-rate": {
+  "group": "Useful Chunks from the Listening",
+  "ipa": "/bɜrn reɪt/",
+  "pos": "(n. phr.)",
+  "def": "A company’s burn rate is the rate at which the money it has for a project or a new business is spent.",
+  "simple": "How fast a company spends its money.",
+  "examples": [
+   "The start-up’s burn rate was too high, so it ran out of money.",
+   "Investors watch the burn rate of new companies carefully.",
+   "From the listening: “We had a massive <b>burn rate</b>, and our outgoings were a lot higher than our incomings.”"
+  ]
+ },
+ "venture-capital": {
+  "group": "Useful Chunks from the Listening",
+  "ipa": "/ˈvɛntʃər ˈkæpətəl/",
+  "pos": "(n. phr.)",
+  "def": "Venture capital is money that is invested in a new company to help it develop. It can involve a lot of risk.",
+  "simple": "Money given to a new company that could lose or make a lot.",
+  "examples": [
+   "The start-up raised venture capital to build its first product.",
+   "Venture capital firms look for ideas that could grow very fast.",
+   "From the listening: “...huge <b>venture capital</b> firms came in and invested between them many millions of pounds.”"
+  ]
+ },
+ "dot-com-bust": {
+  "group": "Useful Chunks from the Listening",
+  "title": "dot-com bust",
+  "ipa": "/ˈdɑt kɑm bʌst/",
+  "pos": "(n. phr.)",
+  "def": "The dot-com bust was a period of economic difficulty in the early 2000s, when many companies that sold goods and services on the Internet struggled to survive or closed. A dot-com is a company that sells goods and services on the Internet, and a bust is a period of economic difficulty.",
+  "simple": "A time when many Internet companies lost money and failed.",
+  "examples": [
+   "Many online stores closed during the dot-com bust.",
+   "He lost his first company in the dot-com bust.",
+   "From the listening: “Then we almost lost everything in the <b>dot-com bust</b> in early 2000.”"
+  ]
+ },
+ "chap": {
+  "group": "Additional Vocabulary",
+  "ipa": "/tʃæp/",
+  "pos": "(n.)",
+  "def": "A chap is a man. People in Great Britain use this word in a friendly way.",
+  "simple": "A man (a friendly British word).",
+  "examples": [
+   "He’s a nice chap. You’ll like him.",
+   "Who is that chap over there?",
+   "From the listening: “...a wonderful <b>chap</b> called Tom Teichman decided to invest half a million pounds into our business.”"
+  ]
+ },
+ "overextended": {
+  "group": "Additional Vocabulary",
+  "ipa": "/ˌoʊvərɪkˈstɛndɪd/",
+  "pos": "(adj.)",
+  "def": "If you are overextended, you are involved in more work or activities, or you are spending more money, than you can manage without problems.",
+  "simple": "Trying to do or spend more than you can handle.",
+  "examples": [
+   "I felt overextended with three jobs and school.",
+   "The company was overextended and could not pay its bills.",
+   "From the listening: “We <b>overextended</b> ourselves. We spent too much money.”"
+  ]
+ },
+ "financing": {
+  "group": "Additional Vocabulary",
+  "ipa": "/ˈfaɪnænsɪŋ/",
+  "pos": "(n.)",
+  "def": "Financing is money that is used to run a business, an activity, or a project.",
+  "simple": "Money used to run a business or project.",
+  "examples": [
+   "The company is looking for financing to build a new factory.",
+   "She got financing from a bank.",
+   "From the listening: “I’d managed to raise further <b>financing</b>, and in total, I’d raised about six million pounds...”"
+  ]
+ },
+ "stakes": {
+  "group": "Additional Vocabulary",
+  "ipa": "/steɪks/",
+  "pos": "(n.)",
+  "def": "The stakes are what you risk losing, especially money, when you are involved in something that can succeed or fail.",
+  "simple": "What you could lose if something goes wrong.",
+  "examples": [
+   "The stakes are high in the final game.",
+   "With so much money at risk, the stakes were very high for the founders.",
+   "From the listening: “So the pressure and the <b>stakes</b> really, really raised at that point.”"
+  ]
+ },
+ "k": {
+  "group": "Additional Vocabulary",
+  "title": "K",
+  "ipa": "/keɪ/",
+  "pos": "(abbr.)",
+  "def": "K is an abbreviation for one thousand, especially when talking about money or numbers. So $600K means $600,000.",
+  "simple": "Short for “thousand” (K = 1,000).",
+  "examples": [
+   "The job pays $50K a year.",
+   "The house costs 300K.",
+   "From the listening: “You gave me six million and I’ve got six hundred <b>K</b> left.”"
+  ]
+ },
+ "sue": {
+  "group": "Additional Vocabulary",
+  "ipa": "/su/",
+  "pos": "(v.)",
+  "def": "If you sue someone, you make a claim against them in court because of something they have said or done to harm you.",
+  "simple": "To take someone to court to get money for harm they caused you.",
+  "examples": [
+   "The customer sued the company for selling a broken product.",
+   "He threatened to sue the newspaper.",
+   "From the listening: “...some interns have even <b>sued</b> their employers for unpaid wages...”"
+  ]
+ },
+ "flood": {
+  "group": "Additional Vocabulary",
+  "ipa": "/flʌd/",
+  "pos": "(v.)",
+  "def": "If people or things flood somewhere, they arrive or go there in very large numbers.",
+  "simple": "To arrive in very large numbers.",
+  "examples": [
+   "Tourists flood the city every summer.",
+   "Complaints flooded in after the TV show.",
+   "From the listening: “Young people are graduating from university and <b>flooding</b> the workforce...”"
+  ]
+ },
+ "cutting-edge": {
+  "group": "Additional Vocabulary",
+  "ipa": "/ˈkʌtɪŋ ɛdʒ/",
+  "pos": "(adj.)",
+  "def": "Something that is cutting-edge is the newest and most advanced of its kind.",
+  "simple": "The newest and most advanced.",
+  "examples": [
+   "The lab uses cutting-edge technology.",
+   "This phone has a cutting-edge camera.",
+   "From the listening: “He got to work with <b>cutting-edge</b> technology...”"
+  ]
+ },
+ "cv": {
+  "group": "Additional Vocabulary",
+  "title": "CV",
+  "ipa": "/ˌsi ˈvi/",
+  "pos": "(n.)",
+  "def": "A CV is a written record of your education and the jobs you have done, which you send when you are applying for a job. (In the US, this is usually called a résumé.)",
+  "simple": "A paper that lists your education and work experience (résumé).",
+  "examples": [
+   "Please send your CV and a short letter.",
+   "She updated her CV before the interview.",
+   "From the listening: “The employers were impressed that she had a big, important museum on her <b>CV</b>...”"
+  ]
+ },
+ "grassroots": {
+  "group": "Additional Vocabulary",
+  "ipa": "/ˈgræsˌruts/",
+  "pos": "(adj.)",
+  "def": "Grassroots describes ordinary people in a society or an organization, rather than the leaders or the people who make decisions. A grassroots group is started and run by ordinary people.",
+  "simple": "Started by ordinary people, not by leaders or big organizations.",
+  "examples": [
+   "The park was saved by a grassroots campaign.",
+   "She works for a small grassroots group.",
+   "From the listening: “The other is a smaller, <b>grassroots</b> group.”"
+  ]
+ }
+};
+
+const VOCAB_GROUP_ORDER = ["Listening 1 Target Vocabulary","Listening 2 Target Vocabulary","Useful Chunks from the Listening","Additional Vocabulary"];
+
+let currentWordKey = null;
+let showingSimple = false;
+
+function wordTitle(key){
+  const d = WORD_DEFS[key];
+  return (d && d.title) ? d.title : key.replace(/-/g,' ');
+}
+function renderWordModal(){
+  const d = WORD_DEFS[currentWordKey];
+  if(!d) return;
+  const title = wordTitle(currentWordKey);
+  document.getElementById('wm-word').textContent = title;
+  document.getElementById('wm-pos').textContent = d.pos;
+  document.getElementById('wm-ipa').textContent = d.ipa;
+  document.getElementById('wm-def').textContent = showingSimple ? d.simple : d.def;
+  document.getElementById('wm-simplify-btn').textContent = showingSimple ? 'Show standard definition' : 'Show simplified definition';
+  document.getElementById('wm-examples').innerHTML = d.examples.map(e=>'<div class="mex">'+e+'</div>').join('');
+  document.getElementById('wm-cambridge').href = 'https://www.google.com/search?q=' + encodeURIComponent(title + ' ' + d.pos + " meaning '" + d.simple + "'. define this specific meaning in simple language suitable for A2 level. make it brief and to the point with at least 5 examples matching this meaning") + '&newwindow=1';
+}
+function openWordModal(key){
+  if(!WORD_DEFS[key]) return;
+  currentWordKey = key;
+  showingSimple = false;
+  renderWordModal();
+  document.getElementById('wordModal').classList.add('open');
+}
+function toggleSimple(){
+  showingSimple = !showingSimple;
+  renderWordModal();
+}
+function closeModal(id){ document.getElementById(id).classList.remove('open'); }
+
+function buildVocabChips(){
+  const box = document.getElementById('vocabGroups');
+  const byGroup = {};
+  Object.keys(WORD_DEFS).forEach(k=>{
+    const g = WORD_DEFS[k].group || 'Additional Vocabulary';
+    (byGroup[g] = byGroup[g] || []).push(k);
+  });
+  let html = '';
+  VOCAB_GROUP_ORDER.forEach(g=>{
+    if(!byGroup[g]) return;
+    html += '<div class="vocabgroup-h">'+g+'</div><div class="chiprow">';
+    html += byGroup[g].map(k=>'<div class="chip" onclick="closeModal(\'vocabListModal\');openWordModal(\''+k+'\')">'+wordTitle(k)+'</div>').join('');
+    html += '</div>';
+  });
+  box.innerHTML = html;
+}
+document.getElementById('vocabListBtn').addEventListener('click', ()=>{ buildVocabChips(); document.getElementById('vocabListModal').classList.add('open'); });
+document.querySelectorAll('.modal-backdrop').forEach(m=>{
+  m.addEventListener('click', (e)=>{ if(e.target===m) m.classList.remove('open'); });
+});
+document.addEventListener('keydown', e=>{
+  if(e.key==='Escape'){ document.querySelectorAll('.modal-backdrop.open').forEach(m=>m.classList.remove('open')); }
+});
+
+/* =====================================================================
+   Answer lock — one passcode per page, plus a master code for the
+   teacher. Nothing is remembered between visits (resets on reload).
+   To change codes, just edit the values below.
+   ===================================================================== */
+const PAGES = {
+  p127: { label:'Page 127', code:'path' },
+  p128: { label:'Page 128', code:'lemon' },
+  p129: { label:'Page 129', code:'startup' },
+  p130: { label:'Page 130', code:'rejection' },
+  p131: { label:'Page 131', code:'journey' },
+  p132: { label:'Page 132', code:'whiteboard' },
+  p133: { label:'Page 133', code:'contrast' },
+  p134: { label:'Page 134', code:'compare' },
+  p135: { label:'Page 135', code:'intern' },
+  p136: { label:'Page 136', code:'coffee' },
+  p137: { label:'Page 137', code:'sister' },
+  p138: { label:'Page 138', code:'lexicon' },
+  p139: { label:'Page 139', code:'mistake' }
+};
+const MASTER_CODE = 'robot234';
+const unlockedPages = new Set();
+
+function isUnlocked(page){ return !page || unlockedPages.has(page); }
+
+function tryUnlock(page, code){
+  if(code === MASTER_CODE){
+    Object.keys(PAGES).forEach(p=>{ unlockedPages.add(p); refreshLockUI(p); });
+    return true;
+  }
+  if(PAGES[page] && code === PAGES[page].code){
+    unlockedPages.add(page);
+    refreshLockUI(page);
+    return true;
+  }
+  return false;
+}
+
+function refreshLockUI(page){
+  document.querySelectorAll('.revealbtn[data-group="'+page+'"]').forEach(b=>{
+    b.classList.remove('locked');
+  });
+}
+
+let pendingUnlock = null; // { page, onSuccess }
+function openLockModal(page, onSuccess){
+  pendingUnlock = { page: page, onSuccess: onSuccess };
+  document.getElementById('lockTitle').innerHTML = '&#128274; ' + (PAGES[page] ? PAGES[page].label : 'Answers') + ' is locked';
+  document.getElementById('lockMsg').textContent = '';
+  const input = document.getElementById('lockInput');
+  input.value = '';
+  document.getElementById('lockModal').classList.add('open');
+  setTimeout(()=>input.focus(), 50);
+}
+function submitLockCode(){
+  if(!pendingUnlock) return;
+  const input = document.getElementById('lockInput');
+  const val = (input.value || '').trim();
+  if(tryUnlock(pendingUnlock.page, val)){
+    const cb = pendingUnlock.onSuccess;
+    pendingUnlock = null;
+    closeModal('lockModal');
+    if(cb) cb();
+  } else {
+    document.getElementById('lockMsg').textContent = 'Incorrect code. Try again.';
+    input.value = '';
+    input.focus();
+  }
+}
+document.getElementById('lockGo').addEventListener('click', submitLockCode);
+document.getElementById('lockInput').addEventListener('keydown', e=>{ if(e.key==='Enter') submitLockCode(); });
+
+/* =====================================================================
+   Reveal-answers, one item per click. Locked pages open the passcode
+   modal first; the reveal resumes automatically once unlocked.
+   An item with class "follow" is revealed together with the item before it.
+   ===================================================================== */
+function toggleAnswers(btn, wrapId, page){
+  if(page && !isUnlocked(page)){
+    openLockModal(page, ()=> toggleAnswers(btn, wrapId, page));
+    return;
+  }
+  const wrap = document.getElementById(wrapId);
+  const all = Array.from(wrap.querySelectorAll('.ans-ph, .model-ans'));
+  const groups = [];
+  all.forEach(it=>{
+    if(it.classList.contains('follow') && groups.length) groups[groups.length-1].push(it);
+    else groups.push([it]);
+  });
+  const total = groups.length;
+  const isModel = btn.classList.contains('model');
+  const baseLabel = btn.dataset.label;
+  const hideLabel = isModel ? (total>1?'Hide Sample Answers':'Hide Sample Answer') : (total>1?'Hide Answers':'Hide Answer');
+  let count = parseInt(wrap.dataset.revealed || '0', 10);
+
+  if(count < total){
+    groups[count].forEach(item=>{
+      item.classList.add('shown');
+      const bp = item.closest('.blank-ph');
+      if(bp) bp.classList.add('shown');
+      if(item.classList.contains('mc-marker')){
+        const li = item.closest('li');
+        const letter = li && li.dataset.correct;
+        if(li && letter){
+          const opt = li.querySelector('.mcopt[data-letter="'+letter+'"]');
+          if(opt) opt.classList.add('circled');
+        }
+      }
+    });
+    count++;
+    wrap.dataset.revealed = count;
+    btn.textContent = (count < total) ? baseLabel+' ('+count+'/'+total+')' : hideLabel;
+  } else {
+    all.forEach(it=>{
+      it.classList.remove('shown');
+      const bp = it.closest('.blank-ph');
+      if(bp) bp.classList.remove('shown');
+    });
+    wrap.querySelectorAll('.mcopt.circled').forEach(o=>o.classList.remove('circled'));
+    wrap.dataset.revealed = 0;
+    btn.textContent = baseLabel;
+  }
+}
+document.querySelectorAll('.revealbtn:not(.ts):not(.script)').forEach(b=>{ b.dataset.label = b.textContent; });
+
+/* Lock every answer button whose page hasn't been unlocked yet (i.e. all of them, on load) */
+document.querySelectorAll('.revealbtn[data-group]').forEach(b=>{
+  if(!isUnlocked(b.getAttribute('data-group'))) b.classList.add('locked');
+});
+
+/* =====================================================================
+   Timestamps — show/hide clickable time chips; clicking one jumps the
+   linked audio/video player to that point and plays it. Not gated.
+   ===================================================================== */
+function toggleTimestamps(btn, wrapId){
+  const wrap = document.getElementById(wrapId);
+  const on = wrap.classList.toggle('ts-visible');
+  btn.textContent = on ? 'Hide Timestamps' : 'Show Timestamps';
+}
+function jumpTo(el){
+  const t = parseFloat(el.dataset.t);
+  const media = document.getElementById(el.dataset.audio);
+  if(media && !isNaN(t)){
+    media.currentTime = t;
+    media.play();
+  }
+}
+
+/* =====================================================================
+   Script reveal — shows the full audio transcript. Gated behind the
+   same page passcode as the answers, since the script gives them away.
+   ===================================================================== */
+function toggleScript(btn, boxId, page){
+  if(page && !isUnlocked(page)){
+    openLockModal(page, ()=> toggleScript(btn, boxId, page));
+    return;
+  }
+  const box = document.getElementById(boxId);
+  const on = box.classList.toggle('shown');
+  btn.textContent = on ? 'Hide Script' : 'Show Script';
+}
+
+/* =====================================================================
+   Highlighter / eraser tool
+   ===================================================================== */
+let highlightMode=false, eraseMode=false;
+const hlBtn=document.getElementById('highlightBtn'), erBtn=document.getElementById('eraseBtn');
+hlBtn.addEventListener('click', ()=>{
+  highlightMode=!highlightMode; eraseMode=false;
+  hlBtn.classList.toggle('on',highlightMode); erBtn.classList.remove('on');
+});
+erBtn.addEventListener('click', ()=>{
+  eraseMode=!eraseMode; highlightMode=false;
+  erBtn.classList.toggle('on',eraseMode); hlBtn.classList.remove('on');
+});
+document.addEventListener('mouseup', (e)=>{
+  if(!highlightMode) return;
+  if(e.target.closest('#pagenav')||e.target.closest('#rightctrl')||e.target.closest('.modal-backdrop')) return;
+  const sel = window.getSelection();
+  if(!sel || sel.isCollapsed) return;
+  const range = sel.getRangeAt(0);
+  if(range.collapsed) return;
+  const mark = document.createElement('mark');
+  mark.className='user-highlight';
+  try{
+    range.surroundContents(mark);
+  }catch(err){
+    const frag = range.extractContents();
+    mark.appendChild(frag);
+    range.insertNode(mark);
+  }
+  sel.removeAllRanges();
+});
+document.addEventListener('click', (e)=>{
+  if(!eraseMode) return;
+  const mk = e.target.closest('mark.user-highlight');
+  if(mk){
+    const parent = mk.parentNode;
+    while(mk.firstChild) parent.insertBefore(mk.firstChild, mk);
+    parent.removeChild(mk);
+  }
+});
+
+/* =====================================================================
+   Zoom control — scales the whole continuous document at once
+   ===================================================================== */
+const BASE_ZOOM = 1.2;
+let relScale = 1.0;
+const contentEl = document.getElementById('content');
+function applyZoom(){
+  const doc = document.documentElement;
+  const maxScrollBefore = Math.max(1, doc.scrollHeight - window.innerHeight);
+  const scrollFrac = doc.scrollTop / maxScrollBefore;
+  const prevBehavior = doc.style.scrollBehavior;
+  doc.style.scrollBehavior = 'auto';
+
+  contentEl.style.transform = 'scale(' + (relScale*BASE_ZOOM) + ')';
+  contentEl.style.width = (100/(relScale*BASE_ZOOM)) + '%';
+  document.getElementById('zoomlabel').textContent = Math.round(relScale*100) + '%';
+
+  requestAnimationFrame(()=>{
+    const maxScrollAfter = Math.max(1, doc.scrollHeight - window.innerHeight);
+    doc.scrollTop = scrollFrac * maxScrollAfter;
+    doc.style.scrollBehavior = prevBehavior;
+  });
+}
+document.getElementById('zoomIn').addEventListener('click', ()=>{ relScale = Math.min(relScale+0.1, 1.8); applyZoom(); });
+document.getElementById('zoomOut').addEventListener('click', ()=>{ relScale = Math.max(relScale-0.1, 0.6); applyZoom(); });
+applyZoom();
+
+/* =====================================================================
+   Active page-number highlighting while scrolling
+   ===================================================================== */
+const pageAnchors = ["p126","p127","p128","p129","p130","p131","p132","p133","p134","p135","p136","p137","p138","p139"].map(id=>document.getElementById(id)).filter(Boolean);
+const pagenavLinks = {};
+document.querySelectorAll('#pagenav a').forEach(a=> pagenavLinks[a.getAttribute('data-p')] = a);
+function updateActivePage(){
+  let current = pageAnchors[0];
+  const refY = 90;
+  for(const a of pageAnchors){
+    const rect = a.getBoundingClientRect();
+    if(rect.top - refY <= 0) current = a; else break;
+  }
+  Object.values(pagenavLinks).forEach(a=>a.classList.remove('active'));
+  if(current && pagenavLinks[current.id]) pagenavLinks[current.id].classList.add('active');
+}
+window.addEventListener('scroll', updateActivePage, {passive:true});
+window.addEventListener('resize', updateActivePage);
+setTimeout(updateActivePage, 300);
+
+</script>
+</body>
+</html>

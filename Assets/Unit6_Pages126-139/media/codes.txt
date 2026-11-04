@@ -1,0 +1,33 @@
+Q: Skills for Success 4 — Unit 6, pp. 126–139 — Answer-lock class codes
+========================================================================
+
+Page 127 ......... path
+Page 128 ......... lemon
+Page 129 ......... startup
+Page 130 ......... rejection
+Page 131 ......... journey
+Page 132 ......... whiteboard
+Page 133 ......... contrast
+Page 134 ......... compare
+Page 135 ......... intern
+Page 136 ......... coffee
+Page 137 ......... sister
+Page 138 ......... lexicon
+Page 139 ......... mistake
+
+Page 126 has no code: it is the unit opener and has no answers or script.
+
+MASTER CODE (unlocks every page on this deck at once, for the teacher):
+robot234
+
+Notes:
+- Codes reset every time the page is reloaded — nothing is saved/remembered
+  in the browser (no login, no localStorage).
+- To change a code, open index.html, find the PAGES object near the top of
+  the "<script>" block, and edit the "code:" value for that page.
+- Exercise D on pages 136–137 (Identify, items 1–5) uses the PAGE 136 code
+  (coffee) for all 5 items, even though items 3–5 are displayed under the
+  Page 137 heading (the exercise itself starts on page 136). There is an
+  on-page note next to the button as a reminder.
+- Show Timestamps is not locked. Show Script uses the same code as the
+  answers on its page.

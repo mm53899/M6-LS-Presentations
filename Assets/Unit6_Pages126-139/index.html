@@ -100,6 +100,17 @@ video{width:100%;max-width:640px;display:block;margin:8px 0 4px;background:#000;
 .medialabel{font-size:11.5px;font-weight:800;color:var(--purple);text-transform:uppercase;letter-spacing:.4px;margin:10px 0 0;}
 .script-box{display:none;background:var(--cream);border:1px solid var(--creamborder);border-left:5px solid var(--blue);border-radius:0 6px 6px 0;padding:12px 16px;margin:0 0 14px;font-size:13px;line-height:1.65;max-height:360px;overflow-y:auto;}
 .script-box.shown{display:block;}
+.speaking-box{display:none;background:#fff;border:2px solid var(--purple);border-radius:8px;padding:16px 22px 18px;margin:0 0 14px;font-size:14.5px;line-height:1.6;}
+.speaking-box.shown{display:block;}
+.speaking-box h3{margin:0 0 8px;font-size:19px;color:var(--purple);}
+.speaking-box h4{margin:14px 0 4px;font-size:15px;color:var(--navy);}
+.speaking-box ol,.speaking-box ul{margin:4px 0 6px;padding-left:24px;}
+.speaking-box li{margin-bottom:5px;}
+.speaking-box table{border-collapse:collapse;margin:6px 0 0;width:100%;max-width:640px;font-size:13.5px;}
+.speaking-box th,.speaking-box td{border:1px solid #cfc8e0;padding:6px 10px;text-align:left;}
+.speaking-box th{background:#efeaf7;}
+.speaking-box td.pts,.speaking-box th.pts{text-align:center;width:70px;}
+.revealbtn.speak{background:#b3361f;}
 .script-box p{margin:0 0 8px;}
 .script-box .sp{font-weight:800;color:var(--navy);}
 
@@ -582,6 +593,35 @@ mark.user-highlight{background:#fff176;padding:0 1px;}
 <div class="wordbank"><div class="vocabcols"><div><div>in contrast to <span class="pos"></span></div><div>but <span class="pos"></span></div></div><div><div>instead of <span class="pos"></span></div><div>rather than <span class="pos"></span></div></div><div><div>however <span class="pos"></span></div><div>whereas <span class="pos"></span></div></div><div><div>on the other hand <span class="pos"></span></div></div></div></div>
 <div id="ex134b" class="exwrap"><p><span class="model-ans">Possible answers: In contrast to Scott Nash, Michael Acton Smith failed because he spent too much money. / John Paul DeJoria and Scott Nash started with a little money, but Michael Acton Smith got a lot of money from investors.</span></p></div>
 <div class="btnrow"><button class="revealbtn model" data-group="p134" onclick="toggleAnswers(this,'ex134b','p134')">Show Sample Answers</button></div></div>
+
+<div class="exblock" id="s135speak">
+<div class="btnrow" style="justify-content:flex-start"><button class="revealbtn speak" data-group="p134" onclick="toggleSpeaking(this,'speaking-test','p134')">Show Speaking Test</button></div>
+<div class="speaking-box" id="speaking-test">
+<h3>Speaking test (2&ndash;3 minutes)</h3>
+<p>Use information from Listening 1 and the video (page 130) to talk about these three questions:</p>
+<ol>
+<li>Choose <b>Scott Nash</b> or <b>John Paul DeJoria</b>. Choose the <b>two events</b> you think were most important to his success. Explain why each event mattered.</li>
+<li>For <b>Michael Acton Smith</b>, find <b>two mistakes</b> he made. Explain why each was a mistake and what he could have done differently.</li>
+<li>In conclusion, use <b>at least two contrast words</b> (page 133) to show how the way to success of your chosen businessman (Task 1) and Michael Acton Smith (Task 2) is different.</li>
+</ol>
+<h4>Your talk should include:</h4>
+<ul>
+<li>an introduction</li>
+<li>Scott Nash <b>or</b> John Paul DeJoria (your choice)</li>
+<li>Michael Acton Smith</li>
+<li>a conclusion</li>
+</ul>
+<p>Use <b>at least 10 vocabulary items</b> from Listening 1 and the video (pages 129&ndash;130). <b>Use past tenses.</b><br>You may use your speaking notes with a mind map and key words or phrases only. <b>NO FULL SENTENCES!</b></p>
+<h4>Scoring (20 points)</h4>
+<table>
+<tr><th>Criterion</th><th class="pts">Points</th></tr>
+<tr><td>Content: accurate events and mistakes from the sources</td><td class="pts">5</td></tr>
+<tr><td>Reasons: explains why each event mattered or was a mistake, and what he could have done</td><td class="pts">5</td></tr>
+<tr><td>Language: contrast words, unit vocabulary (at least 10 items), past forms</td><td class="pts">4</td></tr>
+<tr><td>Fluency and pronunciation</td><td class="pts">4</td></tr>
+<tr><td>Organization and timing</td><td class="pts">2</td></tr>
+</table>
+</div></div>
 
 <div class="exblock" id="s134c">
 <h2 class="stitle" style="margin-top:8px;">Listening 2 &middot; Interns in New York</h2>
@@ -1980,6 +2020,16 @@ function toggleScript(btn, boxId, page){
   const box = document.getElementById(boxId);
   const on = box.classList.toggle('shown');
   btn.textContent = on ? 'Hide Script' : 'Show Script';
+}
+
+function toggleSpeaking(btn, boxId, page){
+  if(page && !isUnlocked(page)){
+    openLockModal(page, ()=> toggleSpeaking(btn, boxId, page));
+    return;
+  }
+  const box = document.getElementById(boxId);
+  const on = box.classList.toggle('shown');
+  btn.textContent = on ? 'Hide Speaking Test' : 'Show Speaking Test';
 }
 
 /* =====================================================================

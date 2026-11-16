@@ -31,3 +31,5 @@ Notes:
   on-page note next to the button as a reminder.
 - Show Timestamps is not locked. Show Script uses the same code as the
   answers on its page.
+
+Speaking Test button (under C. Compose, before the page 135 divider) uses the p134 code: compare
